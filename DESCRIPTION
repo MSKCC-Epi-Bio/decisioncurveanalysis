@@ -1,0 +1,27 @@
+Package: dca.tutorial
+Title: Decision Curve Analysis Tutorial
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Daniel D.",
+           family = "Sjoberg",
+           role = c("aut", "cre"),
+           email = "danield.sjoberg@gmail.com")
+Description: Tutorial for performing Decision Curve Analysis (DCA) in R,
+    Stata, SAS, and Python.
+License: MIT + file LICENSE
+Imports:
+    knitr,
+    rlang
+Suggests: 
+    dcurves,
+    dplyr,
+    gtsummary,
+    here,
+    rmarkdown,
+    tidyr
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1

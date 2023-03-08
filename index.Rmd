@@ -1,64 +1,30 @@
 ---
-title: "Decision Curve Analysis"
-author: "Shaun Porwal"
-date: "February 15, 2023"
-output:
-  html_document:
-    theme: cosmo
+title: "Decision Curve Analysis Tutorial"
+output: html_document
 ---
 
-# Introduction
+<!-- auto redirecting users to the tutorial -->
+<!-- <meta http-equiv="Refresh" content="0; url='https://mskcc-epi-bio.github.io/decisioncurveanalysis'" />  -->
 
-Diagnostic and prognostic models are typically evaluated with measures of accuracy, such as the area-under-the-curve (AUC) or the Brier score, that do not address clinical consequences. Decision-analytic techniques allow assessment of clinical outcomes but generally require collection of extensive additional information and are cumbersome to apply to models that yield a risk estimate on a continuous scale from 0 to 1. Decision curve analysis allows incorporation of clinical consequences, thus addressing the question of whether a model would do more good than harm, but is able to do so without excessive extraneous data.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(knitr.duplicate.label = "allow")
+```
 
-# Software Installation, Examples, and Explanations
+```{r, render, echo = FALSE, include=FALSE}
+rmarkdown::render("dca-tutorial.Rmd",
+                  params = list(language = "r"),
+                  output_file = "dca-tutorial-r.html")
+rmarkdown::render("dca-tutorial.Rmd",
+                  params = list(language = "stata"),
+                  output_file = "dca-tutorial-stata.html")
+rmarkdown::render("dca-tutorial.Rmd",
+                  params = list(language = "sas"),
+                  output_file = "dca-tutorial-sas.html")
+rmarkdown::render("dca-tutorial.Rmd",
+                  params = list(language = "python"),
+                  output_file = "dca-tutorial-python.html")
+```
 
-- [DCA tutorial in R, Python, Stata, SAS](https://www.danieldsjoberg.com/dca-tutorial.html)
-- [DCA tutorial in Python](https://www.danieldsjoberg.com/dca-tutorial/dca-tutorial-python.html)
-- [DCA tutorial in Stata](https://www.danieldsjoberg.com/dca-tutorial/dca-tutorial-stat.html)
-- [DCA tutorial in SAS](https://www.danieldsjoberg.com/dca-tutorial/dca-tutorial-sas.html)
-
-# Source Code
-
-- R: [ddsjoberg/dcurves](https://github.com/ddsjoberg/dcurves)
-- Python: [MSKCC-Epi-Bio/dcurves](https://github.com/MSKCC-Epi-Bio/dcurves)
-- Stata: [ddsjoberg/dca.stata](https://github.com/ddsjoberg/dca.stata)
-- SAS: [ddsjoberg/dca.sas](https://github.com/ddsjoberg/dca.sas)
-
-# Peer-Reviewed Literature
-
-## Original Paper on DCA
-
-- [Decision curve analysis: a novel method for evaluating prediction models](https://pubmed.ncbi.nlm.nih.gov/17099194/)
-
-## Extensions to DCA
-
-- [Decision-analytic evaluation of prognostic markers](https://pubmed.ncbi.nlm.nih.gov/19036144/)
-- [Decision curve analysis revisited](https://pubmed.ncbi.nlm.nih.gov/17550609/)
-- [Trial design: a decision tool for researchers and payers](https://pubmed.ncbi.nlm.nih.gov/17022818/)
-
-# Introductory Papers and Guides
-
-- [A general framework for evaluating clinical prediction models](https://pubmed.ncbi.nlm.nih.gov/26810254/)
-- [How to understand a decision curve](https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7)
-- [Guide for investigators on reporting decision curves](https://www.sciencedirect.com/science/article/pii/S0302283818306407?via%3Dihub)
-
-# Discussion Papers and Theoretical Background
-
-- [A general framework for decision curve analysis: a mathematical approach](https://pubmed.ncbi.nlm.nih.gov/19132141/)
-- [Decision curve analysis: a technical note](https://pubmed.ncbi.nlm.nih.gov/20172362/)
-- [The relative utility curve in decision analysis](https://pubmed.ncbi.nlm.nih.gov/20069131/)
-- [Assessing the performance of prediction models: a three-step approach](https://pubmed.ncbi.nlm.nih.gov/20010215/)
-
-
-# Discussion Papers and Theoretical Background
-
-
-
-
-
-
-
-
-
-
+Welcome to the tutorial for Decision Curve Analysis.
+You're being redirected to https://www.danieldsjoberg.com/dca-tutorial/dca-tutorial-r.html
