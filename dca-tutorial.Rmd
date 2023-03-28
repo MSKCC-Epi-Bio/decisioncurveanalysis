@@ -89,7 +89,7 @@ extension <- switch(params$language,
                     "stata" = ".do", "python" = ".py")
 script_url <- 
   paste0(
-    "https://github.com/ddsjoberg/dca-tutorial/raw/main/rmd_chunks/chunks_as_scripts/",
+    "https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/raw/main/rmd_chunks/chunks_as_scripts/",
     "dca-script", extension
   )
 ```
@@ -101,17 +101,6 @@ knitr::read_chunk("rmd_chunks/sas-chunks.sas")
 knitr::read_chunk("rmd_chunks/python-chunks.py")
 ```
 
-## Introduction
-
-Diagnostic and prognostic models are typically evaluated with measures of accuracy, such as the area-under-the-curve (AUC) or the Brier score, that do not address clinical consequences.
-Decision-analytic techniques allow assessment of clinical outcomes but generally require collection of extensive additional information and are cumbersome to apply to models that yield a risk estimate on a continuous scale from 0 to 1.
-Decision curve analysis allows incorporation of clinical consequences, thus addressing the question of whether a model would do more good than harm, but is able to do so without excessive extraneous data.
-
-This document will walk you through how to perform a decision curve analysis in a variety of different settings, and then how to interpret the resulting curves.
-In decision curve analysis, models are compared to two default strategies: 1) assume that all patients are test positive and therefore treat everyone, or 2) assume that all patients are test negative and offer treatment to no one.
-"Treatment" is considered in the widest possible sense, not only drugs, radiotherapy or surgery, but advice, further diagnostic procedures or more intensive monitoring.
-
-For more on DCA, visit [www.decisioncurveanalysis.org](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis): you'll find the original articles explaining the theory and mathematical derivation of net benefit along with papers justifying the advantages of decision curve analysis over other methods of model evaluation.
 Below we will walk through how to perform decision curve analysis for binary and time-to-event outcomes using **R**, **Stata**, **SAS**, and **Python**.
 Code is provided for all languages and can be downloaded or simply copy and pasted into your application to see how it runs.
 For simplicity's sake, however, we only show output from the R functions; although, naturally, output is very similar irrespective of programming language.  .

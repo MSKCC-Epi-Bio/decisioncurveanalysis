@@ -4,12 +4,19 @@ output_dir: "."
 navbar:
   title: "Decision Curve Analysis"
   left:
-    - icon: fa-home fa-lg
-      href: http://mskcc-epi-bio.github.io/decisioncurveanalysis
-
+    # - icon: fa-home fa-lg
+    - text: Home
+      href: index.html
+    - text: "Peer-Reviewed Literature"
+      href: literature.html
+    - text: "Tutorial"
+      href: dca-tutorial.html
+    - text: "Other Resources"
+      href: resources.html
+      
   right:
     - icon: fa-github fa-lg
-      href: https://github.com/mskcc-epi-bio/decisioncurveanalysis
+      href: https://github.com/mskcc-epi-bio/decisioncurveanalysis/
 
 output:
   html_document:

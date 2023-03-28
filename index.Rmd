@@ -3,6 +3,11 @@ title: "Decision Curve Analysis Tutorial"
 output: html_document
 ---
 
+Decision curve analysis (DCA) is a statistical method that evaluates models in terms of their clinical outcomes on patients. Unlike traditional accuracy measures, such as the area-under-the-curve or Brier score, DCA takes into account clinical consequences. DCA compares models to two default strategies: treat all patients and treat no patients. It evaluates the net benefit of a model, which is the benefit minus the harm of a given strategy. DCA is particularly useful for assessing the clinical utility of diagnostic and prognostic models. In this document, we provide step-by-step instructions for performing DCA for binary and time-to-event outcomes using R, Stata, SAS, and Python. We also cover multivariable DCA, evaluation of published models, saving net benefit values, interventions avoided, survival outcomes, competing risks, case-control designs, and incorporating harms. DCA can help researchers determine whether a model would do more good than harm, and it can assist in reducing unnecessary interventions.
+
+For more on DCA, visit [www.decisioncurveanalysis.org](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis): you'll find the original articles explaining the theory and mathematical derivation of net benefit along with papers justifying the advantages of decision curve analysis over other methods of model evaluation.
+
+
 <!-- auto redirecting users to the tutorial -->
 <!-- <meta http-equiv="Refresh" content="0; url='https://mskcc-epi-bio.github.io/decisioncurveanalysis'" />  -->
 
@@ -12,19 +17,19 @@ options(knitr.duplicate.label = "allow")
 ```
 
 ```{r, render, echo = FALSE, include=FALSE}
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "r"),
-                  output_file = "dca-tutorial-r.html")
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "stata"),
-                  output_file = "dca-tutorial-stata.html")
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "sas"),
-                  output_file = "dca-tutorial-sas.html")
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "python"),
-                  output_file = "dca-tutorial-python.html")
+# rmarkdown::render("dca-tutorial.Rmd",
+#                   params = list(language = "r"),
+#                   output_file = "dca-tutorial-r.html")
+# rmarkdown::render("dca-tutorial.Rmd",
+#                   params = list(language = "stata"),
+#                   output_file = "dca-tutorial-stata.html")
+# rmarkdown::render("dca-tutorial.Rmd",
+#                   params = list(language = "sas"),
+#                   output_file = "dca-tutorial-sas.html")
+# rmarkdown::render("dca-tutorial.Rmd",
+#                   params = list(language = "python"),
+#                   output_file = "dca-tutorial-python.html")
 ```
 
-Welcome to the tutorial for Decision Curve Analysis.
-You're being redirected to https://www.danieldsjoberg.com/dca-tutorial/dca-tutorial-r.html
+<!-- Welcome to the tutorial for Decision Curve Analysis. -->
+<!-- You're being redirected to https://www.danieldsjoberg.com/dca-tutorial/dca-tutorial-r.html -->
