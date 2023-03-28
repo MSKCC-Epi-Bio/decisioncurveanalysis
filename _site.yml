@@ -9,7 +9,7 @@ navbar:
       href: index.html
     - text: "Peer-Reviewed Literature"
       href: literature.html
-    - text: "Tutorial"
+    - text: "Software Tutorial"
       href: dca-tutorial.html
     - text: "Other Resources"
       href: resources.html

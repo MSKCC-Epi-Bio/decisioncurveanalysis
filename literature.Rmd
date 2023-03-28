@@ -1,7 +1,252 @@
 ---
-title: "literature"
-output: html_document
-date: "2023-03-28"
+title: ""
+output:
+  html_document:
+    toc: TRUE
+    toc_float:
+      smooth_scroll: TRUE
+    toc_depth: 2
+    toc_collapse: true
 ---
+
+```{css, echo=FALSE}
+
+.contact-box {
+ border: 2px solid lightgrey;
+ padding: 10px;
+ margin-bottom: 10px;
+ border-radius: 10px;
+}
+
+.contact-wrapper {
+ display: flex;
+}
+
+.contact-text {
+
+}
+```
+
+
+# Introductory Papers and Guides
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Original Paper on DCA </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/17099194/</href> 
+<p> Extensions to DCA </p>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> General Introduction to DCA </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/26810254/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> How to Understand a Decision Curve </h2>
+<href>https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Guide for Investigators on Reporting Decision Curves </h2>
+<href>https://www.sciencedirect.com/science/article/pii/S0302283818306407?via%3Dihub</href>
+</div>
+</div>
+
+# Extensions to DCA
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Applications to Survival Time Data among others </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/19036144/</href>
+</div>
+</div
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> DCA & Treatment Response: Model Evaluation </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/17550609/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> DCA & Treatment Response: Trial Design </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/17022818/</href>
+</div>
+</div>
+
+# Discussion Papers and Theoretical Background
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> General Theoretical Background to DCA </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/19132141/</href>
+<href>https://pubmed.ncbi.nlm.nih.gov/20172362/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Mathematical Underpinnings of DCA through Relationship to Relative Utility (Similar Method) </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/20069131/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Widely Cited First Prediction Model Evaluation Paper to Introduce 3-Step Approach of Discrimination, Calibration, Clinical Utility </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/20010215/</href>
+</div>
+</div>
+
+# Editorials and Commentaries Recommending DCA in Major Journals
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Editorials recommending DCA Published in Major Journals </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/27247223/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Editorials recommending DCA Published in Major Journals </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/26810254/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Editorials recommending DCA Published in Major Journals </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/25626037/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Editorials recommending DCA Published in Major Journals </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/22910942/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Editorials recommending DCA Published in Major Journals </h2>
+<href>https://www.acpjournals.org/doi/10.7326/M22-0844</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Editorials recommending DCA Published in Major Journals </h2>
+<href>https://www.nature.com/articles/s41746-021-00549-7</href>
+</div>
+</div>
+
+# Other Editorials
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/35348862/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/33676020/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper </h2>
+<href>https://link.springer.com/chapter/10.1007/978-3-030-85292-4_15</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/34862535/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper </h2>
+<href>https://erj.ersjournals.com/content/58/5/2101186.long</href>
+</div>
+</div>
+
+# Newly Added
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper </h2>
+<href>https://pubmed.ncbi.nlm.nih.gov/30819037/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Christodoulou E, et al. </h2>
+<p> A systematic review shows no performance benefit of machine learning over logistic regression for clinical prediction models. J Clin Epidemiol 2019;110:12–22. </p>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Jung K, et al. </h2>
+<p> A framework for making predictive models useful in practice. J Am Med Inform Assoc 2021; 28 (6): 1149–58. </p>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Calculating net benefit under resource constraints </h2>
+<p> Journal of the American Medical Informatics Association, Singh, Karandeep, February 22, 2023. </p>
+<href>https://academic.oup.com/jamia/advance-article-abstract/doi/10.1093/jamia/ocad006/7051008?utm_source=advanceaccess&utm_campaign=jamia&utm_medium=email</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> R code for calculating net benefit under resource constraints </h2>
+<href>https://github.com/ML4LHS/modelrecon</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Andrew's Suggested Paper </h2>
+<href>doi:10.7326/M22-0844</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Link from DCA site </h2>
+<href>https://www.fharrell.com/post/edca/</href>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2> Paper Recommending DCA for Evaluating Machine Learning Prediction Studies </h2>
+<href>https://www.sciencedirect.com/science/article/pii/S0895435623000550</href>
+</div>
+</div>
+ 
+ 
+
 
 
