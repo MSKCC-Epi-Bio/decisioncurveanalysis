@@ -66,7 +66,7 @@ output:
 <h2> Applications to Survival Time Data among others </h2>
 <href>https://pubmed.ncbi.nlm.nih.gov/19036144/</href>
 </div>
-</div
+</div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
