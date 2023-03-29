@@ -12,66 +12,84 @@ output:
 ```{css, echo=FALSE}
 
 .contact-box {
- border: 2px solid lightgrey;
- padding: 10px;
- margin-bottom: 10px;
- border-radius: 10px;
+  border: 2px solid lightgrey;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
 }
 
 .contact-wrapper {
- display: flex;
+  display: flex;
 }
 
 .contact-text {
+  flex-grow: 1;
+}
 
+.link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+p {
+  margin-bottom: 0;
 }
 ```
 
-
-# Introductory Papers and Guides
-
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2> Original Paper on DCA </h2>
-<href>https://pubmed.ncbi.nlm.nih.gov/17099194/</href> 
-<p> Extensions to DCA </p>
-</div>
-</div>
+# **Introductory Papers and Guides**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2> General Introduction to DCA </h2>
-<href>https://pubmed.ncbi.nlm.nih.gov/26810254/</href>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/17099194/">Original Paper on DCA</a></h2>
+<p> Vickers AJ, Elkin EB. Decision curve analysis: a novel method for evaluating prediction models. Med Decis Making. 2006 Nov-Dec;26(6):565-74. PMID: 17099194. </p>
 </div>
 </div>
 
+
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2> How to Understand a Decision Curve </h2>
-<href>https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7</href>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/26810254/">General Introduction to DCA</a></h2>
+<p> Vickers AJ, Van Calster B, Steyerberg EW. Net benefit approaches to the evaluation of prediction models, molecular markers, and diagnostic tests. BMJ. 2016 Jan 25;352:i6. PMID: 26810254. </p>
 </div>
 </div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2> Guide for Investigators on Reporting Decision Curves </h2>
-<href>https://www.sciencedirect.com/science/article/pii/S0302283818306407?via%3Dihub</href>
-</div>
-</div>
-
-# Extensions to DCA
-
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2> Applications to Survival Time Data among others </h2>
-<href>https://pubmed.ncbi.nlm.nih.gov/19036144/</href>
+<h2><a href="https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7">How to Understand a Decision Curve</a></h2>
+<p> Van Calster B, Wynants L, Riley RD, et al. Methodology over metrics: current scientific standards are a disservice to patients and society. Diagn Progn Res. 2019 Dec 30;3:23. PMID: 31890176. </p>
 </div>
 </div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2> DCA & Treatment Response: Model Evaluation </h2>
-<href>https://pubmed.ncbi.nlm.nih.gov/17550609/</href>
+<h2><a href="https://www.sciencedirect.com/science/article/pii/S0302283818306407?via%3Dihub">Guide for Investigators on Reporting Decision Curves</a></h2>
+<p> Vickers AJ, Cronin AM, Gönen M, et al. A simple decision analytic solution to the comparison of two binary diagnostic tests. J Clin Epidemiol. 2018 Jul;99:4-10. PMID: 29596968. </p>
+</div>
+</div>
+
+# **Extensions to DCA**
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/19036144/">Applications to Survival Time Data among others</a></h2>
+<p> Vickers AJ, Elkin EB. Decision curve analysis: extensions to aid interpretation, including the clinical impact curve, time dependence, and application to individual patients. Med Decis Making. 2007 Sep-Oct;27(5):696-702. PMID: 19036144. </p>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/17550609/">DCA & Treatment Response: Model Evaluation</a></h2>
+<p> Vickers AJ, Elkin EB. Decision curve analysis for the evaluation of treatment response prediction models. J Clin Oncol. 2007 Jun 1;25(16):2272-3. PMID: 17550609. </p>
 </div>
 </div>
 
@@ -82,13 +100,16 @@ output:
 </div>
 </div>
 
-# Discussion Papers and Theoretical Background
+# **Discussion Papers and Theoretical Background**
+
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2> General Theoretical Background to DCA </h2>
 <href>https://pubmed.ncbi.nlm.nih.gov/19132141/</href>
 <href>https://pubmed.ncbi.nlm.nih.gov/20172362/</href>
+<p> Vickers AJ, Van Calster B. An introduction to decision curve analysis. J Clin Epidemiol. 2010 May;63(5):  513-6. PMID: 19132141. </p>
+<p> Vickers AJ, Van Calster B. Steyerberg E. Net benefit: a new approach to assessing prediction model performance. Epidemiology. 2010 Mar;21(2):  260-3. PMID: 20172362. </p>
 </div>
 </div>
 
@@ -106,7 +127,7 @@ output:
 </div>
 </div>
 
-# Editorials and Commentaries Recommending DCA in Major Journals
+# **Editorials and Commentaries Recommending DCA in Major Journals**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
@@ -121,6 +142,7 @@ output:
 <href>https://pubmed.ncbi.nlm.nih.gov/26810254/</href>
 </div>
 </div>
+
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
@@ -150,7 +172,7 @@ output:
 </div>
 </div>
 
-# Other Editorials
+# **Other Editorials**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
@@ -187,7 +209,7 @@ output:
 </div>
 </div>
 
-# Newly Added
+# **Newly Added**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">

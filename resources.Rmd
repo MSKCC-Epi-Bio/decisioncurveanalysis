@@ -1,7 +1,6 @@
 ---
-title: "resources"
+title: "Other Resources"
 output: html_document
-date: "2023-03-28"
 ---
 
 DCA YouTube Series (12 Videos)

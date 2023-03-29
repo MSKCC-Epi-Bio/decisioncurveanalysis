@@ -1,5 +1,5 @@
 ---
-title: "Decision Curve Analysis Tutorial"
+title: "Decision Curve Analysis "
 output: html_document
 
 ---
