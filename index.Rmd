@@ -161,25 +161,27 @@ For more on DCA, visit [www.decisioncurveanalysis.org](https://www.mskcc.org/dep
 <!-- <meta http-equiv="Refresh" content="0; url='https://mskcc-epi-bio.github.io/decisioncurveanalysis'" />  -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-options(knitr.duplicate.label = "allow")
-```
-
-```{r, render, echo = FALSE, include=FALSE}
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "r"),
-                  output_file = "dca-tutorial-r.html")
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "stata"),
-                  output_file = "dca-tutorial-stata.html")
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "sas"),
-                  output_file = "dca-tutorial-sas.html")
-rmarkdown::render("dca-tutorial.Rmd",
-                  params = list(language = "python"),
-                  output_file = "dca-tutorial-python.html")
-rmarkdown::render("literature.Rmd")
-rmarkdown::render("resources.Rmd")
+  # knitr::opts_chunk$set(echo = TRUE)
+  # options(knitr.duplicate.label = "allow")
+  # ```
+  # 
+  # ```{r, render, echo = FALSE, include=FALSE}
+  # rmarkdown::render("dca-tutorial.Rmd")
+  # 
+  # rmarkdown::render("dca-tutorial.Rmd",
+  #                  params = list(language = "r"),
+  #                  output_file = "dca-tutorial-r.html")
+  # rmarkdown::render("dca-tutorial.Rmd",
+  #                  params = list(language = "stata"),
+  #                  output_file = "dca-tutorial-stata.html")
+  # rmarkdown::render("dca-tutorial.Rmd",
+  #                  params = list(language = "sas"),
+  #                  output_file = "dca-tutorial-sas.html")
+  # rmarkdown::render("dca-tutorial.Rmd",
+  #                  params = list(language = "python"),
+  #                  output_file = "dca-tutorial-python.html")
+  # rmarkdown::render("literature.Rmd")
+  # rmarkdown::render("resources.Rmd")
 ```
 
 <!-- Welcome to the tutorial for Decision Curve Analysis. -->

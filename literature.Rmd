@@ -302,11 +302,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 </div>
 </div>
 
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2><a href="https://github.com/ML4LHS/modelrecon">R code for calculating net benefit under resource constraints</a></h2>
-</div>
-</div>
+
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
