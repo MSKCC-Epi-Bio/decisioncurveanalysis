@@ -4,7 +4,6 @@ output_dir: "."
 navbar:
   title: "Decision Curve Analysis"
   left:
-    # - icon: fa-home fa-lg
     - text: Home
       href: index.html
     - text: "Peer-Reviewed Literature"

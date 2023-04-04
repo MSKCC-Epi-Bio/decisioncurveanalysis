@@ -9,6 +9,154 @@ Decision curve analysis (DCA) is a statistical method that evaluates models in t
 For more on DCA, visit [www.decisioncurveanalysis.org](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis): you'll find the original articles explaining the theory and mathematical derivation of net benefit along with papers justifying the advantages of decision curve analysis over other methods of model evaluation.
 
 
+
+<!-- ```{r, echo=FALSE, results='asis'} -->
+<!-- # Include the necessary D3.js library -->
+<!-- cat('<script src="https://d3js.org/d3.v7.min.js"></script>\n') -->
+
+<!-- # Include the HTML and JavaScript code for the decision curve analysis plot -->
+<!-- cat(' -->
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <head> -->
+<!--     <meta charset="UTF-8"> -->
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!--     <title>Decision Curve Analysis</title> -->
+<!--     <style> -->
+<!--         /* Add your CSS styles here */ -->
+<!--     </style> -->
+<!-- </head> -->
+<!-- <body> -->
+<!--     <div id="decision-curve"></div> -->
+<!--     <script> -->
+<!--         // Sample data for decision curve analysis -->
+<!-- const data = [ -->
+<!--     { thresholdProbability: 0, netBenefit: 0 }, -->
+<!--     { thresholdProbability: 0.1, netBenefit: 0.2 }, -->
+<!--     // ... more data points -->
+<!-- ]; -->
+
+<!-- // Set the dimensions and margins of the graph -->
+<!-- const margin = { top: 20, right: 20, bottom: 30, left: 50 }, -->
+<!--     width = 960 - margin.left - margin.right, -->
+<!--     height = 500 - margin.top - margin.bottom; -->
+
+<!-- // Create the SVG container and set its dimensions -->
+<!-- const svg = d3.select("#decision-curve") -->
+<!--     .append("svg") -->
+<!--     .attr("width", width + margin.left + margin.right) -->
+<!--     .attr("height", height + margin.top + margin.bottom) -->
+<!--     .append("g") -->
+<!--     .attr("transform", `translate(${margin.left},${margin.top})`); -->
+
+<!-- // Create scales for x and y axes -->
+<!-- const x = d3.scaleLinear().range([0, width]); -->
+<!-- const y = d3.scaleLinear().range([height, 0]); -->
+
+<!-- // Define the line for the decision curve -->
+<!-- const line = d3.line() -->
+<!--     .x(d => x(d.thresholdProbability)) -->
+<!--     .y(d => y(d.netBenefit)); -->
+
+<!-- // Set the domain for the x and y axes based on the data -->
+<!-- x.domain(d3.extent(data, d => d.thresholdProbability)); -->
+<!-- y.domain([0, d3.max(data, d => d.netBenefit)]); -->
+
+<!-- // Add the x-axis to the SVG -->
+<!-- svg.append("g") -->
+<!--     .attr("transform", `translate(0,${height})`) -->
+<!--     .call(d3.axisBottom(x)); -->
+
+<!-- // Add the y-axis to the SVG -->
+<!-- svg.append("g") -->
+<!--     .call(d3.axisLeft(y)); -->
+
+<!-- // Add the decision curve line to the SVG -->
+<!-- svg.append("path") -->
+<!--     .data([data]) -->
+<!--     .attr("class", "line") -->
+<!--     .attr("d", line); -->
+
+<!-- // Add interactivity, e.g., tooltips, hover effects, etc. -->
+<!-- // ... your custom code here -->
+
+<!--     </script> -->
+<!-- </body> -->
+<!-- </html> -->
+<!-- ') -->
+<!-- ``` -->
+
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <head> -->
+<!--     <meta charset="UTF-8"> -->
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!--     <title>Decision Curve Analysis</title> -->
+<!--     <style> -->
+<!--         /* Add your CSS styles here */ -->
+<!--     </style> -->
+<!--     <script src="https://d3js.org/d3.v7.min.js"></script> -->
+<!-- </head> -->
+<!-- <body> -->
+<!--     <div id="decision-curve"></div> -->
+<!--     <script> -->
+<!--         // Add your JavaScript code here -->
+<!--     </script> -->
+<!-- </body> -->
+<!-- </html> -->
+
+
+<!-- // Sample data for decision curve analysis -->
+<!-- const data = [ -->
+<!--     { thresholdProbability: 0, netBenefit: 0 }, -->
+<!--     { thresholdProbability: 0.1, netBenefit: 0.2 }, -->
+<!--     // ... more data points -->
+<!-- ]; -->
+
+<!-- // Set the dimensions and margins of the graph -->
+<!-- const margin = { top: 20, right: 20, bottom: 30, left: 50 }, -->
+<!--     width = 960 - margin.left - margin.right, -->
+<!--     height = 500 - margin.top - margin.bottom; -->
+
+<!-- // Create the SVG container and set its dimensions -->
+<!-- const svg = d3.select("#decision-curve") -->
+<!--     .append("svg") -->
+<!--     .attr("width", width + margin.left + margin.right) -->
+<!--     .attr("height", height + margin.top + margin.bottom) -->
+<!--     .append("g") -->
+<!--     .attr("transform", `translate(${margin.left},${margin.top})`); -->
+
+<!-- // Create scales for x and y axes -->
+<!-- const x = d3.scaleLinear().range([0, width]); -->
+<!-- const y = d3.scaleLinear().range([height, 0]); -->
+
+<!-- // Define the line for the decision curve -->
+<!-- const line = d3.line() -->
+<!--     .x(d => x(d.thresholdProbability)) -->
+<!--     .y(d => y(d.netBenefit)); -->
+
+<!-- // Set the domain for the x and y axes based on the data -->
+<!-- x.domain(d3.extent(data, d => d.thresholdProbability)); -->
+<!-- y.domain([0, d3.max(data, d => d.netBenefit)]); -->
+
+<!-- // Add the x-axis to the SVG -->
+<!-- svg.append("g") -->
+<!--     .attr("transform", `translate(0,${height})`) -->
+<!--     .call(d3.axisBottom(x)); -->
+
+<!-- // Add the y-axis to the SVG -->
+<!-- svg.append("g") -->
+<!--     .call(d3.axisLeft(y)); -->
+
+<!-- // Add the decision curve line to the SVG -->
+<!-- svg.append("path") -->
+<!--     .data([data]) -->
+<!--     .attr("class", "line") -->
+<!--     .attr("d", line); -->
+
+<!-- // Add interactivity, e.g., tooltips, hover effects, etc. -->
+<!-- // ... your custom code here -->
+
 <!-- auto redirecting users to the tutorial -->
 <!-- <meta http-equiv="Refresh" content="0; url='https://mskcc-epi-bio.github.io/decisioncurveanalysis'" />  -->
 
