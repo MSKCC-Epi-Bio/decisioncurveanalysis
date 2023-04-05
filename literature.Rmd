@@ -72,7 +72,7 @@ p {
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://pubmed.ncbi.nlm.nih.gov/26810254/">General Introduction to DCA</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/26810254/">Best Basic Introduction to Decision Curve Analysis</a>
 </h2>
 <span class="year">2016</span>
 <p>
@@ -84,7 +84,7 @@ Vickers AJ, Van Calster B, Steyerberg EW. Net benefit approaches to the evaluati
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7">How to Understand a Decision Curve</a>
+<a href="https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7">How to Understand a Published Decision Curve</a>
 </h2>
 <span class="year">2019</span>
 <p>
@@ -105,12 +105,12 @@ Ben Van Calster, Laure Wynants, Jan F.M. Verbeek, Jan Y. Verbakel, Evangelia Chr
 </div>
 </div>
 
-
 # **Extensions to DCA**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/19036144/">Applications to Survival Time Data among others</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/19036144/">Applications to
+Survival Time Data, Competing Risks, and Cross Validation</a></h2>
 <span class="year">2008</span>
 <p>Vickers AJ, Cronin AM, Elkin EB, Gonen M. Extensions to decision curve analysis, a novel method for evaluating diagnostic tests, prediction models and molecular markers. BMC Med Inform Decis Mak. 2008;8:53. Published 2008 Nov 26. <a href="https://doi.org/10.1186/1472-6947-8-53">doi:10.1186/1472-6947-8-53</a>.</p>
 </div>
@@ -130,6 +130,14 @@ Ben Van Calster, Laure Wynants, Jan F.M. Verbeek, Jan Y. Verbakel, Evangelia Chr
 <h2><a href="https://pubmed.ncbi.nlm.nih.gov/17022818/">DCA & Treatment Response: Trial Design</a></h2>
 <span class="year">2006</span>
 <p>Vickers AJ, Kramer BS, Baker SG. Selecting patients for randomized trials: a systematic approach based on risk group. Trials. 2006 Oct 5;7:30. PMID: 17022818; PMCID: PMC1609186. </p>
+</div>
+</div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/36810659/">Calculating net benefit under resource constraints</a></h2>
+<span class="year">2023</span>
+<p> Karandeep Singh, Nigam H Shah, Andrew J Vickers, Assessing the net benefit of machine learning models in the presence of resource constraints, Journal of the American Medical Informatics Association, Volume 30, Issue 4, April 2023, Pages 668–673, https://doi.org/10.1093/jamia/ocad006 </p>
 </div>
 </div>
 
@@ -176,11 +184,20 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 </div>
 </div>
 
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30819037/">A Systematic Review of the Literature Demonstrates Some Errors in the Use of Decision Curve Analysis but Generally Correct Interpretation of Findings</a></h2>
+<span class="year">2019</span>
+<p> Capogrosso P, Vickers AJ. Med Decis Making. 2019 Jul;39(5):493-498. PMID: 30819037. </p>
+</div>
+</div>
+
+
 # **Editorials and Commentaries Recommending DCA in Major Journals**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/27247223/">Assessing the Clinical Impact of Risk Prediction Models With Decision Curves: Guidance for Correct Interpretation and Appropriate Use</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/27247223/">Journal of Clinical Oncology</a></h2>
 <span class="year">2016</span>
 <p>Kerr KF, Brown MD, Zhu K, Janes H. Assessing the Clinical Impact of Risk Prediction Models With Decision Curves: Guidance for Correct Interpretation and Appropriate Use. J Clin Oncol. 2016 Jul 20;34(21):2534-40. PMID: 27247223; PMCID: PMC4962736. </p>
 </div>
@@ -188,7 +205,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/26810254/">Net Benefit Approaches to the Evaluation of Prediction Models, Molecular Markers, and Diagnostic Tests</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/26810254/">British Medical Journal</a></h2>
 <span class="year">2016</span>
 <p>Vickers AJ, Van Calster B, Steyerberg EW. Net benefit approaches to the evaluation of prediction models, molecular markers, and diagnostic tests. BMJ. 2016 Jan 25;352:i6. PMID: 26810254; PMCID: PMC4724785. </p>
 </div>
@@ -196,7 +213,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/25626037/">Decision Curve Analysis</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/25626037/">The Journal of the American Medical Association</a></h2>
 <span class="year">2015</span>
 <p>Fitzgerald M, Saville BR, Lewis RJ. Decision curve analysis. JAMA. 2015 Jan 27;313(4):409-10. PMID: 25626037. </p>
 </div>
@@ -204,7 +221,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/22910942/">Beyond the Usual Prediction Accuracy Metrics: Reporting Results for Clinical Decision Making</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/22910942/">Annals of Internal Medicine</a></h2>
 <span class="year">2012</span>
 <p>Localio AR, Goodman S. Beyond the usual prediction accuracy metrics: reporting results for clinical decision making. Ann Intern Med. 2012 Aug 21;157(4):294-5. PMID: 22910942. </p>
 </div>
@@ -212,17 +229,17 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.acpjournals.org/doi/10.7326/M22-0844">Assessing Performance and Clinical Usefulness in Prediction Models With Survival Outcomes: Practical Guidance for Cox Proportional Hazards Models</a></h2>
-<span class="year">2023</span>
-<p>David J. McLernon, Daniele Giardiello, Ben Van Calster, et al; topic groups 6 and 8 of the STRATOS Initiative. Assessing Performance and Clinical Usefulness in Prediction Models With Survival Outcomes: Practical Guidance for Cox Proportional Hazards Models. Ann Intern Med.2023;176:105-114. [Epub 27 December 2022]. </p>
+<h2><a href="https://www.nature.com/articles/s41746-021-00549-7">Recommendation for decision curve analysis for machine learning and artificial intelligence applications</a></h2>
+<span class="year">2022</span>
+<p>de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. doi: 10.1038/s41746-021-00549-7. PMID: 35348862; PMCID: PMC8393232.</p>
 </div>
 </div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.nature.com/articles/s41746-021-00549-7">Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review</a></h2>
-<span class="year">2022</span>
-<p>de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. doi: 10.1038/s41746-021-00549-7. PMID: 35348862; PMCID: PMC8393232.</p>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/36571841/">Recommendation to Use Decision Curves for Time-to-Event Data</a></h2>
+<span class="year">2023</span>
+<p> McLernon DJ, et al. Ann Intern Med. 2023 Jan;176(1):105-114. PMID: 36571841. </p>
 </div>
 </div>
 
@@ -230,7 +247,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/35348862/">Decision curve analysis in the evaluation of radiology research</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/35348862/">European Radiology</a></h2>
 <span class="year">2022</span>
 <p>Vickers AJ, Woo S. Decision curve analysis in the evaluation of radiology research. Eur Radiol. 2022 Sep;32(9):5787-5789. doi: 10.1007/s00330-022-08685-8. Epub 2022 Mar 29. PMID: 35348862.</p>
 </div>
@@ -238,19 +255,11 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/33676020/">Decision curve analysis to evaluate the clinical benefit of prediction models</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/33676020/">Decision Curve Analysis to Evaluate the Clinical Benefit of Prediction Models</a></h2>
 <span class="year">2021</span>
 <p>Vickers AJ, Holland F. Decision curve analysis to evaluate the clinical benefit of prediction models. Spine J. 2021 Oct;21(10):1643-1648. doi: 10.1016/j.spinee.2021.02.024. Epub 2021 Mar 3. PMID: 33676020; PMCID: PMC8413398.</p>
 </div>
 </div>
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2><a href="https://link.springer.com/chapter/10.1007/978-3-030-85292-4_15">Is My Clinical Prediction Model Clinically Useful? A Primer on Decision Curve Analysis</a></h2> -->
-<!-- <span class="year">2022</span> -->
-<!-- <p>Mijderwijk HJ, Nieboer D. Is My Clinical Prediction Model Clinically Useful? A Primer on Decision Curve Analysis. In: Staartjes VE, Regli L, Serra C, editors. Machine Learning in Clinical Neuroscience. Acta Neurochirurgica Supplement, vol 134. Springer, Cham; 2022. p. 115-118. doi: 10.1007/978-3-030-85292-4_15.</p> -->
-<!-- </div> -->
-<!-- </div> -->
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
@@ -262,25 +271,17 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/34503984/">Moving beyond AUC: decision curve analysis for quantifying net benefit of risk prediction models</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/34503984/">The European Respiratory Journal</a></h2>
 <span class="year">2021</span>
 <p>Sadatsafavi M, Adibi A, Puhan M, Gershon A, Aaron SD, Sin DD. Moving beyond AUC: decision curve analysis for quantifying net benefit of risk prediction models. Eur Respir J. 2021 Nov 4;58(5):2101186. doi: 10.1183/13993003.01186-2021. PMID: 34735641.</p>
 </div>
 </div>
 
-# **Newly Added**
+# **Decision Curve Analysis & Machine Learning/AI**
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30819037/">A Systematic Review of the Literature Demonstrates Some Errors in the Use of Decision Curve Analysis but Generally Correct Interpretation of Findings</a></h2>
-<span class="year">2019</span>
-<p> Capogrosso P, Vickers AJ. Med Decis Making. 2019 Jul;39(5):493-498. PMID: 30819037. </p>
-</div>
-</div>
-
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30763612/">A systematic review shows no performance benefit of machine learning over logistic regression for clinical prediction models</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30763612/">Recommending Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications (1)</a></h2>
 <span class="year">2019</span>
 <p> Christodoulou E, et al. J Clin Epidemiol 2019;110:12–22. </p>
 </div>
@@ -288,7 +289,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/33355350/">A framework for making predictive models useful in practice</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/33355350/">Recommendation for Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications (2)</a></h2>
 <span class="year">2021</span>
 <p> Jung K, et al. J Am Med Inform Assoc 2021; 28 (6): 1149–58. </p>
 </div>
@@ -296,98 +297,13 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/36810659/">Calculating net benefit under resource constraints</a></h2>
-<span class="year">2023</span>
-<p> Karandeep Singh, Nigam H Shah, Andrew J Vickers, Assessing the net benefit of machine learning models in the presence of resource constraints, Journal of the American Medical Informatics Association, Volume 30, Issue 4, April 2023, Pages 668–673, https://doi.org/10.1093/jamia/ocad006 </p>
-</div>
-</div>
-
-
-
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/36571841/">Assessing Performance and Clinical Usefulness in Prediction Models With Survival Outcomes: Practical Guidance for Cox Proportional Hazards Models</a></h2>
-<span class="year">2023</span>
-<p> McLernon DJ, et al. Ann Intern Med. 2023 Jan;176(1):105-114. PMID: 36571841. </p>
-</div>
-</div>
- 
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2><a href="https://www.fharrell.com/post/edca/">Seven Common Errors in Decision Curve Analysis</a></h2>
-<span class="year">2023</span>
-<p> Andrew Vickers </p>
-</div>
-</div>
-
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
-<h2><a href="https://www.sciencedirect.com/science/article/pii/S0895435623000550">Overinterpretation of findings in machine learning prediction model studies in oncology: a systematic review</a></h2>
+<h2><a href="https://www.sciencedirect.com/science/article/pii/S0895435623000550">Recommendation for Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications (3)</a></h2>
 <span class="year">2023</span>
 <p> Dhiman P, Ma J, Andaur Navarro CL, Speich B, Bullock G, Damen JAA, Hooft L, Kirtley S, Riley RD, Van Calster B, Moons KGM, Collins GS. Journal of Clinical Epidemiology. 2023; ISSN 0895-4356. https://doi.org/10.1016/j.jclinepi.2023.03.012.</p>
 </div>
 </div>
 
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> Paper </h2> -->
-<!-- <href>https://pubmed.ncbi.nlm.nih.gov/30819037/</href> -->
-<!-- <p> Capogrosso P, Vickers AJ. A Systematic Review of the Literature Demonstrates Some Errors in the Use of Decision Curve Analysis but Generally Correct Interpretation of Findings. Med Decis Making. 2019 Jul;39(5):493-498. PMID: 30819037. </p> -->
-<!-- </div> -->
-<!-- </div> -->
 
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> Christodoulou E, et al. </h2> -->
-<!-- <p> A systematic review shows no performance benefit of machine learning over logistic regression for clinical prediction models. J Clin Epidemiol 2019;110:12–22. </p> -->
-<!-- <href>https://pubmed.ncbi.nlm.nih.gov/30763612/</href> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> Jung K, et al. </h2> -->
-<!-- <p> A framework for making predictive models useful in practice. J Am Med Inform Assoc 2021; 28 (6): 1149–58. </p> -->
-<!-- <href>https://pubmed.ncbi.nlm.nih.gov/33355350/</href> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> Calculating net benefit under resource constraints </h2> -->
-<!-- <p> Karandeep Singh, Nigam H Shah, Andrew J Vickers, Assessing the net benefit of machine learning models in the presence of resource constraints, Journal of the American Medical Informatics Association, Volume 30, Issue 4, April 2023, Pages 668–673, https://doi.org/10.1093/jamia/ocad006 </p> -->
-<!-- <href>https://academic.oup.com/jamia/article/30/4/668/7051008?utm_source=advanceaccess&utm_campaign=jamia&utm_medium=email</href> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> R code for calculating net benefit under resource constraints </h2> -->
-<!-- <href>https://github.com/ML4LHS/modelrecon</href> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> McLernon DJ, et al. </h2> -->
-<!-- <p> Assessing Performance and Clinical Usefulness in Prediction Models With Survival Outcomes: Practical Guidance for Cox Proportional Hazards Models. Ann Intern Med. 2023 Jan;176(1):105-114. PMID: 36571841. </p> -->
-<!-- <href>https://pubmed.ncbi.nlm.nih.gov/36571841/</href> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2> Seven Common Errors in Decision Curve Analysis </h2> -->
-<!-- <href>https://www.fharrell.com/post/edca/</href> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="contact-wrapper contact-box"> -->
-<!-- <div class="contact-text"> -->
-<!-- <h2><a href="https://www.sciencedirect.com/science/article/pii/S0895435623000550">Overinterpretation of findings in machine learning prediction model studies in oncology: a systematic review</a></h2> -->
-<!-- <p> Dhiman P, Ma J, Andaur Navarro CL, Speich B, Bullock G, Damen JAA, Hooft L, Kirtley S, Riley RD, Van Calster B, Moons KGM, Collins GS. Journal of Clinical Epidemiology. 2023; ISSN 0895-4356. https://doi.org/10.1016/j.jclinepi.2023.03.012.</p> -->
-<!-- </div> -->
-<!-- </div> -->
  
  
 

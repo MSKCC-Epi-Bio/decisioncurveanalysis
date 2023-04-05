@@ -65,4 +65,10 @@ p {
 </div>
 </div>
 
-
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://www.fharrell.com/post/edca/">Seven Common Errors in Decision Curve Analysis</a></h2>
+<span class="year">2023</span>
+<p> Andrew Vickers </p>
+</div>
+</div>
