@@ -135,7 +135,7 @@ Survival Time Data, Competing Risks, and Cross Validation</a></h2>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/36810659/">Calculating net benefit under resource constraints</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/36810659/">Calculating Net Benefit Under Resource Constraints</a></h2>
 <span class="year">2023</span>
 <p> Karandeep Singh, Nigam H Shah, Andrew J Vickers, Assessing the net benefit of machine learning models in the presence of resource constraints, Journal of the American Medical Informatics Association, Volume 30, Issue 4, April 2023, Pages 668–673, https://doi.org/10.1093/jamia/ocad006 </p>
 </div>
@@ -229,7 +229,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.nature.com/articles/s41746-021-00549-7">Recommendation for decision curve analysis for machine learning and artificial intelligence applications</a></h2>
+<h2><a href="https://www.nature.com/articles/s41746-021-00549-7">Recommendation for Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications</a></h2>
 <span class="year">2022</span>
 <p>de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. doi: 10.1038/s41746-021-00549-7. PMID: 35348862; PMCID: PMC8393232.</p>
 </div>
