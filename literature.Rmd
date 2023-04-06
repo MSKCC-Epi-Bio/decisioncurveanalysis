@@ -10,7 +10,6 @@ output:
 ---
 
 ```{css, echo=FALSE}
-
 .contact-box {
   position: relative;
   border: 2px solid lightgrey;
@@ -19,7 +18,6 @@ output:
   border-radius: 10px;
   background-color: #f9f9f9;
 }
-
 
 .contact-wrapper {
   display: flex;
@@ -46,7 +44,6 @@ output:
   padding-left: 10px; /* Add left padding to separate the year from the text */
 }
 
-
 h2 {
   margin-bottom: 10px;
   font-size: 1.3em;
@@ -55,6 +52,48 @@ h2 {
 
 p {
   margin-bottom: 0;
+}
+
+/* Custom CSS for the table of contents */
+.tocify-item {
+  display: block;
+  text-indent: 0em;
+  padding-right: 0em;
+}
+
+.tocify-item .tocify-header1 {
+  display: inline-block;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+.tocify-item .tocify-header2 {
+  display: inline-block;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+.tocify-item .tocify-header2 > span {
+  display: inline-block;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+.tocify-item.active {
+  background-color: rgba(92, 184, 92, 0.2); /* Green with 50% transparency */
+  color: rgba(92, 184, 92, 0.5);
+}
+
+.tocify-item:hover {
+  background-color: rgba(100, 149, 237, 0.5); /* Light blue with transparency */
+  color: #ffffff;
+}
+
+/* Add or modify the following CSS in your existing CSS code */
+
+.tocify-item.active:hover {
+  background-color: rgba(92, 184, 92, 0.7); /* Slightly transparent version of the active color */
+  color: #ffffff;
 }
 
 ```
@@ -229,14 +268,6 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.nature.com/articles/s41746-021-00549-7">Recommendation for Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications</a></h2>
-<span class="year">2022</span>
-<p>de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. doi: 10.1038/s41746-021-00549-7. PMID: 35348862; PMCID: PMC8393232.</p>
-</div>
-</div>
-
-<div class="contact-wrapper contact-box">
-<div class="contact-text">
 <h2><a href="https://pubmed.ncbi.nlm.nih.gov/36571841/">Recommendation to Use Decision Curves for Time-to-Event Data</a></h2>
 <span class="year">2023</span>
 <p> McLernon DJ, et al. Ann Intern Med. 2023 Jan;176(1):105-114. PMID: 36571841. </p>
@@ -281,7 +312,7 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30763612/">Recommending Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications (1)</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30763612/">Recommendation for Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications (1)</a></h2>
 <span class="year">2019</span>
 <p> Christodoulou E, et al. J Clin Epidemiol 2019;110:12–22. </p>
 </div>
@@ -303,9 +334,14 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 </div>
 </div>
 
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://www.nature.com/articles/s41746-021-00549-7">Recommendation for Decision Curve Analysis for Machine Learning and Artificial Intelligence Applications (4)</a></h2>
+<span class="year">2022</span>
+<p>de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality criteria for artificial intelligence-based prediction models in healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. doi: 10.1038/s41746-021-00549-7. PMID: 35348862; PMCID: PMC8393232.</p>
+</div>
+</div>
 
  
  
-
-
 

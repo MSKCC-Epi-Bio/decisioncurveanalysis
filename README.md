@@ -16,8 +16,8 @@ To do list....
     - [X] Add a NEWS.md file to track updates and version releases
     - [X] Review+merge PR
 - Python
-    - [ ] Finish module
-    - [ ] Implement unit testing
+    - [X] Finish module
+    - [X] Implement unit testing
     - [ ] Add a module website?
 - Tutorial
     - [X] Add tabsets with each language is its own tab
