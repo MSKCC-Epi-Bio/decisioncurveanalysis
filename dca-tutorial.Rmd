@@ -424,11 +424,14 @@ The key steps are as follows:
 add_tabset_codes("cross_validation")
 ```
 
+Note: Predicted probabilities for each subject can be used to calculate other performance metrics, such as discrimination.
+
+<hr style="border: none; border-top: 1px solid #333; color: #333; margin: 20px 0;">
+
 ## One More Thing
 
 Before running a decision curve analysis, please do read <a href="https://www.fharrell.com/post/edca/">Seven Common Errors in Decision Curve Analysis</a>
 
-<hr style="border: none; border-top: 1px solid #333; color: #333; margin: 20px 0;">
 
-Note: Predicted probabilities for each subject can be used to calculate other performance metrics, such as discrimination.
+
 

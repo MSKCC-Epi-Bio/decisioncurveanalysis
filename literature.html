@@ -371,14 +371,14 @@ div.tocify {
   flex-grow: 1;
 }
 
-.link {
-  text-decoration: none;
-  color: #007bff;
-}
+<!-- .link { -->
+<!--   text-decoration: none; -->
+<!--   color: #000000; -->
+<!-- } -->
 
-.link:hover {
-  text-decoration: underline;
-}
+<!-- .link:hover { -->
+<!--   text-decoration: underline; -->
+<!-- } -->
 
 .year {
   position: absolute;
@@ -399,46 +399,31 @@ p {
 }
 
 /* Custom CSS for the table of contents */
+
 .tocify-item {
-  display: block;
-  text-indent: 0em;
-  padding-right: 0em;
-}
-
-.tocify-item .tocify-header1 {
   display: inline-block;
-  text-indent: 0;
-  padding-left: 0;
+  text-indent: -10px;
+  padding-left: 20px;
 }
 
-.tocify-item .tocify-header2 {
+.tocify-header {
   display: inline-block;
-  text-indent: 0;
-  padding-left: 0;
+  text-indent: 10px;
+  padding-left: 100px;
 }
 
-.tocify-item .tocify-header2 > span {
+.tocify-header > .tocify-subheader {
   display: inline-block;
-  text-indent: 0;
-  padding-left: 0;
+  text-indent: 0px;
+  padding-left: 15px; /* Increase the left padding for subheaders to create an additional indent */
 }
 
-.tocify-item.active {
-  background-color: rgba(92, 184, 92, 0.2); /* Green with 50% transparency */
-  color: rgba(92, 184, 92, 0.5);
+.list-group-item.active{
+    z-index: 2;
+    background-color: none;
+    background:none;
 }
 
-.tocify-item:hover {
-  background-color: rgba(100, 149, 237, 0.5); /* Light blue with transparency */
-  color: #ffffff;
-}
-
-/* Add or modify the following CSS in your existing CSS code */
-
-.tocify-item.active:hover {
-  background-color: rgba(92, 184, 92, 0.7); /* Slightly transparent version of the active color */
-  color: #ffffff;
-}
 
 </style>
 <div id="introductory-papers-and-guides" class="section level1">
@@ -447,7 +432,7 @@ p {
 <div class="contact-text">
 <h2>
 <a href="https://pubmed.ncbi.nlm.nih.gov/17099194/">Original Paper on
-DCA</a>
+Decision Curve Analysis</a>
 </h2>
 <span class="year">2006</span>
 <p>
@@ -474,23 +459,22 @@ tests. BMJ. 2016 Jan 25;352:i6. PMID: 26810254.
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://diagnprognres.biomedcentral.com/articles/10.1186/s41512-019-0064-7">How
-to Understand a Published Decision Curve</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/31592444/">How to Understand a
+Published Decision Curve</a>
 </h2>
 <span class="year">2019</span>
 <p>
 Vickers, A.J., van Calster, B. &amp; Steyerberg, E.W. A simple,
 step-by-step guide to interpreting decision curve analysis. Diagn Progn
 Res 3, 18 (2019).
-<a href="https://doi.org/10.1186/s41512-019-0064-7">https://doi.org/10.1186/s41512-019-0064-7</a>
 </p>
 </div>
 </div>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://www.sciencedirect.com/science/article/pii/S0302283818306407?via%3Dihub">Guide
-for Investigators on Reporting Decision Curves</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/30241973/">Guide for
+Investigators on Reporting Decision Curves</a>
 </h2>
 <span class="year">2018</span>
 <p>
@@ -498,14 +482,13 @@ Ben Van Calster, Laure Wynants, Jan F.M. Verbeek, Jan Y. Verbakel,
 Evangelia Christodoulou, Andrew J. Vickers, Monique J. Roobol, Ewout W.
 Steyerberg. Reporting and Interpreting Decision Curve Analysis: A Guide
 for Investigators. European Urology, Volume 74, Issue 6, 2018, Pages
-796-804, ISSN 0302-2838,
-<a href="https://doi.org/10.1016/j.eururo.2018.08.038">https://doi.org/10.1016/j.eururo.2018.08.038</a>.
+796-804, ISSN 0302-2838
 </p>
 </div>
 </div>
 </div>
-<div id="extensions-to-dca" class="section level1">
-<h1><strong>Extensions to DCA</strong></h1>
+<div id="extensions-to-decision-curve-analysis" class="section level1">
+<h1><strong>Extensions to Decision Curve Analysis</strong></h1>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
@@ -518,30 +501,28 @@ Vickers AJ, Cronin AM, Elkin EB, Gonen M. Extensions to decision curve
 analysis, a novel method for evaluating diagnostic tests, prediction
 models and molecular markers. BMC Med Inform Decis Mak. 2008;8:53.
 Published 2008 Nov 26.
-<a href="https://doi.org/10.1186/1472-6947-8-53">doi:10.1186/1472-6947-8-53</a>.
 </p>
 </div>
 </div>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://pubmed.ncbi.nlm.nih.gov/17550609/">DCA &amp; Treatment
-Response: Model Evaluation</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/17550609/">Decision Curve
+Analysis &amp; Treatment Response: Model Evaluation</a>
 </h2>
 <span class="year">2007</span>
 <p>
 Vickers AJ, Kattan MW, Daniel S. Method for evaluating prediction models
 that apply the results of randomized trials to individual patients.
 Trials. 2007;8:14. Published 2007 Jun 5.
-<a href="https://doi.org/10.1186/1745-6215-8-14">doi:10.1186/1745-6215-8-14</a>.
 </p>
 </div>
 </div>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://pubmed.ncbi.nlm.nih.gov/17022818/">DCA &amp; Treatment
-Response: Trial Design</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/17022818/">Decision Curve
+Analysis &amp; Treatment Response: Trial Design</a>
 </h2>
 <span class="year">2006</span>
 <p>
@@ -562,9 +543,7 @@ Benefit Under Resource Constraints</a>
 Karandeep Singh, Nigam H Shah, Andrew J Vickers, Assessing the net
 benefit of machine learning models in the presence of resource
 constraints, Journal of the American Medical Informatics Association,
-Volume 30, Issue 4, April 2023, Pages 668–673, <a
-href="https://doi.org/10.1093/jamia/ocad006"
-class="uri">https://doi.org/10.1093/jamia/ocad006</a>
+Volume 30, Issue 4, April 2023, Pages 668–673
 </p>
 </div>
 </div>
@@ -576,14 +555,12 @@ class="section level1">
 <div class="contact-text">
 <h2>
 <a href="https://pubmed.ncbi.nlm.nih.gov/19132141/">General Theoretical
-Background to DCA (1)</a>
+Background to Decision Curve Analysis (1)</a>
 </h2>
 <span class="year">2008</span>
 <p>
 Vickers AJ. Decision analysis for the evaluation of diagnostic tests,
-prediction models and molecular markers. Am Stat. 2008;62(4):314-320. <a
-href="doi:10.1198/000313008X370302"
-class="uri">doi:10.1198/000313008X370302</a>
+prediction models and molecular markers. Am Stat. 2008;62(4):314-320
 </p>
 </div>
 </div>
@@ -591,15 +568,13 @@ class="uri">doi:10.1198/000313008X370302</a>
 <div class="contact-text">
 <h2>
 <a href="https://pubmed.ncbi.nlm.nih.gov/20172362/">General Theoretical
-Background to DCA (2)</a>
+Background to Decision Curve Analysis (2)</a>
 </h2>
 <span class="year">2010</span>
 <p>
 Vickers AJ, Cronin AM. Traditional statistical methods for evaluating
 prediction models are uninformative as to clinical value: towards a
-decision analytic framework. Semin Oncol. 2010;37(1):31-38. <a
-href="doi:10.1053/j.seminoncol.2009.12.004"
-class="uri">doi:10.1053/j.seminoncol.2009.12.004</a>
+decision analytic framework. Semin Oncol. 2010;37(1):31-38.
 </p>
 </div>
 </div>
@@ -607,8 +582,8 @@ class="uri">doi:10.1053/j.seminoncol.2009.12.004</a>
 <div class="contact-text">
 <h2>
 <a href="https://pubmed.ncbi.nlm.nih.gov/20069131/">Mathematical
-Underpinnings of DCA through Relationship to Relative Utility (Similar
-Method)</a>
+Underpinnings of Decision Curve Analysis through Relationship to
+Relative Utility (Similar Method)</a>
 </h2>
 <span class="year">2009</span>
 <p>
@@ -649,10 +624,11 @@ PMID: 30819037.
 </div>
 </div>
 </div>
-<div id="editorials-and-commentaries-recommending-dca-in-major-journals"
+<div
+id="editorials-and-commentaries-recommending-decision-curve-analysis-in-major-journals"
 class="section level1">
-<h1><strong>Editorials and Commentaries Recommending DCA in Major
-Journals</strong></h1>
+<h1><strong>Editorials and Commentaries Recommending Decision Curve
+Analysis in Major Journals</strong></h1>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
@@ -734,38 +710,36 @@ Radiology</a>
 <span class="year">2022</span>
 <p>
 Vickers AJ, Woo S. Decision curve analysis in the evaluation of
-radiology research. Eur Radiol. 2022 Sep;32(9):5787-5789. doi:
-10.1007/s00330-022-08685-8. Epub 2022 Mar 29. PMID: 35348862.
+radiology research. Eur Radiol. 2022 Sep;32(9):5787-5789. Epub 2022 Mar
+29. PMID: 35348862.
 </p>
 </div>
 </div>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://pubmed.ncbi.nlm.nih.gov/33676020/">Decision Curve
-Analysis to Evaluate the Clinical Benefit of Prediction Models</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/33676020/">Spine: Decision
+Curve Analysis to Evaluate the Clinical Benefit of Prediction Models</a>
 </h2>
 <span class="year">2021</span>
 <p>
 Vickers AJ, Holland F. Decision curve analysis to evaluate the clinical
-benefit of prediction models. Spine J. 2021 Oct;21(10):1643-1648. doi:
-10.1016/j.spinee.2021.02.024. Epub 2021 Mar 3. PMID: 33676020; PMCID:
-PMC8413398.
+benefit of prediction models. Spine J. 2021 Oct;21(10):1643-1648. Epub
+2021 Mar 3. PMID: 33676020; PMCID: PMC8413398.
 </p>
 </div>
 </div>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
 <h2>
-<a href="https://pubmed.ncbi.nlm.nih.gov/34862535/">Is My Clinical
-Prediction Model Clinically Useful? A Primer on Decision Curve
-Analysis</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/34862535/">Acta
+Neurochirurgica</a>
 </h2>
 <span class="year">2022</span>
 <p>
 Mijderwijk HJ, Nieboer D. Is My Clinical Prediction Model Clinically
 Useful? A Primer on Decision Curve Analysis. Acta Neurochir Suppl.
-2022;134:115-118. doi: 10.1007/978-3-030-85292-4_15. PMID: 34862535.
+2022;134:115-118. PMID: 34862535.
 </p>
 </div>
 </div>
@@ -779,8 +753,8 @@ Respiratory Journal</a>
 <p>
 Sadatsafavi M, Adibi A, Puhan M, Gershon A, Aaron SD, Sin DD. Moving
 beyond AUC: decision curve analysis for quantifying net benefit of risk
-prediction models. Eur Respir J. 2021 Nov 4;58(5):2101186. doi:
-10.1183/13993003.01186-2021. PMID: 34735641.
+prediction models. Eur Respir J. 2021 Nov 4;58(5):2101186. PMID:
+34735641.
 </p>
 </div>
 </div>
@@ -826,9 +800,7 @@ Intelligence Applications (3)</a>
 <p>
 Dhiman P, Ma J, Andaur Navarro CL, Speich B, Bullock G, Damen JAA, Hooft
 L, Kirtley S, Riley RD, Van Calster B, Moons KGM, Collins GS. Journal of
-Clinical Epidemiology. 2023; ISSN 0895-4356. <a
-href="https://doi.org/10.1016/j.jclinepi.2023.03.012"
-class="uri">https://doi.org/10.1016/j.jclinepi.2023.03.012</a>.
+Clinical Epidemiology. 2023; ISSN 0895-4356.
 </p>
 </div>
 </div>
@@ -843,8 +815,8 @@ Intelligence Applications (4)</a>
 <p>
 de Hond AAH, Leeuwenberg AM, Hooft L, et al. Guidelines and quality
 criteria for artificial intelligence-based prediction models in
-healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. doi:
-10.1038/s41746-021-00549-7. PMID: 35348862; PMCID: PMC8393232.
+healthcare: a scoping review. npj Digit Med. 2022 Jan 20;5(1):2. PMID:
+35348862; PMCID: PMC8393232.
 </p>
 </div>
 </div>

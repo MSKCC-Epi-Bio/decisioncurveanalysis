@@ -1,0 +1,10 @@
+table.dataTable tbody tr:hover {
+  background-color: inherit !important;
+  cursor: default;
+}
+
+table.dataTable tbody tr:hover td,
+table.dataTable tbody tr:hover th {
+  background-color: inherit !important;
+}
+
