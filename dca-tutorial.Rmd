@@ -1,5 +1,5 @@
 ---
-title: "Decision Curve Analysis Tutorial"
+title: "DCA: Software Tutorial"
 output: 
   html_document:
     toc: true
@@ -13,6 +13,10 @@ editor_options:
   markdown: 
     wrap: sentence
 ---
+
+<!-- <div class="center"> -->
+<!--   <h1>Decision Curve Analysis</h1> -->
+<!-- </div> -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3)

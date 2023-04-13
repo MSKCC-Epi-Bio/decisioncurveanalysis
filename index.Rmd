@@ -1,9 +1,15 @@
 ---
-title: ""
+title: "DCA: homepage"
 output: html_document
 ---
+<style>
+.title{
+  display: none;
+}
+</style>
 
 ```{css, echo=FALSE}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
