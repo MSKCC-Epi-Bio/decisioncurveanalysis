@@ -1,15 +1,9 @@
 ---
-title: "DCA: homepage"
+title: ""
 output: html_document
 ---
-<style>
-.title{
-  display: none;
-}
-</style>
 
 ```{css, echo=FALSE}
-
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -63,11 +57,11 @@ In the “Peer-Reviewed Literature” tab you can find references to the origina
 
 
 ```{r setup, include=FALSE}
-  # knitr::opts_chunk$set(echo = TRUE)
-  # options(knitr.duplicate.label = "allow")
-  # ```
-  # 
-  # ```{r, render, echo = FALSE, include=FALSE}
+  knitr::opts_chunk$set(echo = TRUE)
+  options(knitr.duplicate.label = "allow")
+```
+
+```{r, render, echo = FALSE, include=FALSE}
   # rmarkdown::render("dca-tutorial.Rmd")
   # 
   # rmarkdown::render("dca-tutorial.Rmd",
@@ -82,7 +76,7 @@ In the “Peer-Reviewed Literature” tab you can find references to the origina
   # rmarkdown::render("dca-tutorial.Rmd",
   #                  params = list(language = "python"),
   #                  output_file = "dca-tutorial-python.html")
-  # rmarkdown::render("literature.Rmd")
-  # rmarkdown::render("resources.Rmd")
+  rmarkdown::render("literature.Rmd")
+  rmarkdown::render("resources.Rmd")
 ```
 

@@ -48,7 +48,9 @@ dca_famhistory2_df = \
         )
 
 plot_graphs(
-    plot_df=dca_famhistory2_df
+    plot_df=dca_famhistory2_df,
+    graph_type='net_benefit',
+    y_limits=[-0.05, 0.2]
 )
 
 # ---- model_multi ----- 
