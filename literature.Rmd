@@ -68,39 +68,36 @@ p {
   display: inline-block;
   text-indent: 10px;
   padding-left: 100px;
-  background-color: none;
-  background:none;
+  background-color: transparent;
 }
 
 .tocify-header > .tocify-subheader {
   display: inline-block;
   text-indent: 0px;
   padding-left: 15px; /* Increase the left padding for subheaders to create an additional indent */
-  background-color: none;
-  background:none;
 }
 
 .list-group-item.highlight {
-    background-color:  none;
-    color:  none;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
 }
 
 /* Add hover effect for the TOC items */
-.list-group-item:hover {
-    background-color: None; /* You can change the color to your preference */
-    color: None;
-    cursor: pointer;
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+  z-index: 2;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
 }
 
-.list-group-item.active:hover {
-    background-color: None; /* You can change the color to your preference */
-    color: None;
-    cursor: pointer;
-}
+
 
 .list-group-item.active{
-    background-color: none;
-    background:none;
+  z-index: 2;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+
+
 }
 
 ```
