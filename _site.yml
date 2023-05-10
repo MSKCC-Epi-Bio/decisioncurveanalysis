@@ -12,8 +12,11 @@ navbar:
     - text: "Other Resources"
       href: resources.html
   right:
+    - text: "Discussions"
+      href: https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/discussions
     - icon: fa-github fa-lg
       href: https://github.com/mskcc-epi-bio/decisioncurveanalysis/
+    
 output:
   html_document:
     theme: yeti
