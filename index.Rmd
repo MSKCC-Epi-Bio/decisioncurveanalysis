@@ -1,7 +1,12 @@
 ---
-title: ""
+title: "DCA: Homepage"
 output: html_document
 ---
+<style>
+.title{
+  display: none;
+}
+</style>
 
 ```{css, echo=FALSE}
 body {
