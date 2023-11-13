@@ -295,15 +295,20 @@ dca(casecontrol ~ cancerpredmarker,
 # set seed for random process
 set.seed(112358)
 
-# create a 10-fold cross validation set
-rsample::vfold_cv(df_cancer_dx, v = 10, repeats = 25) %>%
-  # for each cut of the data, build logistic regression on the 90% (analysis set),
-  # and perform DCA on the 10% (assessment set)
-  rowwise() %>%
+formula = cancer ~ marker + age + famhistory
+dca_thresholds = seq(0,0.36, 0.01)
+
+# create a 10-fold cross validation set, 1 repeat which is the base case, change to suit your use case
+cross_validation_samples <- rsample::vfold_cv(df_cancer_dx, v = 10, repeats = 1)
+
+df_crossval_predictions <- 
+  cross_validation_samples %>% 
+  # for each cut of the data, build logistic regression on the 90% (analysis set)
+  rowwise() %>% 
   mutate(
     # build regression model on analysis set
     glm_analysis =
-      glm(cancer ~ marker + age + famhistory,
+      glm(formula = formula,
           data = rsample::analysis(splits),
           family = binomial
       ) %>%
@@ -315,22 +320,30 @@ rsample::vfold_cv(df_cancer_dx, v = 10, repeats = 25) %>%
         newdata = rsample::assessment(splits),
         type.predict = "response"
       ) %>%
-      list(),
-    # calculate net benefit on assessment set
-    dca_assessment =
-      dca(cancer ~ .fitted,
-          data = df_assessment,
-          thresholds = seq(0, 0.35, 0.01),
-          label = list(.fitted = "Cross-validated Prediction Model")
-      ) %>%
-      as_tibble() %>%
       list()
   ) %>%
+  ungroup() %>%
   # pool results from the 10-fold cross validation
-  pull(dca_assessment) %>%
-  bind_rows() %>%
-  group_by(variable, label, threshold) %>%
-  summarise(net_benefit = mean(net_benefit), .groups = "drop") %>%
+  pull(df_assessment) %>%
+  bind_rows() %>% # Concatenate all cross validation predictions
+  group_by(patientid) %>%
+  summarise(cv_pred = mean(.fitted), .groups = "drop") %>% # Generate mean prediction per patient
+  ungroup()
+
+df_cv_pred <-
+  df_cancer_dx %>%
+  left_join(
+    df_crossval_predictions,
+    by = 'patientid'
+  )
+
+dcurves::dca( # calculate net benefit scores on mean cross validation predictions
+  data = df_cv_pred,
+  formula = cancer ~ cv_pred,
+  thresholds = dca_thresholds,
+  label = list(
+    cv_pred = "Cross-validated Prediction Model"
+  ))$dca |> 
   # plot cross validated net benefit values
   ggplot(aes(x = threshold, y = net_benefit, color = label)) +
   stat_smooth(method = "loess", se = FALSE, formula = "y ~ x", span = 0.2) +
