@@ -277,13 +277,8 @@ df_cancer_dx['conditional'] = np.where((df_cancer_dx['risk_group'] == "high") |
 # ---- cross_validation ----- 
 
 # Load dependencies for cross validation
-import random
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import RepeatedKFold
-from sklearn.metrics import log_loss
-import statsmodels.api as sm
-import dcurves
+import random # Library to generate random seed
+from sklearn.model_selection import RepeatedKFold # Cross validation data selection and segregation function
 
 # Set seed for random processes
 random.seed(112358)
@@ -293,9 +288,6 @@ df_cancer_dx = \
     pd.read_csv(
         "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv"
     )
-
-# Create a 10-fold cross validation set
-cv = RepeatedKFold(n_splits=10, n_repeats=25, random_state=112358)
 
 # Define the formula (make sure the column names in your DataFrame match these)
 formula = 'cancer ~ marker + age + famhistory'
@@ -331,8 +323,8 @@ df_cv_pred = pd.merge(df_cancer_dx, df_mean_predictions, on='patientid', how='le
 
 # Decision curve analysis
 # Generate net benefit score for each threshold value
-df_dca_cv = dcurves.dca(
+df_dca_cv = dca(
         data=df_cv_pred, modelnames=['cv_prediction'], outcome='cancer'
     )
 # Plot DCA curves
-dcurves.plot_graphs(plot_df=df_dca_cv, graph_type='net_benefit', y_limits=[-0.01, 0.15], color_names=['blue', 'red', 'green'])
+plot_graphs(plot_df=df_dca_cv, graph_type='net_benefit', y_limits=[-0.01, 0.15], color_names=['blue', 'red', 'green'])
