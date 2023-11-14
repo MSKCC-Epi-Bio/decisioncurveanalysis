@@ -276,8 +276,63 @@ df_cancer_dx['conditional'] = np.where((df_cancer_dx['risk_group'] == "high") |
 
 ## ---- python-cross_validation -----
 
-# Coming Soon!
+# Load dependencies for cross validation
+import random
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import RepeatedKFold
+from sklearn.metrics import log_loss
+import statsmodels.api as sm
+import dcurves
 
+# Set seed for random processes
+random.seed(112358)
 
+# Load simulation data
+df_cancer_dx = \
+    pd.read_csv(
+        "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv"
+    )
 
+# Create a 10-fold cross validation set
+cv = RepeatedKFold(n_splits=10, n_repeats=25, random_state=112358)
 
+# Define the formula (make sure the column names in your DataFrame match these)
+formula = 'cancer ~ marker + age + famhistory'
+
+# Create cross-validation object
+rkf = RepeatedKFold(n_splits=10, n_repeats=1, random_state=112358)
+
+# Placeholder for predictions
+cv_predictions = []
+
+# Perform cross-validation
+for train_index, test_index in rkf.split(df_cancer_dx):
+    # Split data into training and test sets
+    train, test = df_cancer_dx.iloc[train_index], df_cancer_dx.iloc[test_index]
+
+    # Fit the model
+    model = sm.Logit.from_formula(formula, data=train).fit(disp=0)
+
+    # Make predictions on the test set
+    test['cv_prediction'] = model.predict(test)
+
+    # Store predictions
+    cv_predictions.append(test[['patientid', 'cv_prediction']])
+
+# Concatenate predictions from all folds
+df_predictions = pd.concat(cv_predictions)
+
+# Calculate mean prediction per patient
+df_mean_predictions = df_predictions.groupby('patientid')['cv_prediction'].mean().reset_index()
+
+# Join with original data
+df_cv_pred = pd.merge(df_cancer_dx, df_mean_predictions, on='patientid', how='left')
+
+# Decision curve analysis
+# Generate net benefit score for each threshold value
+df_dca_cv = dcurves.dca(
+        data=df_cv_pred, modelnames=['cv_prediction'], outcome='cancer'
+    )
+# Plot DCA curves
+dcurves.plot_graphs(plot_df=df_dca_cv, graph_type='net_benefit', y_limits=[-0.01, 0.15], color_names=['blue', 'red', 'green'])
