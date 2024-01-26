@@ -225,18 +225,25 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 <div class="contact-text">
 <h2><a href="https://pubmed.ncbi.nlm.nih.gov/20010215/">Introduction of 3-Step Approach of Discrimination, Calibration, Clinical Utility</a></h2>
 <span class="year">2010</span>
-<p>Steyerberg EW, Vickers AJ, Cook NR, Gerds T, Gonen M, Obuchowski N, Pencina MJ, Kattan MW. Assessing the performance of prediction models: a framework for traditional and novel measures. Epidemiology. 2010 Jan;21(1):128-38. PMID: 20010215; PMCID: PMC3575184. </p>
+<p>Steyerberg EW, Vickers AJ, Cook NR, Gerds T, Gonen M, Obuchowski N, Pencina MJ, Kattan MW. Assessing the performance of prediction models: a framework for traditional and novel measures. Epidemiology. 2010 Jan;21(1):128-38. PMID: 20010215; PMCID: PMC3575184.</p>
 </div>
 </div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30819037/">Systematic Literature Review</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/30819037/">Systematic review of how decision curves used in the literature</a></h2>
 <span class="year">2019</span>
-<p> Capogrosso P, Vickers AJ. Med Decis Making. 2019 Jul;39(5):493-498. PMID: 30819037. </p>
+<p>Capogrosso P, Vickers AJ. Med Decis Making. 2019 Jul;39(5):493-498. PMID: 30819037.</p>
 </div>
 </div>
 
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/37277840/">Decision curve analysis: confidence intervals and hypothesis testing for net benefit</a></h2>
+<span class="year">2023</span>
+<p>Vickers AJ, Van Claster B, Wynants L, Steyerberg EW. Decision curve analysis: confidence intervals and hypothesis testing for net benefit. Diagn Progn Res. 2023 Jun 6;7(1):11. doi: 10.1186/s41512-023-00148-y. PMID: 37277840; PMCID: PMC10243069.</p>
+</div>
+</div>
 
 # **Editorials & Commentaries in Major Journals**
 
