@@ -72,3 +72,12 @@ p {
 <p> Andrew Vickers </p>
 </div>
 </div>
+
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://it-innovations-healthcare.medium.com/decision-curve-analysis-or-why-interpretation-of-medical-decision-support-models-should-be-based-on-b553acedb998">Decision Curve Analysis or Why Interpretation of Medical Decision Support Models Should Be Based on Net Benefit</a></h2>
+<span class="year">2024</span>
+<p>Paul Hiemstra, PhD</p>
+</div>
+</div>
+
