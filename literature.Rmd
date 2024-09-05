@@ -155,7 +155,7 @@ Ben Van Calster, Laure Wynants, Jan FM Verbeek, Jan Y Verbakel, Evangelia Christ
 </h2>
 <span class="year">2024</span>
 <p>
-Efthimiou O, Seo M, Chalkou K, Debray T, Egger M, Salanti G et al. Developing clinical prediction models: a step-by-step guide. BMJ 2024; 386 :e078276 doi:10.1136/bmj-2023-078276
+Efthimiou O, Seo M, Chalkou K, Debray T, Egger M, Salanti G. Developing clinical prediction models: a step-by-step guide. BMJ. 2024 Sep 3;386:e078276. PMID: 39227063.
 </p>
 </div>
 </div>
