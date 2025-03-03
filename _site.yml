@@ -20,3 +20,6 @@ navbar:
 output:
   html_document:
     theme: yeti
+    css: custom.css
+    includes:
+      in_header: templates/head.html

@@ -19,7 +19,8 @@ editor_options:
 <!-- </div> -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3, cache = TRUE, 
+                     cache.lazy = FALSE, message = FALSE)
 options(knitr.duplicate.label = "allow")
 gtsummary::theme_gtsummary_compact()
 
@@ -165,7 +166,7 @@ If the marker does indeed predict well, many patients will not need to undergo a
 
 We will go through step by step how to import your data, build models based on multiple variables, and use those models to obtain predicted probabilities.
 The first step is to import your data, label the variables and produce a table of summary statistics.
-The second step is  you’ll want to begin building your model.
+The second step is  you'll want to begin building your model.
 As we have a binary outcome (i.e. the outcome of our model has two levels: cancer or no cancer), we will be using a logistic regression model.
 
 ```{r, import_cancer, echo=FALSE, message = FALSE, results='asis'}
@@ -180,7 +181,7 @@ First, we want to confirm family history of cancer is indeed associated with the
 add_tabset_codes("model")
 ```
 
-Via logistic regression with cancer as the outcome, we can see that family history is related to biopsy outcome with odds ratio `r inline_text(mod1_summary, variable = "famhistory")`.
+Via logistic regression with cancer as the outcome, we can see that family history is related to biopsy outcome with odds ratio 2.32 (95% CI: 1.44, 3.71; p<0.001).
 The decision curve analysis can help us address the clinical utility of using family history to predict biopsy outcome.
 
 ```{r, dca_famhistory, echo=FALSE, message = FALSE, results='asis'}
@@ -328,7 +329,7 @@ add_tabset_codes("import_ttcancer")
 ```
 
 The survival probability to any time-point can be derived from any type of survival model; here we use a Cox as this is the most common model in statistical practice.
-You don’t necessarily need to know this to run a decision curve, but the formula for a survival probability from a Cox model is given by:
+You don't necessarily need to know this to run a decision curve, but the formula for a survival probability from a Cox model is given by:
 
 $$
 S(t|X) = S_0(t)^{e^{X\beta}}

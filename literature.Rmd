@@ -351,7 +351,15 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 </div>
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.bmj.com/content/385/bmj-2023-078378">DCA & Machine Learning/AI (5)</a></h2>
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/40020442/">DCA & Machine Learning/AI (5)</a></h2>
+<span class="year">2025</span>
+<p>Vickers, A., Hollingsworth, A., Bozzo, A., Chatterjee, A., & Chatterjee, S. (2025). Hypothesis: Net benefit as an objective function during development of machine learning algorithms for medical applications. International journal of medical informatics, 197, 105844. PMID: 40020442. https://doi.org/10.1016/j.ijmedinf.2025.105844
+</p>
+</div>
+</div>
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://www.bmj.com/content/385/bmj-2023-078378">DCA & Machine Learning/AI (6)</a></h2>
 <span class="year">2024</span>
 <p>Collins GS, Moons KGM, Dhiman P, Riley RD, Beam AL, Van Calster B et al. TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods. BMJ. 2024 Apr 18;385:q902. PMID: 38636956; PMCID: PMC11025451.
 </p>
