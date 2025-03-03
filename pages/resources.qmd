@@ -1,6 +1,9 @@
 ---
 title: "DCA: Other Resources"
-format: html
+format: 
+  html:
+    toc: true
+    toc-location: left
 ---
 
 ```{=html}
@@ -15,17 +18,74 @@ format: html
 
 This page contains various resources for implementing and understanding Decision Curve Analysis.
 
-## Software Packages
+## Software Packages and Implementations
 
-- **dcurves**: R package for Decision Curve Analysis
-- **dca**: Stata module for Decision Curve Analysis
-- **rms**: R package that includes Decision Curve Analysis functions
+### R
+- [**dcurves**](https://cran.r-project.org/web/packages/dcurves/index.html): Comprehensive R package specifically designed for Decision Curve Analysis
+- [**rms**](https://cran.r-project.org/web/packages/rms/index.html): R package for regression modeling strategies that includes Decision Curve Analysis functions
+- [**stdca**](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis): R function for standard DCA
 
-## Additional Resources
+### Stata
+- [**dca**](https://ideas.repec.org/c/boc/bocode/s458401.html): Stata module for Decision Curve Analysis
+- [**stdca**](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis): Stata implementation
 
-- Tutorials and workshops
-- Example datasets
-- Code repositories
-- FAQ and Common Issues
+### SAS
+- [**SAS macros**](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis): Collection of SAS macros for implementing DCA
 
-(This is a placeholder page that will be fully developed as part of the repository reorganization) 
+### Python
+- [**dca-python**](https://github.com/yikuan8/DCA-Python): Python implementation of Decision Curve Analysis
+
+## Educational Resources
+
+### Books and Book Chapters
+- Vickers AJ, Elkin EB. Decision Curve Analysis: A Novel Method for Evaluating Prediction Models. *Medical Decision Making*. 2006;26(6):565-574.
+- Steyerberg EW. *Clinical Prediction Models: A Practical Approach to Development, Validation, and Updating*. Springer; 2019. (Chapter on Decision Analysis)
+
+### Online Courses and Tutorials
+- [Memorial Sloan Kettering Cancer Center Resources](https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis)
+- [TRIPOD Statement](https://www.tripod-statement.org/): Guidelines for reporting prediction model development and validation
+
+## Example Datasets
+
+Several datasets commonly used in DCA tutorials and examples:
+
+- **Prostate Cancer Dataset**: Available in the `dcurves` R package
+- **Breast Cancer Wisconsin Dataset**: Available through UCI Machine Learning Repository
+- **Melanoma Dataset**: Available in the `rms` R package
+
+## Common Applications of DCA
+
+DCA has been applied in various clinical fields:
+
+- **Oncology**: Predicting cancer recurrence, treatment response
+- **Cardiology**: Predicting cardiac events, need for intervention
+- **Emergency Medicine**: Triage decisions, hospital admission
+- **Surgery**: Predicting post-operative complications
+
+## Frequently Asked Questions
+
+### When should I use DCA instead of traditional metrics?
+DCA is particularly useful when clinical decisions are directly informed by model predictions. Unlike ROC curves or calibration plots, DCA directly addresses the question of clinical utility.
+
+### How do I choose appropriate threshold probabilities?
+Threshold probabilities should reflect the point at which a clinician or patient would opt for intervention. This depends on weighing the relative harms of false positives against the benefits of true positives.
+
+### Can DCA be applied to time-to-event outcomes?
+Yes, DCA has been extended to survival data. The `dcurves` package includes functionality for time-to-event outcomes.
+
+### How does DCA handle missing data?
+DCA itself doesn't address missing data. Models should be developed with appropriate methods for handling missing data before applying DCA.
+
+## Discussion Forums and Communities
+
+- [GitHub Discussions](https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/discussions): Q&A and discussions about DCA implementation
+- [Statistical Methods in Medical Research](https://journals.sagepub.com/home/smm): Journal that frequently publishes DCA methodology papers
+- [Medical Decision Making](https://journals.sagepub.com/home/mdm): Journal focused on clinical decision making
+
+## Upcoming Events and Workshops
+
+Check back for information about upcoming workshops, webinars, and conference sessions related to Decision Curve Analysis.
+
+## Contact Information
+
+For questions about the methodology behind Decision Curve Analysis, please contact the developers through the [GitHub repository](https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis). 

@@ -3,68 +3,654 @@ title: "DCA: Software Tutorial"
 format: 
   html:
     toc: true
+    toc-float: true
+    highlight-style: agate
     include-in-header: "../highlight/header.html"
     css: "../highlight/styles/agate.min.css"
 params:
   language: r
-editor_options: 
-  markdown: 
-    wrap: sentence
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3, message = FALSE)
 options(knitr.duplicate.label = "allow")
-gtsummary::theme_gtsummary_compact()
+if(requireNamespace("gtsummary", quietly = TRUE)) {
+  gtsummary::theme_gtsummary_compact()
+}
 
+# Load necessary packages if installed
+if(requireNamespace("dcurves", quietly = TRUE)) {
+  library(dcurves)
+}
+if(requireNamespace("tidyverse", quietly = TRUE)) {
+  library(tidyverse)
+}
+if(requireNamespace("gtsummary", quietly = TRUE)) {
+  library(gtsummary)
+}
+```
+
+Below we will walk through how to perform decision curve analysis for binary and time-to-event outcomes using **R**, **Stata**, **SAS**, and **Python**.
+Code is provided for all languages and can be downloaded or simply copy and pasted into your application to see how it runs.
+
+## Binary Outcomes
+
+### Motivating Example
+
+We will be working with an example data set containing information about cancer diagnosis.
+The data set includes information on patients who have recently discovered they have a gene mutation that puts them at a higher risk for harboring cancer.
+Each patient has been biopsied and we know their cancer status.
+It is known that older patients with a family history of cancer have a higher probability of harboring cancer.
+A clinical chemist has recently discovered a marker that she believes can distinguish between patients with and without cancer.
+We wish to assess whether or not the new marker does indeed distinguish between patients with and without cancer.
+If the marker does indeed predict well, many patients will not need to undergo a painful biopsy.
+
+### Data Set-up
+
+We will go through step by step how to import your data, build models based on multiple variables, and use those models to obtain predicted probabilities.
+The first step is to import your data, label the variables and produce a table of summary statistics.
+The second step is you'll want to begin building your model.
+As we have a binary outcome (i.e. the outcome of our model has two levels: cancer or no cancer), we will be using a logistic regression model.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# install dcurves to perform DCA from CRAN
+install.packages("dcurves")
+
+# install other packages used in this tutorial
+install.packages(
+  c("tidyverse", "survival", "gt", "broom",
+    "gtsummary", "rsample", "labelled")
+)
+
+# load packages
 library(dcurves)
 library(tidyverse)
 library(gtsummary)
 ```
 
-## Introduction to Decision Curve Analysis
-
-Decision Curve Analysis (DCA) is a method for evaluating prediction models and diagnostic tests in a clinical context. This tutorial walks through how to implement DCA in various programming languages.
-
-## Basic Implementation
-
-Select your preferred language from the tabs below to see implementation examples:
-
-:::{.panel-tabset}
-### R
-
-```{r}
-#| eval: false
-# Example DCA implementation in R
-# This is placeholder code for the tutorial
-library(dcurves)
-# Sample code - not evaluated
-# data(prostate, package = "dcurves")
-# dca_model <- dca(data = prostate, outcome = "cancer", predictors = c("psa", "cancerpredmarker"))
-# plot(dca_model)
-```
-
 ### Stata
 
-```{stata}
-#| eval: false
-* Example DCA implementation in Stata
-// Code would be placed here
+```stata
+* install dca functions from GitHub.com
+net install dca, from("https://raw.github.com/ddsjoberg/dca.stata/master/") replace
 ```
 
 ### SAS
 
-```{sas}
-#| eval: false
-/* Example DCA implementation in SAS */
-/* Code would be placed here */
+```sas
+/* source the dca macros from GitHub.com */
+/* you can also navigate to GitHub.com and save the macros locally */
+FILENAME dca URL "https://raw.githubusercontent.com/ddsjoberg/dca.sas/main/dca.sas";
+FILENAME stdca URL "https://raw.githubusercontent.com/ddsjoberg/dca.sas/main/stdca.sas";
+%INCLUDE dca;
+%INCLUDE stdca;
 ```
 
 ### Python
 
-```{python}
-#| eval: false
-# Example DCA implementation in Python
-# Code would be placed here
+```python
+# install dcurves to perform DCA (first install package via pip)
+# pip install dcurves
+from dcurves import dca, plot_graphs
+
+# install other packages used in this tutorial
+# pip install pandas numpy statsmodels lifelines
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+import lifelines
 ```
-::: 
+
+:::
+
+Let's first look at importing data:
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# import data
+df_cancer_dx <-
+  readr::read_csv(
+    file = "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv"
+  )
+
+# add variable labels using the labelled package
+df_cancer_dx <- 
+  df_cancer_dx %>%
+  labelled::set_variable_labels(
+    patientid = "Patient ID",
+    cancer = "Cancer Diagnosis",
+    risk_group = "Risk Group",
+    age = "Patient Age",
+    famhistory = "Family History",
+    marker = "Marker",
+    cancerpredmarker = "Prediction Model"
+  )
+```
+
+### Stata
+
+```stata
+* import data
+import delimited "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv", clear
+
+* assign variable labels. these labels will be carried through in the DCA output
+label variable patientid "Patient ID"
+label variable cancer "Cancer Diagnosis"
+label variable risk_group "Risk Group"
+label variable age "Patient Age"
+label variable famhistory "Family History"
+label variable marker "Marker"
+label variable cancerpredmarker "Prediction Model"
+```
+
+### SAS
+
+```sas
+FILENAME cancer URL "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv";
+
+PROC IMPORT FILE = cancer OUT = work.data_cancer DBMS = CSV;
+RUN;
+
+* assign variable labels. these labels will be carried through in the DCA output;
+DATA data_cancer;
+  SET data_cancer;
+
+  LABEL patientid = "Patient ID"
+        cancer = "Cancer Diagnosis"
+        risk_group = "Risk Group"
+        age = "Patient Age"
+        famhistory = "Family History"
+        marker = "Marker"
+        cancerpredmarker = "Prediction Model";
+RUN;
+```
+
+### Python
+
+```python
+df_cancer_dx = pd.read_csv('https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv')
+```
+
+:::
+
+```{r, eval=FALSE, echo=FALSE}
+# This block would import the data in the background if we were rendering the file
+if(requireNamespace("readr", quietly = TRUE)) {
+  df_cancer_dx <-
+    readr::read_csv(
+      file = "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv"
+    )
+  
+  if(requireNamespace("labelled", quietly = TRUE)) {
+    df_cancer_dx <- 
+      df_cancer_dx %>%
+      labelled::set_variable_labels(
+        patientid = "Patient ID",
+        cancer = "Cancer Diagnosis",
+        risk_group = "Risk Group",
+        age = "Patient Age",
+        famhistory = "Family History",
+        marker = "Marker",
+        cancerpredmarker = "Prediction Model"
+      )
+  }
+}
+```
+
+Let's first take a look at our data set:
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# view structure of the data
+str(df_cancer_dx)
+
+# create summary table of data
+df_cancer_dx %>%
+  select(cancer, age, famhistory, marker) %>%
+  tbl_summary(
+    by = cancer,
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = list(all_continuous() ~ c(1, 1))
+  ) %>%
+  add_p(pvalue_fun = ~ style_pvalue(.x, digits = 3)) %>%
+  add_overall() %>%
+  modify_header(label = "**Variable**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Cancer**")
+```
+
+### Stata
+
+```stata
+* summarize the data
+summarize cancer age famhistory marker
+
+* create a summary table of mean values by cancer
+tabstat age famhistory marker, by(cancer) statistics(mean) nototal
+
+* create a detailed summary table
+table cancer, contents(mean age mean famhistory mean marker) nototal
+```
+
+### SAS
+
+```sas
+* view structure of the data;
+PROC CONTENTS DATA = data_cancer;
+RUN;
+
+* create a summary table of data by cancer diagnosis;
+PROC FREQ DATA = data_cancer;
+  TABLES famhistory * cancer;
+RUN;
+
+PROC MEANS DATA = data_cancer;
+  CLASS cancer;
+  VAR age marker;
+  OUTPUT OUT = cancer_summary MEAN=;
+RUN;
+```
+
+### Python
+
+```python
+# View structure of the data
+print(df_cancer_dx.info())
+print(df_cancer_dx.head())
+
+# Create summary statistics
+print(df_cancer_dx.describe())
+
+# Summary by cancer status
+print(df_cancer_dx.groupby('cancer')[['age', 'famhistory', 'marker']].mean())
+
+# More detailed summary
+from scipy import stats
+
+def summary_table(df, group_col, variables):
+    result = pd.DataFrame()
+    
+    for var in variables:
+        if df[var].dtype in ['int64', 'float64']:
+            # Continuous variable
+            stats_df = df.groupby(group_col)[var].agg(['mean', 'std'])
+            stats_df.columns = [f'{var}_mean', f'{var}_std']
+            
+            # Calculate p-value
+            groups = [df[df[group_col] == val][var].dropna() for val in df[group_col].unique()]
+            p_val = stats.f_oneway(*groups)[1]
+            stats_df[f'{var}_p'] = p_val
+            
+            result = pd.concat([result, stats_df], axis=1)
+        else:
+            # Categorical variable
+            crosstab = pd.crosstab(df[group_col], df[var], normalize='index') * 100
+            crosstab.columns = [f'{var}_{col}_pct' for col in crosstab.columns]
+            
+            # Calculate p-value
+            contingency_table = pd.crosstab(df[group_col], df[var])
+            p_val = stats.chi2_contingency(contingency_table)[1]
+            crosstab[f'{var}_p'] = p_val
+            
+            result = pd.concat([result, crosstab], axis=1)
+    
+    return result
+
+summary = summary_table(df_cancer_dx, 'cancer', ['age', 'famhistory', 'marker'])
+print(summary)
+```
+
+:::
+
+### Building Models
+
+First we will test whether family history is associated with cancer.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# Test whether family history is associated with cancer
+mod_fh <- glm(cancer ~ famhistory, data = df_cancer_dx, family = binomial)
+summary(mod_fh)
+```
+
+### Stata
+
+```stata
+* Test whether family history is associated with cancer
+logit cancer famhistory
+```
+
+### SAS
+
+```sas
+* Test whether family history is associated with cancer;
+PROC LOGISTIC DATA = data_cancer DESCENDING;
+  MODEL cancer = famhistory;
+RUN;
+```
+
+### Python
+
+```python
+mod1 = sm.GLM.from_formula('cancer ~ famhistory', data=df_cancer_dx, family=sm.families.Binomial())
+result = mod1.fit()
+print(result.summary())
+```
+
+:::
+
+This shows that family history does indeed predict cancer risk.
+The next step is to calculate predicted probabilities of having cancer for each patient based on the predictors.
+We will test multiple models.
+
+1. Model 1: Using family history alone
+2. Model 2: Using age and family history
+3. Model 3: Using age, family history, and marker
+
+For Model 1, we will use family history as the sole predictor of cancer.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# Model 1: Family history
+model1 <- glm(cancer ~ famhistory, data = df_cancer_dx, family = binomial)
+df_cancer_dx$p_model1 <- predict(model1, type = "response")
+```
+
+### Stata
+
+```stata
+* Model 1: Family history
+logit cancer famhistory
+predict p_model1, pr
+```
+
+### SAS
+
+```sas
+* Model 1: Family history;
+PROC LOGISTIC DATA = data_cancer DESCENDING;
+  MODEL cancer = famhistory;
+  OUTPUT OUT = pred1 PRED = p_model1;
+RUN;
+```
+
+### Python
+
+```python
+# Model 1: Family history
+model1 = sm.GLM.from_formula('cancer ~ famhistory', data=df_cancer_dx, family=sm.families.Binomial())
+result1 = model1.fit()
+df_cancer_dx['p_model1'] = result1.predict()
+```
+
+:::
+
+For Model 2, we will derive a model based on age and family history to predict the risk of cancer.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# Model 2: Age and family history
+model2 <- glm(cancer ~ age + famhistory, data = df_cancer_dx, family = binomial)
+df_cancer_dx$p_model2 <- predict(model2, type = "response")
+```
+
+### Stata
+
+```stata
+* Model 2: Age and family history
+logit cancer age famhistory
+predict p_model2, pr
+```
+
+### SAS
+
+```sas
+* Model 2: Age and family history;
+PROC LOGISTIC DATA = data_cancer DESCENDING;
+  MODEL cancer = age famhistory;
+  OUTPUT OUT = pred2 PRED = p_model2;
+RUN;
+
+* Merge prediction datasets;
+DATA pred_models;
+  MERGE pred1 pred2;
+  BY patientid;
+RUN;
+```
+
+### Python
+
+```python
+# Model 2: Age and family history
+model2 = sm.GLM.from_formula('cancer ~ age + famhistory', data=df_cancer_dx, family=sm.families.Binomial())
+result2 = model2.fit()
+df_cancer_dx['p_model2'] = result2.predict()
+```
+
+:::
+
+For Model 3, we will include age, family history, and marker in our model.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# Model 3: Age, family history, and marker
+model3 <- glm(cancer ~ age + famhistory + marker, data = df_cancer_dx, family = binomial)
+df_cancer_dx$p_model3 <- predict(model3, type = "response")
+```
+
+### Stata
+
+```stata
+* Model 3: Age, family history, and marker
+logit cancer age famhistory marker
+predict p_model3, pr
+```
+
+### SAS
+
+```sas
+* Model 3: Age, family history, and marker;
+PROC LOGISTIC DATA = data_cancer DESCENDING;
+  MODEL cancer = age famhistory marker;
+  OUTPUT OUT = pred3 PRED = p_model3;
+RUN;
+
+* Merge all prediction datasets;
+DATA pred_final;
+  MERGE pred_models pred3;
+  BY patientid;
+RUN;
+```
+
+### Python
+
+```python
+# Model 3: Age, family history, and marker
+model3 = sm.GLM.from_formula('cancer ~ age + famhistory + marker', data=df_cancer_dx, family=sm.families.Binomial())
+result3 = model3.fit()
+df_cancer_dx['p_model3'] = result3.predict()
+```
+
+:::
+
+Let's calculate the AUROC for each model.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# Calculate AUROC for each model
+library(pROC)
+
+roc1 <- roc(df_cancer_dx$cancer, df_cancer_dx$p_model1)
+roc2 <- roc(df_cancer_dx$cancer, df_cancer_dx$p_model2)
+roc3 <- roc(df_cancer_dx$cancer, df_cancer_dx$p_model3)
+
+# Print ROC values
+c(Model1 = roc1$auc, Model2 = roc2$auc, Model3 = roc3$auc)
+```
+
+### Stata
+
+```stata
+* Calculate AUROC for each model
+roctab cancer p_model1
+roctab cancer p_model2
+roctab cancer p_model3
+```
+
+### SAS
+
+```sas
+* Calculate AUROC for each model;
+PROC LOGISTIC DATA = pred_final DESCENDING;
+  MODEL cancer = age famhistory marker / OUTROC = roc_model3;
+RUN;
+
+PROC LOGISTIC DATA = pred_final DESCENDING;
+  MODEL cancer = age famhistory / OUTROC = roc_model2;
+RUN;
+
+PROC LOGISTIC DATA = pred_final DESCENDING;
+  MODEL cancer = famhistory / OUTROC = roc_model1;
+RUN;
+```
+
+### Python
+
+```python
+from sklearn.metrics import roc_auc_score
+
+# Calculate AUROC for each model
+roc1 = roc_auc_score(df_cancer_dx['cancer'], df_cancer_dx['p_model1'])
+roc2 = roc_auc_score(df_cancer_dx['cancer'], df_cancer_dx['p_model2'])
+roc3 = roc_auc_score(df_cancer_dx['cancer'], df_cancer_dx['p_model3'])
+
+print(f"Model 1 AUC: {roc1:.3f}")
+print(f"Model 2 AUC: {roc2:.3f}")
+print(f"Model 3 AUC: {roc3:.3f}")
+```
+
+:::
+
+## Decision Curve Analysis
+
+Recall that the net benefit of a model is:
+
+$$ \text{Net Benefit} = \text{True Positive Rate} - \text{False Positive Rate} \times \frac{p_t}{1-p_t} $$
+
+where $p_t$ refers to the threshold probability.
+
+Let's run a decision curve analysis to compare the three models:
+
+::: {.panel-tabset}
+
+### R
+
+```r
+# Decision curve analysis 
+dca_models <- dca(
+  data = df_cancer_dx,
+  outcome = "cancer",
+  predictors = c("p_model1", "p_model2", "p_model3"),
+  label = list(
+    p_model1 = "Model 1: Family History", 
+    p_model2 = "Model 2: Age + Family History",
+    p_model3 = "Model 3: Age + Family History + Marker"
+  )
+)
+
+# Plot decision curve
+plot(dca_models, smooth = TRUE)
+```
+
+### Stata
+
+```stata
+* Decision curve analysis 
+dca cancer p_model1 p_model2 p_model3, label(p_model1 "Model 1: Family History" ///
+             p_model2 "Model 2: Age + Family History" ///
+             p_model3 "Model 3: Age + Family History + Marker")
+             
+* Plot decision curve
+dcagraph
+```
+
+### SAS
+
+```sas
+* Decision curve analysis;
+%dca(
+   data = pred_final,
+   outcome = cancer,
+   predictors = p_model1 p_model2 p_model3,
+   label = p_model1 "Model 1: Family History" 
+           p_model2 "Model 2: Age + Family History"
+           p_model3 "Model 3: Age + Family History + Marker"
+);
+```
+
+### Python
+
+```python
+# Decision curve analysis
+results = dca(
+    data=df_cancer_dx,
+    outcome='cancer',
+    models=['p_model1', 'p_model2', 'p_model3'],
+    model_names={
+        'p_model1': 'Model 1: Family History',
+        'p_model2': 'Model 2: Age + Family History',
+        'p_model3': 'Model 3: Age + Family History + Marker'
+    }
+)
+
+# Plot decision curve
+plot_graphs(results)
+```
+
+:::
+
+## Correction for Overfit
+
+As is well known, evaluating a model on the same data set that was used to generate the model will give overoptimistic estimates of model performance.
+One way to correct for this sort of overfit is by using 10-fold cross validation.
+The key steps are as follows:
+
+1. Randomly divide the data set into 10 groups of equal size, with equal numbers of events in each group.
+2. Fit the model using all but the first group.
+3. Apply the model created from all observations other than those in the first group (in step 2), to the first group to obtain the predicted probability of the event.
+4. Repeat steps (2) and (3) leaving out and then applying the fitted model for each of the groups. Every subject now has a predicted probability of the event derived from a model that was generated from a data set that did not include that subject.
+5. Using the predicted probabilities, compute the net benefit at various threshold probabilities.
+6. One approach is to repeat this process many times and take an average (repeated 10-fold cross validation).
+
+<hr style="border: none; border-top: 1px solid #333; color: #333; margin: 20px 0;">
+
+## One More Thing
+
+Before running a decision curve analysis, please do read <a href="https://www.fharrell.com/post/edca/">Seven Common Errors in Decision Curve Analysis</a>
