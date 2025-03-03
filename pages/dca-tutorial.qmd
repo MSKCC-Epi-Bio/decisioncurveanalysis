@@ -1,0 +1,70 @@
+---
+title: "DCA: Software Tutorial"
+format: 
+  html:
+    toc: true
+    include-in-header: "../highlight/header.html"
+    css: "../highlight/styles/agate.min.css"
+params:
+  language: r
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3, message = FALSE)
+options(knitr.duplicate.label = "allow")
+gtsummary::theme_gtsummary_compact()
+
+library(dcurves)
+library(tidyverse)
+library(gtsummary)
+```
+
+## Introduction to Decision Curve Analysis
+
+Decision Curve Analysis (DCA) is a method for evaluating prediction models and diagnostic tests in a clinical context. This tutorial walks through how to implement DCA in various programming languages.
+
+## Basic Implementation
+
+Select your preferred language from the tabs below to see implementation examples:
+
+:::{.panel-tabset}
+### R
+
+```{r}
+#| eval: false
+# Example DCA implementation in R
+# This is placeholder code for the tutorial
+library(dcurves)
+# Sample code - not evaluated
+# data(prostate, package = "dcurves")
+# dca_model <- dca(data = prostate, outcome = "cancer", predictors = c("psa", "cancerpredmarker"))
+# plot(dca_model)
+```
+
+### Stata
+
+```{stata}
+#| eval: false
+* Example DCA implementation in Stata
+// Code would be placed here
+```
+
+### SAS
+
+```{sas}
+#| eval: false
+/* Example DCA implementation in SAS */
+/* Code would be placed here */
+```
+
+### Python
+
+```{python}
+#| eval: false
+# Example DCA implementation in Python
+# Code would be placed here
+```
+::: 

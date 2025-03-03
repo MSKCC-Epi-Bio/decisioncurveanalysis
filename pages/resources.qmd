@@ -1,0 +1,31 @@
+---
+title: "DCA: Other Resources"
+format: html
+---
+
+```{=html}
+<style>
+.title{
+  display: none;
+}
+</style>
+```
+
+# Resources for Decision Curve Analysis
+
+This page contains various resources for implementing and understanding Decision Curve Analysis.
+
+## Software Packages
+
+- **dcurves**: R package for Decision Curve Analysis
+- **dca**: Stata module for Decision Curve Analysis
+- **rms**: R package that includes Decision Curve Analysis functions
+
+## Additional Resources
+
+- Tutorials and workshops
+- Example datasets
+- Code repositories
+- FAQ and Common Issues
+
+(This is a placeholder page that will be fully developed as part of the repository reorganization) 

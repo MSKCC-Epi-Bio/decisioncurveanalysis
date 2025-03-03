@@ -24,7 +24,7 @@
 
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 
-```{r, r-{{chunk_label}}, eval = {{eval}}, echo = {{echo}}, message = {{message}}, include = {{include}}}
+```{r, r-{{chunk_label}}, eval = TRUE, echo = FALSE, message = FALSE, include = TRUE}
 ```
 
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />

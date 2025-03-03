@@ -1,0 +1,52 @@
+# Quarto and R generated files
+/.quarto/
+/_site/
+/_freeze/
+/_book/
+/docs/
+*.html
+*_files/
+*_cache/
+
+# R environment and history files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+
+# R build files
+*.o
+*.so
+*.dll
+
+# renv
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+.Rdata
+.rds
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+.~lock.*
+*.tmp
+*.bak
+*.old 

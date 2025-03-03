@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - pages/literature.qmd
+    - pages/dca-tutorial.qmd
+    - pages/resources.qmd
+
+website:
+  title: "Decision Curve Analysis"
+  navbar:
+    left:
+      - text: Home
+        href: index.html
+      - text: "Peer-Reviewed Literature"
+        href: pages/literature.html
+      - text: "Software Tutorial"
+        href: pages/dca-tutorial.html
+      - text: "Other Resources"
+        href: pages/resources.html
+    right:
+      - text: "Discussions"
+        href: https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/discussions
+      - icon: github
+        href: https://github.com/mskcc-epi-bio/decisioncurveanalysis/
+
+format:
+  html:
+    theme: yeti
+    css: assets/css/custom.css
+    include-in-header: templates/head.html
+    toc: true
+    toc-location: left
+
+execute:
+  freeze: auto 
