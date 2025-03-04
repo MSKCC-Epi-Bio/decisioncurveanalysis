@@ -14,8 +14,10 @@ navbar:
   right:
     - text: "Discussions"
       href: https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/discussions
+      target: _blank
     - icon: fa-github fa-lg
       href: https://github.com/mskcc-epi-bio/decisioncurveanalysis/
+      target: _blank
     
 output:
   html_document:
@@ -23,3 +25,4 @@ output:
     css: assets/css/custom.css
     includes:
       in_header: templates/head.html
+      after_body: templates/footer.html
