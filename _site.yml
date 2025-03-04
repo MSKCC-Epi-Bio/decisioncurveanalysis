@@ -1,5 +1,5 @@
 name: ""
-output_dir: "."
+output_dir: "docs"
 navbar:
   title: "Decision Curve Analysis"
   left:
@@ -8,7 +8,7 @@ navbar:
     - text: "Peer-Reviewed Literature"
       href: literature.html
     - text: "Software Tutorial"
-      href: dca-tutorial.html
+      href: dca-tutorial-r.html
     - text: "Other Resources"
       href: resources.html
   right:
@@ -20,6 +20,6 @@ navbar:
 output:
   html_document:
     theme: yeti
-    css: custom.css
+    css: assets/css/custom.css
     includes:
       in_header: templates/head.html
