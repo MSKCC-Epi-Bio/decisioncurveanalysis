@@ -1,11 +1,21 @@
 ---
-title: "Peer-Reviewed Literature"
-output: html_document
+title: "DCA: Literature"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    # includes: 
+      # in_header: "highlight/header.html"
+    # css: "highlight/styles/agate.min.css"
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
-
-<meta http-equiv="refresh" content="0; url=pages/literature.html">
-
-<p>If you are not redirected automatically, follow this <a href="pages/literature.html">link to the literature page</a>.</p>
+<style>
+.title{
+  display: none;
+}
+</style>
 
 ```{css, echo=FALSE}
 
