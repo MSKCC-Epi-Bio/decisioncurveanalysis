@@ -1,0 +1,23 @@
+<script>
+// Function to execute when the document has loaded
+function setExternalLinksTargetBlank() {
+  // Find all navbar links to GitHub
+  var links = document.querySelectorAll('a[href*="github.com"]');
+  
+  // Set target="_blank" for each GitHub link
+  for (var i = 0; i < links.length; i++) {
+    links[i].setAttribute('target', '_blank');
+    console.log('Set target="_blank" for ' + links[i].href);
+  }
+}
+
+// Add event listener for when the DOM is fully loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setExternalLinksTargetBlank);
+} else {
+  setExternalLinksTargetBlank();
+}
+
+// Also try after a short delay to ensure everything is loaded
+setTimeout(setExternalLinksTargetBlank, 1000);
+</script> 

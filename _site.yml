@@ -1,5 +1,5 @@
 name: ""
-output_dir: "."
+output_dir: "docs"
 navbar:
   title: "Decision Curve Analysis"
   left:
@@ -8,18 +8,21 @@ navbar:
     - text: "Peer-Reviewed Literature"
       href: literature.html
     - text: "Software Tutorial"
-      href: dca-tutorial.html
+      href: dca-tutorial-r.html
     - text: "Other Resources"
       href: resources.html
   right:
     - text: "Discussions"
       href: https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/discussions
+      target: _blank
     - icon: fa-github fa-lg
       href: https://github.com/mskcc-epi-bio/decisioncurveanalysis/
+      target: _blank
     
 output:
   html_document:
     theme: yeti
-    css: custom.css
+    css: assets/css/custom.css
     includes:
       in_header: templates/head.html
+      after_body: templates/footer.html

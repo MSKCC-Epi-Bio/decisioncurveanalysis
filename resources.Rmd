@@ -1,7 +1,11 @@
 ---
-title: "DCA: Other Resources"
+title: "Other Resources"
 output: html_document
 ---
+
+<meta http-equiv="refresh" content="0; url=pages/resources.html">
+
+<p>If you are not redirected automatically, follow this <a href="pages/resources.html">link to the resources page</a>.</p>
 
 ```{css, echo=FALSE}
 
