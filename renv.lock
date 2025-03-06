@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.3",
+    "Version": "4.4.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -3799,6 +3799,41 @@
       "NeedsCompilation": "yes",
       "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>), Oliver Keyes [ctb]",
       "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
+      "Repository": "CRAN"
+    },
+    "pandoc": {
+      "Package": "pandoc",
+      "Version": "0.2.0",
+      "Source": "Repository",
+      "Title": "Manage and Run Universal Converter 'Pandoc' from 'R'",
+      "Authors@R": "c( person(\"Christophe\", \"Dervieux\", , \"cderv@posit.co\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-4474-2498\")), person(given = \"Posit Software, PBC\", role = c(\"cph\", \"fnd\")) )",
+      "Description": "Provides a set of tools to install, manage and run several 'Pandoc' versions.",
+      "License": "MIT + file LICENSE",
+      "URL": "https://github.com/cderv/pandoc, https://cderv.github.io/pandoc/",
+      "BugReports": "https://github.com/cderv/pandoc/issues",
+      "Depends": [
+        "R (>= 3.5.0)"
+      ],
+      "Imports": [
+        "fs",
+        "rappdirs",
+        "rlang (>= 1.0.1)"
+      ],
+      "Suggests": [
+        "covr",
+        "gh",
+        "rmarkdown (>= 2.14)",
+        "testthat (>= 3.0.0)",
+        "tibble",
+        "withr"
+      ],
+      "Config/Needs/website": "tidyverse/tidytemplate, dplyr, tidyr, purrr",
+      "Config/testthat/edition": "3",
+      "Encoding": "UTF-8",
+      "RoxygenNote": "7.2.3",
+      "NeedsCompilation": "no",
+      "Author": "Christophe Dervieux [aut, cre] (<https://orcid.org/0000-0003-4474-2498>), Posit Software, PBC [cph, fnd]",
+      "Maintainer": "Christophe Dervieux <cderv@posit.co>",
       "Repository": "CRAN"
     },
     "parallelly": {
