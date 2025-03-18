@@ -18,7 +18,7 @@ To do list....
 - Python
     - [X] Finish module
     - [X] Implement unit testing
-    - [ ] Add a module website?
+    - [x] Add a module website?
 - Tutorial
     - [X] Add tabsets with each language is its own tab
     - [X] Add language-specific code highlighting
