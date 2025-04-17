@@ -35,7 +35,10 @@ jobs:
           sudo apt-get update && sudo apt-get install -y \
             libcurl4-openssl-dev \
             libfontconfig1-dev \
-            libfreetype6-dev
+            libfreetype6-dev \
+            libpng-dev \
+            libtiff5-dev \
+            libjpeg-dev
 
       - name: Cache R packages
         uses: actions/cache@v3
