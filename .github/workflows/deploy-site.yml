@@ -1,0 +1,80 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    # Use bash shell regardless of GitHub Actions runner
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+          use-public-rspm: true
+
+      - name: Install pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('renv.lock') }}
+          restore-keys: ${{ runner.os }}-
+
+      - name: Install R dependencies
+        run: |
+          install.packages("renv")
+          renv::restore()
+          # Ensure these essential packages are installed
+          pkgs <- c("rmarkdown", "knitr", "dcurves", "tidyverse", "gtsummary", "here")
+          missing <- setdiff(pkgs, installed.packages()[,"Package"])
+          if (length(missing) > 0) install.packages(missing)
+        shell: Rscript {0}
+
+      - name: Build site
+        run: |
+          Rscript -e 'rmarkdown::render_site()'
+
+      - name: Create deployment directory
+        run: |
+          mkdir -p _deploy
+          # Copy only HTML files and necessary assets
+          cp *.html _deploy/
+          cp -r *_files _deploy/ || true
+          cp -r site_libs _deploy/ || true
+          cp -r images _deploy/ || true
+          cp -r highlight _deploy/ || true
+          cp -r templates _deploy/ || true
+          cp custom.css _deploy/ || true
+          cp -r data _deploy/ || true
+          cp -r rmd_chunks _deploy/ || true
+          # Add specialized files for gh-pages branch
+          cp gh-pages-gitignore _deploy/.gitignore || true
+          cp gh-pages-readme.md _deploy/README.md || true
+          # Create a simple .nojekyll file to tell GitHub not to use Jekyll
+          touch _deploy/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: _deploy
+          clean: true
+          git-config-name: GitHub Actions
+          git-config-email: actions@github.com
