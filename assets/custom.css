@@ -1,0 +1,135 @@
+/* Table styles */
+table.dataTable tbody tr:hover {
+  background-color: inherit !important;
+  cursor: default;
+}
+
+table.dataTable tbody tr:hover td,
+table.dataTable tbody tr:hover th {
+  background-color: inherit !important;
+}
+
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Center container */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  margin-right: 50px; /* Add right margin to separate the title from the year */
+}
+
+p {
+  font-size: 1.1em;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Contact box styles */
+.contact-box {
+  position: relative;
+  border: 2px solid lightgrey;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  display: block;
+  width: 100%;
+}
+
+.contact-wrapper {
+  display: flex;
+}
+
+.contact-text {
+  flex-grow: 1;
+}
+
+.link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.year {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  padding-left: 10px; /* Add left padding to separate the year from the text */
+}
+
+/* Hide title */
+.title {
+  display: none;
+}
+
+/* TOC styles */
+.tocify-item {
+  display: inline-block;
+  text-indent: -10px;
+  padding-left: 20px;
+}
+
+.tocify-header {
+  display: inline-block;
+  text-indent: 10px;
+  padding-left: 100px;
+  background-color: transparent;
+}
+
+.tocify-header > .tocify-subheader {
+  display: inline-block;
+  text-indent: 0px;
+  padding-left: 15px; /* Increase the left padding for subheaders to create an additional indent */
+}
+
+.list-group-item.highlight {
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+}
+
+/* Add hover effect for the TOC items */
+.list-group-item.active, 
+.list-group-item.active:focus, 
+.list-group-item.active:hover {
+  z-index: 2;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+}
+

@@ -1,0 +1,30 @@
+#### {.tabset .tabset-pills}
+
+##### R {{active_r}}
+
+```{r, r-{{chunk_label}}, eval = FALSE, class='R'}
+```
+
+##### Stata {{active_stata}}
+
+```{stata, stata-{{chunk_label}}, eval = FALSE, class='Stata'}
+```
+
+##### SAS {{active_sas}}
+
+```{sas, sas-{{chunk_label}}, eval = FALSE, class='SAS'}
+```
+
+##### Python {{active_python}}
+
+```{python, python-{{chunk_label}}, eval = FALSE, class='Python'}
+```
+
+#### {-}
+
+<!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
+
+```{r, r-{{chunk_label}}, eval = {{eval}}, echo = {{echo}}, message = {{message}}, include = {{include}}}
+```
+
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
