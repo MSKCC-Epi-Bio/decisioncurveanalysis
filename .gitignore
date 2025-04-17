@@ -1,0 +1,16 @@
+# This .gitignore is for the gh-pages branch only
+# Don't ignore HTML files in this branch
+!*.html
+
+# Don't ignore asset directories
+!*_files/
+!site_libs/
+
+# Still ignore R-specific files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+*.knit.md
+*.utf8.md
