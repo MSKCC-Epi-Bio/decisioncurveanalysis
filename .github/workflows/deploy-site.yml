@@ -65,21 +65,18 @@ jobs:
       - name: Create deployment directory
         run: |
           mkdir -p _deploy
-          # Copy generated HTML and libs
+          # Copy generated HTML and libs from root
           cp *.html _deploy/
-          cp -r *_files _deploy/ || true # Use || true to avoid error if dir doesn't exist
+          cp -r *_files _deploy/ || true
           cp -r site_libs _deploy/ || true
-          # Copy assets and other necessary source dirs from root
-          cp -r assets/images _deploy/assets/images || true
-          cp -r assets/highlight _deploy/assets/highlight || true
-          cp assets/custom.css _deploy/assets/custom.css || true
-          cp -r assets/templates _deploy/assets/templates || true
-          cp -r assets/data _deploy/assets/data || true
-          cp -r rmd_chunks _deploy/rmd_chunks || true # Rmd chunks from root
+          # Copy the entire assets directory
+          cp -r assets _deploy/assets || true
+          # Copy Rmd chunks if needed (maybe remove later if not needed on deployed site)
+          cp -r rmd_chunks _deploy/rmd_chunks || true
           # Add specialized files for gh-pages branch
           cp gh-pages-gitignore _deploy/.gitignore || true
           cp gh-pages-readme.md _deploy/README.md || true
-          # Create a simple .nojekyll file to tell GitHub not to use Jekyll
+          # Create a simple .nojekyll file
           touch _deploy/.nojekyll
 
       - name: Deploy to gh-pages
