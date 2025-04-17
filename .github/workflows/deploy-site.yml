@@ -30,6 +30,10 @@ jobs:
       - name: Install pandoc
         uses: r-lib/actions/setup-pandoc@v2
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
+
       - name: Cache R packages
         uses: actions/cache@v3
         with:
