@@ -38,7 +38,8 @@ jobs:
             libfreetype6-dev \
             libpng-dev \
             libtiff5-dev \
-            libjpeg-dev
+            libjpeg-dev \
+            python3-dev
 
       - name: Cache R packages
         uses: actions/cache@v3
