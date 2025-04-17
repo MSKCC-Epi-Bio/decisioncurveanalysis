@@ -1,16 +1,16 @@
 ---
 title: "DCA: Software Tutorial"
-output: 
+output:
   html_document:
     toc: true
     toc_float: true
-    includes: 
-      in_header: "highlight/header.html"
-    css: "highlight/styles/agate.min.css"
+    includes:
+      in_header: "assets/highlight/header.html"
+    css: "assets/highlight/styles/agate.min.css"
 params:
   language: r
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: sentence
 ---
 
@@ -19,7 +19,7 @@ editor_options:
 <!-- </div> -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3, cache = TRUE, 
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3, cache = TRUE,
                      cache.lazy = FALSE, message = FALSE)
 options(knitr.duplicate.label = "allow")
 gtsummary::theme_gtsummary_compact()
@@ -28,17 +28,17 @@ library(dcurves)
 library(tidyverse)
 library(gtsummary)
 
-add_tabset_codes <- function(chunk_label, eval = TRUE, echo = FALSE, 
-                             message = FALSE, include = TRUE, 
+add_tabset_codes <- function(chunk_label, eval = TRUE, echo = FALSE,
+                             message = FALSE, include = TRUE,
                              language = params$language) {
   active_r <- ifelse(language %in% "r", "{.active}", "")
   active_stata <- ifelse(language %in% "stata", "{.active}", "")
   active_sas <- ifelse(language %in% "sas", "{.active}", "")
   active_python <- ifelse(language %in% "python", "{.active}", "")
-  
+
   res <-
     knitr::knit_child(
-      text = unlist(knitr::knit_expand('templates/tabset-template.Rmd')),
+      text = unlist(knitr::knit_expand('assets/templates/tabset-template.Rmd')),
       quiet = TRUE,
       envir = rlang::caller_env()
     )
@@ -65,16 +65,16 @@ add_tabset_codes <- function(chunk_label, eval = TRUE, echo = FALSE,
            "r" = ".R",
            "stata" = ".do",
            "python" = ".py")
-  
+
   readr::read_lines(here::here("rmd_chunks", paste0(language, "-chunks", extension))) %>%
     map_chr(
       ~ifelse(
         # edit lines that are the chunk names
         startsWith(., "## ----") & endsWith(., "-----"),
         # replace the ## with the start comment symbols
-        str_replace(., "^##", fixed(comment_start)) %>% 
+        str_replace(., "^##", fixed(comment_start)) %>%
           # add end of comment symbol
-          paste(comment_end) %>% 
+          paste(comment_end) %>%
           # remove language name
           str_replace(fixed(paste0(language, "-")), ""),
         .
@@ -89,10 +89,10 @@ add_tabset_codes <- function(chunk_label, eval = TRUE, echo = FALSE,
 .convert_chunks_to_script()
 
 # create link to download scripts
-extension <- switch(params$language, 
-                    "sas" = ".sas", "r" = ".R", 
+extension <- switch(params$language,
+                    "sas" = ".sas", "r" = ".R",
                     "stata" = ".do", "python" = ".py")
-script_url <- 
+script_url <-
   paste0(
     "https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/raw/main/rmd_chunks/chunks_as_scripts/",
     "dca-script", extension
@@ -114,10 +114,10 @@ For simplicity's sake, however, we only show output from the R functions; althou
 
 ```{r, language-table, echo = FALSE}
 tibble::tibble(
-  r = list(gt::html('<a href="dca-tutorial-r.html"><img src="images/r-icon.png" height="100" /></a>')),
-  stata = list(gt::html('<a href="dca-tutorial-stata.html"><img src="images/stata-icon.png" height="55" /></a>')),
-  sas = list(gt::html('<a href="dca-tutorial-sas.html"><img src="images/sas-icon.png" height="55" /></a>')),
-  python = list(gt::html('<a href="dca-tutorial-python.html"><img src="images/python-icon.png" height="55" /></a>')),
+  r = list(gt::html('<a href="dca-tutorial-r.html"><img src="assets/images/r-icon.png" height="100" /></a>')),
+  stata = list(gt::html('<a href="dca-tutorial-stata.html"><img src="assets/images/stata-icon.png" height="55" /></a>')),
+  sas = list(gt::html('<a href="dca-tutorial-sas.html"><img src="assets/images/sas-icon.png" height="55" /></a>')),
+  python = list(gt::html('<a href="dca-tutorial-python.html"><img src="assets/images/python-icon.png" height="55" /></a>')),
 ) |>
   gt::gt() |>
   gt::cols_label(
@@ -240,7 +240,7 @@ add_tabset_codes("dca_smooth")
 
 An alternative is to calculate net benefit at wider intervals.
 By default, the software calculates net benefit at every 1% of threshold probability, but we this can cause artifacts unless the data set is very large.
-You can specify instead to calculate net benefit every 5%. 
+You can specify instead to calculate net benefit every 5%.
 
 ```{r, dca_smooth2, echo=FALSE, message = FALSE, results='asis'}
 add_tabset_codes("dca_smooth2")
@@ -385,7 +385,7 @@ add_tabset_codes("dca_case_control")
 
 The interpretation of the decision curve analysis figure is the same as for a cohort study.
 In this example, the model performs worse than a biopsy all strategy from threshold 0% to 17%, and the model has benefit from 18% to 40%.
-As the model does not have the highest net benefit across the full range of reasonable threshold probabilities, it is not justified to use it in practice. 
+As the model does not have the highest net benefit across the full range of reasonable threshold probabilities, it is not justified to use it in practice.
 
 ## Incorporating Harms
 
@@ -398,7 +398,7 @@ add_tabset_codes("dca_harm_simple")
 ```
 
 This shows the net benefit of the model is no longer superior across the full range of reasonable threshold probabilities.
-Hence the benefit of using the model does not outweigh the harm of having to collect the marker needed by the model. 
+Hence the benefit of using the model does not outweigh the harm of having to collect the marker needed by the model.
 
 Many decisions in medicine are based on conditional test results, however.
 A classic example is where patients are categorized on the basis of a test as being at high, low or intermediate risk.
@@ -436,7 +436,3 @@ Note: Predicted probabilities for each subject can be used to calculate other pe
 ## One More Thing
 
 Before running a decision curve analysis, please do read <a href="https://www.fharrell.com/post/edca/">Seven Common Errors in Decision Curve Analysis</a>
-
-
-
-

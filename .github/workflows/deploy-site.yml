@@ -32,7 +32,10 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
+          sudo apt-get update && sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libfontconfig1-dev \
+            libfreetype6-dev
 
       - name: Cache R packages
         uses: actions/cache@v3
@@ -58,16 +61,17 @@ jobs:
       - name: Create deployment directory
         run: |
           mkdir -p _deploy
-          # Copy only HTML files and necessary assets
+          # Copy generated HTML and libs
           cp *.html _deploy/
-          cp -r *_files _deploy/ || true
+          cp -r *_files _deploy/ || true # Use || true to avoid error if dir doesn't exist
           cp -r site_libs _deploy/ || true
-          cp -r images _deploy/ || true
-          cp -r highlight _deploy/ || true
-          cp -r templates _deploy/ || true
-          cp custom.css _deploy/ || true
-          cp -r data _deploy/ || true
-          cp -r rmd_chunks _deploy/ || true
+          # Copy assets and other necessary source dirs from root
+          cp -r assets/images _deploy/assets/images || true
+          cp -r assets/highlight _deploy/assets/highlight || true
+          cp assets/custom.css _deploy/assets/custom.css || true
+          cp -r assets/templates _deploy/assets/templates || true
+          cp -r assets/data _deploy/assets/data || true
+          cp -r rmd_chunks _deploy/rmd_chunks || true # Rmd chunks from root
           # Add specialized files for gh-pages branch
           cp gh-pages-gitignore _deploy/.gitignore || true
           cp gh-pages-readme.md _deploy/README.md || true
