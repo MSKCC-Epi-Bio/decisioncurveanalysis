@@ -1,0 +1,12 @@
+{
+  "hash": "def571be2cc02e19e7ff521dcf30d0b5",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"DCA: Other Resources\"\noutput: html_document\n---\n\n```{css, echo=FALSE}\n\n.contact-box {\n  position: relative;\n  border: 2px solid lightgrey;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 10px;\n  background-color: #f9f9f9;\n}\n\n\n.contact-wrapper {\n  display: flex;\n}\n\n.contact-text {\n  flex-grow: 1;\n}\n\n.link {\n  text-decoration: none;\n  color: #007bff;\n}\n\n.link:hover {\n  text-decoration: underline;\n}\n\n.year {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  font-weight: bold;\n  padding-left: 10px; /* Add left padding to separate the year from the text */\n}\n\n\nh2 {\n  margin-bottom: 10px;\n  font-size: 1.3em;\n  margin-right: 50px; /* Add right margin to separate the title from the year */\n}\n\np {\n  margin-bottom: 0;\n}\n\n```\n\n\n\n\n<div class=\"contact-wrapper contact-box\">\n<div class=\"contact-text\">\n<h2><a href=\"https://www.youtube.com/playlist?list=PL_3UUp3wcnVYYQUQ5wXgNjkl1LI1mocA3\">DCA YouTube Series (12 Videos)</a></h2>\n</div>\n</div>\n\n<div class=\"contact-wrapper contact-box\">\n<div class=\"contact-text\">\n<h2><a href=\"https://github.com/ML4LHS/modelrecon\">R code for calculating net benefit under resource constraints</a></h2>\n</div>\n</div>\n\n<div class=\"contact-wrapper contact-box\">\n<div class=\"contact-text\">\n<h2><a href=\"https://www.fharrell.com/post/edca/\">Seven Common Errors in Decision Curve Analysis</a></h2>\n<span class=\"year\">2023</span>\n<p> Andrew Vickers </p>\n</div>\n</div>\n\n<div class=\"contact-wrapper contact-box\">\n<div class=\"contact-text\">\n<h2><a href=\"https://it-innovations-healthcare.medium.com/decision-curve-analysis-or-why-interpretation-of-medical-decision-support-models-should-be-based-on-b553acedb998\">Decision Curve Analysis or Why Interpretation of Medical Decision Support Models Should Be Based on Net Benefit</a></h2>\n<span class=\"year\">2024</span>\n<p>Paul Hiemstra, PhD</p>\n</div>\n</div>\n\n",
+    "supporting": [
+      "resources_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

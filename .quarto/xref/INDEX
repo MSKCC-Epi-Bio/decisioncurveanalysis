@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "86a66cd9"
+  },
+  "pages/literature.qmd": {
+    "literature.html": "ba4abd5c"
+  },
+  "pages/dca-tutorial.qmd": {
+    "dca-tutorial.html": "37d2051d"
+  },
+  "pages/resources.qmd": {
+    "resources.html": "a2d171ec"
+  },
+  "literature.qmd": {
+    "literature.html": "3e9401b3"
+  },
+  "dca-tutorial.qmd": {
+    "dca-tutorial.html": "3fd4d7d0"
+  },
+  "resources.qmd": {
+    "resources.html": "0d4ff1de"
+  }
+}
