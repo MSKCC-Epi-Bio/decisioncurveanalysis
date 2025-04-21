@@ -28,5 +28,5 @@ To do list....
     - [X] Add the R code
     - [X] Add the Stata code
     - [X] Add the SAS code
-    - [ ] Add the Python code
+    - [X] Add the Python code
 

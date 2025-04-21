@@ -121,7 +121,8 @@ dca_pub_model_df = \
 plot_graphs(
     plot_df=dca_pub_model_df,
     y_limits=[-0.05, 0.2],
-    graph_type='net_benefit'
+    graph_type='net_benefit',
+    smooth_frac=0.5
 )
 
 ## ---- python-joint -----
@@ -212,7 +213,8 @@ dca_intervention_df = \
   
 plot_graphs(
   plot_df=dca_intervention_df,
-  graph_type='net_intervention_avoided'
+  graph_type='net_intervention_avoided',
+  smooth_frac=0.5
 )
   
 ## ---- python-import_ttcancer -----
@@ -255,7 +257,8 @@ stdca_coxph_results = \
 plot_graphs(
   plot_df=stdca_coxph_results,
   graph_type='net_benefit',
-  y_limits=[-0.05, 0.25]
+  y_limits=[-0.05, 0.25],
+  smooth_frac=0.5
 )
 
 ## ---- python-stdca_cmprsk -----
@@ -293,7 +296,8 @@ dca_case_control_df = \
 plot_graphs(
   plot_df=dca_case_control_df,
   graph_type='net_benefit',
-  y_limits=[-0.05, 0.25]
+  y_limits=[-0.05, 0.25],
+  smooth_frac=0.5
 )
 
 ## ---- python-cross_validation -----
