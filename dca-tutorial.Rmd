@@ -6,7 +6,7 @@ output:
     toc_float: true
     includes:
       in_header: "assets/highlight/header.html"
-    css: "assets/highlight/styles/agate.min.css"
+    css: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css"
 params:
   language: r
 editor_options:
@@ -282,6 +282,27 @@ This decision curve suggests that although the model might be useful in the most
 As such, the Brown et al. model should not be used in clinical practice.
 This effect, a model being harmful, occurs due to miscalibration, that is, when patients are given risks that are too high or too low.
 Note that miscalibration only occurs rarely when models are created and tested on the same data set, such as in the example where we created a model with both family history and the marker.
+
+#### Joint and Conditional Test Approaches
+
+In clinical practice, we often use different strategies to decide which patients to treat. Let's examine two approaches:
+
+1. **Joint Approach**: Treat patients who are either high risk or have a marker prediction above a threshold.
+2. **Conditional Approach**: Treat high-risk patients immediately; for intermediate-risk patients, use the marker to decide; and don't treat low-risk patients.
+
+First, let's set up the variables for these approaches:
+
+```{r, joint, echo=FALSE, message = FALSE, results='asis'}
+add_tabset_codes("joint")
+```
+
+Now, let's compare the performance of these approaches using decision curve analysis:
+
+```{r, dca_joint, echo=FALSE, message = FALSE, results='asis'}
+add_tabset_codes("dca_joint")
+```
+
+As we can see from the decision curve, the different approaches to combining risk group information with the marker have varying clinical utility across different threshold probabilities.
 
 #### Saving out Net Benefit Values
 

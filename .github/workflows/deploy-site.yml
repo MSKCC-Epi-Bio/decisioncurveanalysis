@@ -62,6 +62,10 @@ jobs:
         run: |
           Rscript -e 'rmarkdown::render_site()'
 
+      - name: Build language-specific tutorials
+        run: |
+          Rscript -e "languages <- c('r', 'stata', 'sas', 'python'); for (lang in languages) { rmarkdown::render('dca-tutorial.Rmd', output_file = paste0('dca-tutorial-', lang, '.html'), params = list(language = lang)) }"
+
       - name: Create deployment directory
         run: |
           mkdir -p _deploy
