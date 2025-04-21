@@ -19,8 +19,10 @@ editor_options:
 <!-- </div> -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.height = 3, cache = TRUE,
-                     cache.lazy = FALSE, message = FALSE)
+knitr::opts_chunk$set(
+  echo = TRUE, warning = FALSE, fig.height = 3, cache = TRUE,
+  cache.lazy = FALSE, message = FALSE
+)
 options(knitr.duplicate.label = "allow")
 gtsummary::theme_gtsummary_compact()
 
@@ -38,37 +40,40 @@ add_tabset_codes <- function(chunk_label, eval = TRUE, echo = FALSE,
 
   res <-
     knitr::knit_child(
-      text = unlist(knitr::knit_expand('assets/templates/tabset-template.Rmd')),
+      text = unlist(knitr::knit_expand("assets/templates/tabset-template.Rmd")),
       quiet = TRUE,
       envir = rlang::caller_env()
     )
-  cat(res, sep = '\n')
+  cat(res, sep = "\n")
 }
 
-.convert_chunks_to_script <- function(language =  params$language) {
+.convert_chunks_to_script <- function(language = params$language) {
   # convert language name to comment symbols
   comment_start <-
     switch(language,
-           "sas" = "/*",
-           "r" = "#",
-           "stata" = "/*",
-           "python" = "#")
+      "sas" = "/*",
+      "r" = "#",
+      "stata" = "/*",
+      "python" = "#"
+    )
   comment_end <-
     switch(language,
-           "sas" = "*/",
-           "r" = "",
-           "stata" = "*/",
-           "python" = "")
+      "sas" = "*/",
+      "r" = "",
+      "stata" = "*/",
+      "python" = ""
+    )
   extension <-
     switch(language,
-           "sas" = ".sas",
-           "r" = ".R",
-           "stata" = ".do",
-           "python" = ".py")
+      "sas" = ".sas",
+      "r" = ".R",
+      "stata" = ".do",
+      "python" = ".py"
+    )
 
   readr::read_lines(here::here("rmd_chunks", paste0(language, "-chunks", extension))) %>%
     map_chr(
-      ~ifelse(
+      ~ ifelse(
         # edit lines that are the chunk names
         startsWith(., "## ----") & endsWith(., "-----"),
         # replace the ## with the start comment symbols
@@ -90,8 +95,11 @@ add_tabset_codes <- function(chunk_label, eval = TRUE, echo = FALSE,
 
 # create link to download scripts
 extension <- switch(params$language,
-                    "sas" = ".sas", "r" = ".R",
-                    "stata" = ".do", "python" = ".py")
+  "sas" = ".sas",
+  "r" = ".R",
+  "stata" = ".do",
+  "python" = ".py"
+)
 script_url <-
   paste0(
     "https://github.com/MSKCC-Epi-Bio/decisioncurveanalysis/raw/main/rmd_chunks/chunks_as_scripts/",
@@ -122,9 +130,9 @@ tibble::tibble(
   gt::gt() |>
   gt::cols_label(
     r = gt::html('<b><a href="dca-tutorial-r.html"><font color="black">R</a></b>'),
-    stata = gt::html('<b><a href="dca-tutorial-r.html"><font color="black">Stata</a></b>'),
-    sas = gt::html('<b><a href="dca-tutorial-r.html"><font color="black">SAS</a></b>'),
-    python = gt::html('<b><a href="dca-tutorial-r.html"><font color="black">Python</a></b>')
+    stata = gt::html('<b><a href="dca-tutorial-stat.html"><font color="black">Stata</a></b>'),
+    sas = gt::html('<b><a href="dca-tutorial-sas.html"><font color="black">SAS</a></b>'),
+    python = gt::html('<b><a href="dca-tutorial-python.html"><font color="black">Python</a></b>')
   ) |>
   gt::cols_width(everything() ~ gt::px(150)) |>
   gt::opt_table_lines("none") |>
