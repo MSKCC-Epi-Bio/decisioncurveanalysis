@@ -4345,12 +4345,12 @@ outcome.</p>
 <div id="stata-3" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Run the decision curve: family history is coded as 0 or 1, i.e. a probability
-* so no need to specify the “probability” option
+* so no need to specify the &quot;probability&quot; option
 dca cancer famhistory</code></pre>
 </div>
 <div id="sas-3" class="section level5">
 <h5>SAS</h5>
-<pre class="sas"><code>* Run the decision curve: family history is coded as 0 or 1, i.e. a probability, so no need to specify the “probability” option;
+<pre class="sas"><code>* Run the decision curve: family history is coded as 0 or 1, i.e. a probability, so no need to specify the &quot;probability&quot; option;
 %DCA(data = data_cancer, outcome = cancer, predictors = famhistory, graph = yes);</code></pre>
 </div>
 <div id="python-3" class="section level5 active">
@@ -4442,15 +4442,15 @@ harm some others, and so should not be used in the clinic.</p>
 </div>
 <div id="multivariable-decision-curve-analysis" class="section level3">
 <h3>Multivariable Decision Curve Analysis</h3>
-<div id="evaluation-of-new-models" class="section level4">
-<h4>Evaluation of New Models</h4>
+</div>
+<div id="evaluation-of-new-models" class="section level3">
+<h3>Evaluation of New Models</h3>
 <p>We want to examine the value of a statistical model that incorporates
 family history, age, and the marker. First, we will build the logistic
 regression model with all three variables, and then save the predicted
 probability of having cancer based on the model. Note that in our
 example data set, this variable actually already exists so it wouldn’t
 be necessary to create the predicted probabilities once again.</p>
-</div>
 <div id="section-10" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
 <div id="r-5" class="section level5">
@@ -5097,14 +5097,14 @@ is equivalent to biopsy no-one at the positive predictive value. This is
 because for a binary variable, a patient with the characteristic is
 given a risk at the positive predictive value.</p>
 </div>
-<div id="evaluation-of-published-models" class="section level4">
-<h4>Evaluation of Published Models</h4>
+</div>
+<div id="evaluation-of-published-models" class="section level3">
+<h3>Evaluation of Published Models</h3>
 <p>Imagine that a model was published by Brown et al. with respect to
 our cancer biopsy data set. The authors reported a statistical model
 with coefficients of 0.75 for a positive family history of cancer; 0.26
 for each increased year of age, and an intercept of -17.5. To test this
 formula on our data set:</p>
-</div>
 <div id="section-18" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
 <div id="r-9" class="section level5">
@@ -5187,8 +5187,9 @@ miscalibration only occurs rarely when models are created and tested on
 the same data set, such as in the example where we created a model with
 both family history and the marker.</p>
 </div>
-<div id="joint-and-conditional-test-approaches" class="section level4">
-<h4>Joint and Conditional Test Approaches</h4>
+</div>
+<div id="joint-and-conditional-test-approaches" class="section level3">
+<h3>Joint and Conditional Test Approaches</h3>
 <p>In clinical practice, we often use different strategies to decide
 which patients to treat. Let’s examine two approaches:</p>
 <ol style="list-style-type: decimal">
@@ -5199,7 +5200,6 @@ immediately; for intermediate-risk patients, use the marker to decide;
 and don’t treat low-risk patients.</li>
 </ol>
 <p>First, let’s set up the variables for these approaches:</p>
-</div>
 <div id="section-20" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
 <div id="r-10" class="section level5">
@@ -5220,7 +5220,7 @@ df_cancer_dx &lt;-
 <div id="stata-10" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Create a variable for the strategy of treating only high risk patients
-* This will be 1 for treat and 0 for don’t treat
+* This will be 1 for treat and 0 for don&#39;t treat
 g high_risk = risk_group==&quot;high&quot;
 label var high_risk &quot;Treat Only High Risk Group&quot;
 
@@ -5321,8 +5321,9 @@ plot_graphs(
 combining risk group information with the marker have varying clinical
 utility across different threshold probabilities.</p>
 </div>
-<div id="saving-out-net-benefit-values" class="section level4">
-<h4>Saving out Net Benefit Values</h4>
+</div>
+<div id="saving-out-net-benefit-values" class="section level3">
+<h3>Saving out Net Benefit Values</h3>
 <p>We can save out net benefit for a decision curve for further analysis
 or presentation in a table. We simply need to specify the name of the
 file we’d like it to be saved as. For a particular range of threshold
@@ -5341,7 +5342,6 @@ a probability. Based on our thresholds, we’d want to begin at 0.05, and
 by increments of 0.05, stop at 0.35. As we are not interested in the
 graph, we can also specify to suppress the graph from being
 displayed.</p>
-</div>
 <div id="section-24" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
 <div id="r-12" class="section level5">
@@ -5366,7 +5366,7 @@ displayed.</p>
 <div id="stata-12" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Run the decision curve and save out net benefit results
-* Specifying xby(.05) since we’d want 5% increments
+* Specifying xby(.05) since we&#39;d want 5% increments
 dca cancer marker, prob(no) xstart(0.05) xstop(0.35) xby(0.05) nograph ///
  saving(&quot;DCA Output marker.dta&quot;, replace)
 
@@ -5860,8 +5860,9 @@ conducting no biopsies, biopsying on the basis of the marker is the
 equivalent of a strategy that found 3 cancers per hundred patients
 without conducting any unnecessary biopsies.”</p>
 </div>
-<div id="interventions-avoided" class="section level4">
-<h4>Interventions Avoided</h4>
+</div>
+<div id="interventions-avoided" class="section level3">
+<h3>Interventions Avoided</h3>
 <p>In many cases, the default clinical strategy is to intervene on all
 patients, and thus the aim of a model or marker is to help reduce
 unnecessary interventions. In contrast to the traditional method, where
@@ -5872,7 +5873,6 @@ In our cancer biopsy example, for instance, we might interested in
 whether we could reduce the number of biopsies. in the table that was
 saved out. To view decrease in interventions graphically, we would only
 need to specify it in our command.</p>
-</div>
 <div id="section-26" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
 <div id="r-13" class="section level5">
@@ -6063,7 +6063,7 @@ df_time_to_cancer_dx &lt;-
 </div>
 <div id="stata-15" class="section level5">
 <h5>Stata</h5>
-<pre class="stata"><code>* Run the cox model and save out baseline survival in the “surv_func” variable
+<pre class="stata"><code>* Run the cox model and save out baseline survival in the &quot;surv_func&quot; variable
 stcox age famhistory marker, basesurv(surv_func)
 
 * get linear predictor for calculation of risk
@@ -6881,12 +6881,12 @@ dca(cancer ~ marker,
 </div>
 <div id="stata-20" class="section level5">
 <h5>Stata</h5>
-<pre class="stata"><code>dca cancer high_risk, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
+<pre class="stata"><code>dca cancer marker, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
 </div>
 <div id="sas-20" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer,
-     predictors = risk_group,
+     predictors = marker,
      probability=no,
      harm = 0.0333,
      graph = yes, xstop = 0.35);</code></pre>
@@ -6968,7 +6968,7 @@ local harm_conditional = r(mean)*`harm_marker&#39;
 encode (risk_group), g(risk_category)
 * Run the decision curve
 dca cancer risk_category, ///
-probability(no) harm(`harm_conditional&#39;) xstop(0.25) xlabel(0(0.05)0.25)</code></pre>
+probability(no) harm(`harm_conditional&#39;) xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
 </div>
 <div id="sas-21" class="section level5">
 <h5>SAS</h5>
@@ -6996,7 +6996,7 @@ RUN;
 %LET harm_conditional = %SYSEVALF(&amp;meanrisk.*&amp;harm_marker.);
 
 * Run the decision curve;
-%DCA(data = data_cancer, outcome = cancer, predictors = high_risk,
+%DCA(data = data_cancer, outcome = cancer, predictors = risk_group,
      probability=no,
      harm = &amp;harm_conditional., xstop = 0.35);</code></pre>
 </div>

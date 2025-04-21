@@ -21,7 +21,7 @@ logit cancer famhistory
 
 /* ---- dca_famhistory ----- */
 * Run the decision curve: family history is coded as 0 or 1, i.e. a probability
-* so no need to specify the “probability” option
+* so no need to specify the "probability" option
 dca cancer famhistory
 
 /* ---- dca_famhistory2 ----- */
@@ -57,7 +57,7 @@ dca cancer phat_Brown, xstop(0.35) xlabel(0(0.05)0.35)
 
 /* ---- joint ----- */
 * Create a variable for the strategy of treating only high risk patients
-* This will be 1 for treat and 0 for don’t treat
+* This will be 1 for treat and 0 for don't treat
 g high_risk = risk_group=="high"
 label var high_risk "Treat Only High Risk Group"
 
@@ -74,7 +74,7 @@ label var conditional "Treat via Conditional Approach"
 dca cancer high_risk joint conditional, xstop(0.35) xlabel(0(0.05)0.35)
 
 /* ---- dca_harm_simple ----- */
-dca cancer high_risk, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)
+dca cancer marker, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)
 
 /* ---- dca_harm ----- */
 * the harm of measuring the marker is stored in a local
@@ -90,11 +90,11 @@ local harm_conditional = r(mean)*`harm_marker'
 encode (risk_group), g(risk_category)
 * Run the decision curve
 dca cancer risk_category, ///
-probability(no) harm(`harm_conditional') xstop(0.25) xlabel(0(0.05)0.25)
+probability(no) harm(`harm_conditional') xstop(0.35) xlabel(0(0.05)0.35)
 
 /* ---- dca_table ----- */
 * Run the decision curve and save out net benefit results
-* Specifying xby(.05) since we’d want 5% increments
+* Specifying xby(.05) since we'd want 5% increments
 dca cancer marker, prob(no) xstart(0.05) xstop(0.35) xby(0.05) nograph ///
  saving("DCA Output marker.dta", replace)
 
@@ -134,7 +134,7 @@ label variable cancer_cr "Cancer Diagnosis Status"
 stset ttcancer, f(cancer)
 
 /* ---- coxph ----- */
-* Run the cox model and save out baseline survival in the “surv_func” variable
+* Run the cox model and save out baseline survival in the "surv_func" variable
 stcox age famhistory marker, basesurv(surv_func)
 
 * get linear predictor for calculation of risk
