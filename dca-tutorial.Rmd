@@ -215,7 +215,7 @@ Hence, we would conclude that using family history to determine who to biopsy wo
 
 ### Multivariable Decision Curve Analysis
 
-#### Evaluation of New Models
+### Evaluation of New Models
 
 We want to examine the value of a statistical model that incorporates family history, age, and the marker.
 First, we will build the logistic regression model with all three variables, and then save  the predicted probability of having cancer based on the model.
@@ -268,7 +268,7 @@ Again, this is easily explained: the negative predictive value is 87%, so a pati
 The net benefit for a binary variable is equivalent to biopsy no-one at the positive predictive value.
 This is because for a binary variable, a patient with the characteristic is given a risk at the positive predictive value.
 
-#### Evaluation of Published Models
+### Evaluation of Published Models
 
 Imagine that a model was published by Brown et al. with respect to our cancer biopsy data set.
 The authors reported a statistical model with coefficients of 0.75 for a positive family history of cancer; 0.26 for each increased year of age, and an intercept of -17.5.
@@ -283,7 +283,7 @@ As such, the Brown et al. model should not be used in clinical practice.
 This effect, a model being harmful, occurs due to miscalibration, that is, when patients are given risks that are too high or too low.
 Note that miscalibration only occurs rarely when models are created and tested on the same data set, such as in the example where we created a model with both family history and the marker.
 
-#### Joint and Conditional Test Approaches
+### Joint and Conditional Test Approaches
 
 In clinical practice, we often use different strategies to decide which patients to treat. Let's examine two approaches:
 
@@ -304,7 +304,7 @@ add_tabset_codes("dca_joint")
 
 As we can see from the decision curve, the different approaches to combining risk group information with the marker have varying clinical utility across different threshold probabilities.
 
-#### Saving out Net Benefit Values
+### Saving out Net Benefit Values
 
 We can save out net benefit for a decision curve for further analysis or presentation in a table.
 We simply need to specify the name of the file we'd like it to be saved as.
@@ -326,7 +326,7 @@ The saved table lists the range of threshold probability that we specified, foll
 Net benefit has a ready clinical interpretation.
 The value of 0.03 at a threshold probability of 20% can be interpreted as: "Comparing to conducting no biopsies, biopsying on the basis of the marker is the equivalent of a strategy that found 3 cancers per hundred patients without conducting any unnecessary biopsies."
 
-#### Interventions Avoided
+### Interventions Avoided
 
 In many cases, the default clinical strategy is to intervene on all patients, and thus the aim of a model or marker is to help reduce unnecessary interventions.
 In contrast to the traditional method, where net benefit is calculated in terms of the net increase in true positives compared to no treatment, we can also calculate net benefit in terms of a net decrease in false positives compared to the "treat all" strategy.

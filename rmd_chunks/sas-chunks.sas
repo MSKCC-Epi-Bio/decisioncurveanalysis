@@ -32,7 +32,7 @@ PROC LOGISTIC DATA = data_cancer DESCENDING;
 RUN;
 
 ## ---- sas-dca_famhistory -----
-* Run the decision curve: family history is coded as 0 or 1, i.e. a probability, so no need to specify the “probability” option;
+* Run the decision curve: family history is coded as 0 or 1, i.e. a probability, so no need to specify the "probability" option;
 %DCA(data = data_cancer, outcome = cancer, predictors = famhistory, graph = yes);
 
 ## ---- sas-dca_famhistory2 -----
@@ -92,7 +92,7 @@ RUN;
 
 ## ---- sas-dca_harm_simple -----
 %DCA(data = data_cancer, outcome = cancer,
-     predictors = risk_group,
+     predictors = marker,
      probability=no,
      harm = 0.0333,
      graph = yes, xstop = 0.35);
@@ -122,7 +122,7 @@ RUN;
 %LET harm_conditional = %SYSEVALF(&meanrisk.*&harm_marker.);
 
 * Run the decision curve;
-%DCA(data = data_cancer, outcome = cancer, predictors = high_risk,
+%DCA(data = data_cancer, outcome = cancer, predictors = risk_group,
      probability=no,
      harm = &harm_conditional., xstop = 0.35);
 
