@@ -82,13 +82,15 @@ local harm_marker = 0.0333
 * in the conditional test, only patients at intermediate risk have their marker measured
 g intermediate_risk = (risk_group=="intermediate")
 
-* harm of the conditional approach is proportion of patients who have the marker measured multiplied by the harm
+* harm of the conditional approach is proportion of patients who have the marker measured multiplied by the harm of measuring
 sum intermediate_risk
 local harm_conditional = r(mean)*`harm_marker'
 
+*convert risk group to a numerical variable to use in the decision curve analysis
+encode (risk_group), g(risk_category)
 * Run the decision curve
-dca cancer high_risk joint conditional, ///
- probability(no) harm(`harm_conditional') xstop(0.35) xlabel(0(0.05)0.35)
+dca cancer risk_category, ///
+probability(no) harm(`harm_conditional') xstop(0.25) xlabel(0(0.05)0.25)
 
 ## ---- stata-dca_table -----
 * Run the decision curve and save out net benefit results
@@ -182,18 +184,18 @@ dca casecontrol cancerpredmarker, prevalence(0.20) xstop(0.50)
 ## ---- stata-cross_validation -----
 * Load Original Dataset
 import delimited "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv", clear
- 
+
 * Start by specifying whether cross validation will be done once or multiple times
 * The global variable cv specifies the number of repeated crossvalidations.
 * Set global cv to 1 for a single crossvalidation, but, say, 25 for multiple crossvalidation
 global cv=25
- 
+
 forvalues i=1(1)$cv {
   * Local macros to store the names of model.
   local prediction1 = "model"
   * Create variables to later store probabilities from each prediction model
   quietly g `prediction1'=.
- 
+
   * Create a variable to be used to `randomize' the patients.
   quietly g u = uniform()
   * Sort by the event to ensure equal number of patients with the event are in each
@@ -201,7 +203,7 @@ forvalues i=1(1)$cv {
   sort cancer u
   * Assign each patient into one of ten groups
   g group = mod(_n, 10) + 1
- 
+
   * Loop through to run through for each of the ten groups
   forvalues j=1(1)10 {
     * First for the "base" model:
@@ -216,12 +218,12 @@ forvalues i=1(1)$cv {
     * patients
     drop ptemp
   }
- 
+
   * Creating a temporary file to store the results of each of the iterations of our
   * decision curve for the multiple the 10 fold cross validation
   * This step may omitted if the optional forvalues loop was excluded.
   tempfile dca`i'
- 
+
   * Run decision curve, and save the results to the tempfile.
   * For those excluding the optional multiple cross validation, this decision curve
   * (to be seen by excluding "nograph") and the results (saved under the name of your
@@ -230,7 +232,7 @@ forvalues i=1(1)$cv {
   saving("`dca`i''")
   drop u group `prediction1'
 } // This closing bracket ends the initial loop for the multiple cross validation.
- 
+
 * It is also necessary for those who avoided the multiple cross validation
 * by changing the value of the forvalues loop from 200 to 1*/
 * The following is only used for the multiple 10 fold cross validations.
@@ -239,16 +241,16 @@ forvalues i=2(1)$cv {
   * Append all values of the multiple cross validations into the first file
   append using "`dca`i''"
 }
- 
+
 * Calculate the average net benefit across all iterations of the multiple
 * cross validation
 collapse all none model model_i, by(threshold)
 save "Cross Validation DCA Output.dta", replace
- 
+
 * Labeling the variables so that the legend will have the proper labels
 label var all "Treat All"
 label var none "Treat None"
 label var model "Cross-validated Prediction Model"
- 
+
 * Plotting the figure of all the net benefits.
 twoway (line all threshold if all>-0.05, sort) || (line none model threshold, sort)
