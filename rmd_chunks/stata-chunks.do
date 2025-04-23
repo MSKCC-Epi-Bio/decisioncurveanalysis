@@ -41,8 +41,31 @@ dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.01)0.35)
 ## ---- stata-dca_smooth -----
 dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.01)0.35) smooth
 
-## ---- stata-dca_smooth2 -----
-dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.05)0.35)
+## ---- stata-dca_smooth2 ----
+dca cancer cancerpredmarker famhistory risk_group, xstop(0.35) xby(0.05) probability(no risk_group)
+
+/* ---- stata-dca_combined_smooth ---- */
+// Combine both smoothing methods: wider intervals and smoothed lines
+dca cancer cancerpredmarker famhistory risk_group, xstop(0.35) xby(0.05) smooth(0.3) probability(no risk_group)
+
+/* ---- stata-dca_formatting ---- */
+// Add formatting options to improve graph appearance
+dca cancer cancerpredmarker, xstop(0.25) lcolor(red green blue) lwidth(thick medium thin) lpattern(solid dash dot)
+
+/* ---- stata-dca_legend_off ---- */
+// Turn off the legend for a cleaner publication-ready figure
+dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.05)0.35) legend(off)
+
+/* ---- stata-dca_create_low_incidence ---- */
+// Create a dataset with lower incidence of cancer
+set seed 123
+g cancer_temp = cancer
+replace cancer_temp=. if cancer==1 & uniform()<.9
+dca cancer_temp cancerpredmarker, xstop(0.25) xlabel(0(0.05)0.25)
+
+/* ---- stata-dca_adjust_axes ---- */
+// Adjust both x and y axes for better visualization
+dca cancer_temp cancerpredmarker, xstop(0.1) ymin(-0.005) xlabel(0(0.02)0.1) ylabel(-0.005(0.01)0.05)
 
 ## ---- stata-pub_model -----
 * Use the coefficients from the Brown model

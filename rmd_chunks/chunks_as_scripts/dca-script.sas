@@ -32,7 +32,7 @@ PROC LOGISTIC DATA = data_cancer DESCENDING;
 RUN;
 
 /* ---- dca_famhistory ----- */
-* Run the decision curve: family history is coded as 0 or 1, i.e. a probability, so no need to specify the “probability” option;
+* Run the decision curve: family history is coded as 0 or 1, i.e. a probability, so no need to specify the "probability" option;
 %DCA(data = data_cancer, outcome = cancer, predictors = famhistory, graph = yes);
 
 /* ---- dca_famhistory2 ----- */
@@ -53,7 +53,84 @@ RUN;
 %DCA(data = data_cancer, outcome = cancer, predictors = cancerpredmarker famhistory, graph = yes, xstop = 0.35, smooth=yes);
 
 /* ---- dca_smooth2 ----- */
-%DCA(data = data_cancer, outcome = cancer, predictors = cancerpredmarker famhistory, graph = yes, xstop = 0.35, xby=0.05, smooth=no);
+%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker famhistory risk_group,
+     probability = no risk_group,
+     xby = 0.05, xstop = 0.35);
+
+/* ---- dca_combined_smooth ----- */
+/* Combine both smoothing methods: wider intervals and loess smoothing */
+%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker famhistory risk_group,
+     probability = no risk_group,
+     xby = 0.05, xstop = 0.35, smooth = loess);
+
+/* ---- dca_formatting ----- */
+/* Add formatting options to improve graph appearance */
+%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker,
+     xstop = 0.25);
+
+/* Example of custom plot formatting using PROC SGPLOT */
+PROC SGPLOT DATA = dca;
+  SERIES X = threshold Y = all / LINEATTRS = (COLOR = red THICKNESS = 3 PATTERN = solid) NAME = "all";
+  SERIES X = threshold Y = none / LINEATTRS = (COLOR = green THICKNESS = 2 PATTERN = dash) NAME = "none";
+  SERIES X = threshold Y = cancerpredmarker / LINEATTRS = (COLOR = blue THICKNESS = 1 PATTERN = dot) NAME = "marker";
+  XAXIS LABEL = "Threshold Probability" VALUES = (0 to 0.25 by 0.05);
+  YAXIS LABEL = "Net Benefit";
+  KEYLEGEND "all" "none" "marker" / TITLE = "";
+RUN;
+
+/* ---- dca_legend_off ----- */
+/* Turn off the legend for a cleaner publication-ready figure */
+%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker famhistory,
+     xstop = 0.35);
+
+/* Custom plot with legend turned off */
+PROC SGPLOT DATA = dca;
+  SERIES X = threshold Y = all;
+  SERIES X = threshold Y = none;
+  SERIES X = threshold Y = cancerpredmarker;
+  SERIES X = threshold Y = famhistory;
+  XAXIS LABEL = "Threshold Probability" VALUES = (0 to 0.35 by 0.05);
+  YAXIS LABEL = "Net Benefit";
+  /* No KEYLEGEND statement means no legend will be displayed */
+RUN;
+
+/* ---- dca_create_low_incidence ----- */
+/* Create a dataset with lower incidence of cancer */
+DATA data_cancer_low;
+  SET data_cancer;
+  CALL STREAMINIT(123); /* Set seed for reproducibility */
+
+  /* Keep only 10% of cancer cases */
+  IF cancer = 1 THEN DO;
+    IF RAND("UNIFORM") < 0.1 THEN cancer_temp = 1;
+    ELSE cancer_temp = .;
+  END;
+  ELSE cancer_temp = cancer;
+RUN;
+
+/* Run DCA with default y-axis */
+%DCA(data = data_cancer_low, outcome = cancer_temp,
+     predictors = cancerpredmarker,
+     xstop = 0.25);
+
+/* ---- dca_adjust_axes ----- */
+/* Adjust both x and y axes for better visualization */
+%DCA(data = data_cancer_low, outcome = cancer_temp,
+     predictors = cancerpredmarker,
+     xstop = 0.1);
+
+/* Custom plot with adjusted axes */
+PROC SGPLOT DATA = dca;
+  SERIES X = threshold Y = all;
+  SERIES X = threshold Y = none;
+  SERIES X = threshold Y = cancerpredmarker;
+  XAXIS LABEL = "Threshold Probability" VALUES = (0 to 0.1 by 0.02);
+  YAXIS LABEL = "Net Benefit" MIN = -0.005 MAX = 0.05;
+RUN;
 
 /* ---- pub_model ----- */
 DATA data_cancer;
@@ -92,7 +169,7 @@ RUN;
 
 /* ---- dca_harm_simple ----- */
 %DCA(data = data_cancer, outcome = cancer,
-     predictors = risk_group,
+     predictors = marker,
      probability=no,
      harm = 0.0333,
      graph = yes, xstop = 0.35);
@@ -122,7 +199,7 @@ RUN;
 %LET harm_conditional = %SYSEVALF(&meanrisk.*&harm_marker.);
 
 * Run the decision curve;
-%DCA(data = data_cancer, outcome = cancer, predictors = high_risk,
+%DCA(data = data_cancer, outcome = cancer, predictors = risk_group,
      probability=no,
      harm = &harm_conditional., xstop = 0.35);
 

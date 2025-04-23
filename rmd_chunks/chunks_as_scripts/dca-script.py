@@ -12,16 +12,16 @@ import statsmodels.api as sm
 import lifelines
 
 # ---- import_cancer ----- 
-  
+
 df_cancer_dx = pd.read_csv('https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv')
-  
+
 # ---- model ----- 
-  
+
 mod1 = sm.GLM.from_formula('cancer ~ famhistory', data=df_cancer_dx, family=sm.families.Binomial())
 mod1_results = mod1.fit()
 
 print(mod1_results.summary())
-  
+
 # ---- dca_famhistory ----- 
 
 dca_famhistory_df = \
@@ -104,6 +104,164 @@ plot_graphs(
     y_limits=[-0.05, 0.2],
     graph_type='net_benefit'
 )
+
+# ---- dca_smooth2 ----- 
+# ... existing code ...
+dca_smooth2_df = \
+  dca(
+      data=df_cancer_dx,
+      outcome='cancer',
+      modelnames=['cancerpredmarker', 'famhistory', 'risk_group'],
+      thresholds=np.arange(0, 0.36, 0.05),
+      models_to_prob=['risk_group']  # Specify risk_group is not a probability
+  )
+
+plot_graphs(
+  plot_df=dca_smooth2_df,
+  graph_type='net_benefit',
+  smooth_frac=0
+)
+
+# ---- dca_combined_smooth ----- 
+# Combine both smoothing methods: wider intervals and smoothed lines
+dca_combined_smooth_df = \
+  dca(
+      data=df_cancer_dx,
+      outcome='cancer',
+      modelnames=['cancerpredmarker', 'famhistory', 'risk_group'],
+      thresholds=np.arange(0, 0.36, 0.05),  # Wider intervals
+      models_to_prob=['risk_group']  # Specify risk_group is not a probability
+  )
+
+plot_graphs(
+  plot_df=dca_combined_smooth_df,
+  graph_type='net_benefit',
+  smooth_frac=0.5  # Add smoothing
+)
+
+# ---- dca_formatting ----- 
+# Add formatting options to improve graph appearance
+dca_formatting_df = \
+  dca(
+      data=df_cancer_dx,
+      outcome='cancer',
+      modelnames=['cancerpredmarker'],
+      thresholds=np.arange(0, 0.26, 0.01)
+  )
+
+# Custom plot with specific formatting
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Extract data
+treat_all = dca_formatting_df[dca_formatting_df['model'] == 'all']
+treat_none = dca_formatting_df[dca_formatting_df['model'] == 'none']
+model = dca_formatting_df[dca_formatting_df['model'] == 'cancerpredmarker']
+
+# Plot with custom formatting
+ax.plot(treat_all['threshold'], treat_all['net_benefit'],
+        color='red', linestyle='solid', linewidth=2, label='Treat All')
+ax.plot(treat_none['threshold'], treat_none['net_benefit'],
+        color='green', linestyle='dashed', linewidth=1.5, label='Treat None')
+ax.plot(model['threshold'], model['net_benefit'],
+        color='blue', linestyle='dotted', linewidth=1, label='Marker')
+
+ax.set_xlabel('Threshold Probability')
+ax.set_ylabel('Net Benefit')
+ax.legend()
+plt.show()
+
+# ---- dca_legend_off ----- 
+# Turn off the legend for a cleaner publication-ready figure
+dca_legend_off_df = \
+  dca(
+      data=df_cancer_dx,
+      outcome='cancer',
+      modelnames=['cancerpredmarker', 'famhistory'],
+      thresholds=np.arange(0, 0.36, 0.01)
+  )
+
+# Custom plot with no legend
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Extract data
+treat_all = dca_legend_off_df[dca_legend_off_df['model'] == 'all']
+treat_none = dca_legend_off_df[dca_legend_off_df['model'] == 'none']
+model1 = dca_legend_off_df[dca_legend_off_df['model'] == 'cancerpredmarker']
+model2 = dca_legend_off_df[dca_legend_off_df['model'] == 'famhistory']
+
+# Plot with no legend
+ax.plot(treat_all['threshold'], treat_all['net_benefit'])
+ax.plot(treat_none['threshold'], treat_none['net_benefit'])
+ax.plot(model1['threshold'], model1['net_benefit'])
+ax.plot(model2['threshold'], model2['net_benefit'])
+
+ax.set_xlabel('Threshold Probability')
+ax.set_ylabel('Net Benefit')
+# No legend is displayed
+plt.show()
+
+# ---- dca_create_low_incidence ----- 
+# Create a dataset with lower incidence of cancer
+import numpy as np
+np.random.seed(123)
+
+# Make a copy of the original dataframe
+df_cancer_dx_low = df_cancer_dx.copy()
+
+# Create a mask for cancer cases
+cancer_mask = (df_cancer_dx_low['cancer'] == 1)
+random_mask = np.random.uniform(0, 1, size=len(df_cancer_dx_low)) >= 0.9
+
+# Set 90% of cancer cases to NaN
+df_cancer_dx_low.loc[cancer_mask & random_mask, 'cancer_temp'] = 1
+df_cancer_dx_low.loc[cancer_mask & ~random_mask, 'cancer_temp'] = np.nan
+df_cancer_dx_low.loc[~cancer_mask, 'cancer_temp'] = df_cancer_dx_low.loc[~cancer_mask, 'cancer']
+
+# Run DCA with default y-axis
+dca_low_incidence_df = \
+  dca(
+      data=df_cancer_dx_low,
+      outcome='cancer_temp',
+      modelnames=['cancerpredmarker'],
+      thresholds=np.arange(0, 0.26, 0.01)
+  )
+
+plot_graphs(
+  plot_df=dca_low_incidence_df,
+  graph_type='net_benefit'
+)
+
+# ---- dca_adjust_axes ----- 
+# Adjust both x and y axes for better visualization
+dca_adjust_axes_df = \
+  dca(
+      data=df_cancer_dx_low,
+      outcome='cancer_temp',
+      modelnames=['cancerpredmarker'],
+      thresholds=np.arange(0, 0.11, 0.01)  # Restricted x-axis
+  )
+
+# Custom plot with adjusted axes
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Extract data
+treat_all = dca_adjust_axes_df[dca_adjust_axes_df['model'] == 'all']
+treat_none = dca_adjust_axes_df[dca_adjust_axes_df['model'] == 'none']
+model = dca_adjust_axes_df[dca_adjust_axes_df['model'] == 'cancerpredmarker']
+
+# Plot with custom y-axis limits
+ax.plot(treat_all['threshold'], treat_all['net_benefit'], label='Treat All')
+ax.plot(treat_none['threshold'], treat_none['net_benefit'], label='Treat None')
+ax.plot(model['threshold'], model['net_benefit'], label='Marker')
+
+ax.set_xlabel('Threshold Probability')
+ax.set_ylabel('Net Benefit')
+ax.set_ylim(-0.005, 0.05)  # Set y-axis limits
+ax.set_xticks(np.arange(0, 0.11, 0.02))  # Set x-axis ticks
+ax.legend()
+plt.show()
 
 # ---- pub_model ----- 
 
@@ -210,20 +368,20 @@ dca_intervention_df = \
       thresholds=np.arange(0.05, 0.36, 0.01),
       models_to_prob=['marker']
   )
-  
+
 plot_graphs(
   plot_df=dca_intervention_df,
   graph_type='net_intervention_avoided',
   smooth_frac=0.5
 )
-  
+
 # ---- import_ttcancer ----- 
 
 df_time_to_cancer_dx = \
     pd.read_csv(
         "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_time_to_cancer_dx.csv"
     )
-    
+
 # ---- coxph ----- 
 
 cph = lifelines.CoxPHFitter()
