@@ -81,17 +81,36 @@ dca(cancer ~ famhistory + cancerpredmarker,
   plot(smooth = FALSE)
 
 ## ---- r-dca_formatting -----
-# Add formatting options to improve graph appearance
+library(dplyr)
+library(ggplot2)
+
 dcurves::dca(
-  data = df_cancer_dx,
-  formula = cancer ~ cancerpredmarker,
+  data       = df_cancer_dx,
+  formula    = cancer ~ cancerpredmarker,
   thresholds = seq(0, 0.25, by = 0.01)
 ) |>
-  plot() +
-  # Add custom colors, line types, and line widths
+  as_tibble() |>
+  filter(!is.na(net_benefit)) |>
+  ggplot(aes(
+    x        = threshold,
+    y        = net_benefit,
+    color    = label,
+    linetype = label,
+    size     = label
+  )) +
+  geom_line() +
+  ylim(-0.05, 0.15) +
   scale_color_manual(values = c("red", "green", "blue")) +
-  scale_linetype_manual(values = c("solid", "dashed", "dotted")) +
-  scale_size_manual(values = c(1.5, 1, 0.5))
+  scale_linetype_manual(values = c("solid", "dashed", "dashed")) +
+  scale_size_manual(values = c(1.5, 1, 0.5)) +
+  labs(
+    x        = "Threshold Probability",
+    y        = "Net Benefit",
+    color    = "Model",
+    linetype = "Model",
+    size     = "Model"
+  ) +
+  theme_minimal()
 
 ## ---- r-dca_legend_off -----
 # Turn off the legend for a cleaner publication-ready figure
@@ -102,7 +121,6 @@ dcurves::dca(
 ) |>
   plot() +
   theme(legend.position = "none")
-
 
 ## ---- r-dca_create_low_incidence -----
 # Create a dataset with lower incidence of cancer

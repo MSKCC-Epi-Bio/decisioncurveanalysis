@@ -237,7 +237,11 @@ Accordingly, we would conclude that using the model to decide whether to biopsy 
 
 ### Graph Appearance Options
 
-There are various options for improving the look of the graph. First, regular graph options apply. In Stata, for instance, you can add lcolor, lwidth and lpattern as options. For instance, `dca cancer marker, xstop(0.25) lcolor(red green blue) lwidth(thick medium thin) lpattern(solid dash dot)` would have "Treat all" as a thick, red, solid line, "treat none" as a medium thickness, green dashed line and marker as a thin, blue, dashed line (note: this would not look much good, but is given for illustrative purposes). In R, Python, and SAS, similar customization options are available through their respective plotting systems.
+There are various options for improving the look of the graph. First, regular graph options apply. You can change line color, width, and patterns, and in this example, the "Treat All" plot shows as a thick, red, solid line, while "Treat None" is of medium thickness, green, and dashed. "Marker" is a thin, blue, dashed line (note: this would not look much good, but is given for illustrative purposes).
+
+In Stata, for instance, you can add lcolor, lwidth and lpattern as options. For instance, `dca cancer marker, xstop(0.25) lcolor(red green blue) lwidth(thick medium thin) lpattern(solid dash dot)` would have "Treat all" as a thick, red, solid line, "treat none" as a medium thickness, green dashed line and marker as a thin, blue, dashed line (note: this would not look much good, but is given for illustrative purposes). In R, Python, and SAS, similar customization options are available through their respective plotting systems.
+
+![Decision curve plot showing formatting options](assets/images/dca_formatting_example.png)
 
 ```{r, dca_formatting, echo=FALSE, message = FALSE, results='asis'}
 add_tabset_codes("dca_formatting")
