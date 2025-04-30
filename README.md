@@ -13,32 +13,18 @@ This repository contains the source code and materials used to build the Decisio
 ### In R Console
 
 ```r
-# Clean the site (remove generated files)
+# 1. Clean the site (remove generated files, especially cache)
 rmarkdown::clean_site(preview = FALSE)
 
-# Render main site
+# 2. Render main site (this builds index.html and other core pages)
 rmarkdown::render_site()
 
-# Render language-specific versions of tutorial
+# Optional: Render language-specific versions of the tutorial
+# (Run this *after* render_site)
 languages <- c("r", "stata", "sas", "python")
 for (lang in languages) {
-  rmarkdown::render("dca-tutorial.Rmd", 
+  rmarkdown::render("dca-tutorial.Rmd",
                     output_file = paste0("dca-tutorial-", lang, ".html"),
                     params = list(language = lang))
 }
 ```
-
-### From Terminal
-
-```bash
-# Clean the site
-Rscript -e 'rmarkdown::clean_site(preview = FALSE)'
-
-# Render main site
-Rscript -e 'rmarkdown::render_site()'
-
-# Render language-specific versions (all in one command)
-Rscript -e 'languages <- c("r", "stata", "sas", "python"); for (lang in languages) { rmarkdown::render("dca-tutorial.Rmd", output_file = paste0("dca-tutorial-", lang, ".html"), params = list(language = lang)) }'
-```
-
-
