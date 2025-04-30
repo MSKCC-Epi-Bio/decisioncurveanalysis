@@ -90,23 +90,6 @@ plot_graphs(
 
 ## ---- python-dca_smooth2 -----
 
-# When running the dca, increase the 'thresholds' interval from 0.01 to 0.05 to get a smoother curve
-dca_multi_df = \
-    dca(
-        data=df_cancer_dx,
-        outcome='cancer',
-        modelnames=['famhistory', 'cancerpredmarker'],
-        thresholds=np.arange(0,0.36,0.05) # here we increase the interval to 0.05
-    )
-
-plot_graphs(
-    plot_df=dca_multi_df,
-    y_limits=[-0.05, 0.2],
-    graph_type='net_benefit'
-)
-
-## ---- python-dca_smooth2 -----
-# ... existing code ...
 dca_smooth2_df = \
   dca(
       data=df_cancer_dx,
@@ -123,6 +106,7 @@ plot_graphs(
 )
 
 ## ---- python-dca_combined_smooth -----
+
 # Combine both smoothing methods: wider intervals and smoothed lines
 dca_combined_smooth_df = \
   dca(

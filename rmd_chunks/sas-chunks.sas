@@ -167,6 +167,10 @@ RUN;
      predictors = high_risk joint conditional,
      graph = yes, xstop = 0.35);
 
+## ---- sas-dca_case_control -----
+%DCA(data = data_case_control, outcome = casecontrol,
+     predictors = cancerpredmarker, prevalence = 0.20);
+
 ## ---- sas-dca_harm_simple -----
 %DCA(data = data_cancer, outcome = cancer,
      predictors = marker,

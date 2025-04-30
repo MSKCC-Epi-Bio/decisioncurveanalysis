@@ -80,32 +80,6 @@ dca(cancer ~ famhistory + cancerpredmarker,
 ) %>%
   plot(smooth = FALSE)
 
-## ---- r-dca_smooth -----
-dca(cancer ~ famhistory + cancerpredmarker,
-  data = df_cancer_dx,
-  thresholds = seq(0, 0.35, 0.01),
-  label = list(cancerpredmarker = "Prediction Model")
-) %>%
-  plot(smooth = TRUE)
-
-## ---- r-dca_smooth2 -----
-dcurves::dca(
-  data = df_cancer_dx,
-  formula = cancer ~ cancerpredmarker + famhistory + risk_group,
-  thresholds = seq(0, 0.35, by = 0.05),
-  as_probability = "risk_group"
-)
-
-## ---- r-dca_combined_smooth -----
-# Combine both smoothing methods: wider intervals and smoothed lines
-dcurves::dca(
-  data = df_cancer_dx,
-  formula = cancer ~ cancerpredmarker + famhistory + risk_group,
-  thresholds = seq(0, 0.35, by = 0.05),
-  as_probability = "risk_group"
-) |>
-  plot(smooth = TRUE)
-
 ## ---- r-dca_formatting -----
 # Add formatting options to improve graph appearance
 dcurves::dca(
@@ -128,6 +102,7 @@ dcurves::dca(
 ) |>
   plot() +
   theme(legend.position = "none")
+
 
 ## ---- r-dca_create_low_incidence -----
 # Create a dataset with lower incidence of cancer
@@ -160,6 +135,33 @@ dcurves::dca(
   coord_cartesian(ylim = c(-0.005, 0.05)) +
   scale_x_continuous(breaks = seq(0, 0.1, by = 0.02))
 
+
+## ---- r-dca_smooth -----
+dca(cancer ~ famhistory + cancerpredmarker,
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  label = list(cancerpredmarker = "Prediction Model")
+) %>%
+  plot(smooth = TRUE)
+
+## ---- r-dca_smooth2 -----
+dcurves::dca(
+  data = df_cancer_dx,
+  formula = cancer ~ cancerpredmarker + famhistory + risk_group,
+  thresholds = seq(0, 0.35, by = 0.05),
+  as_probability = "risk_group"
+)
+
+## ---- r-dca_combined_smooth -----
+# Combine both smoothing methods: wider intervals and smoothed lines
+dcurves::dca(
+  data = df_cancer_dx,
+  formula = cancer ~ cancerpredmarker + famhistory + risk_group,
+  thresholds = seq(0, 0.35, by = 0.05),
+  as_probability = "risk_group"
+) |>
+  plot(smooth = TRUE)
+
 ## ---- r-pub_model -----
 # Use the coefficients from the Brown model
 df_cancer_dx <-
@@ -191,6 +193,12 @@ df_cancer_dx <-
       ifelse(risk_group == "high" | (risk_group == "intermediate" & cancerpredmarker > 0.15), 1, 0)
   )
 
+
+
+
+
+
+
 ## ---- r-dca_joint -----
 dca(cancer ~ high_risk + joint + conditional,
   data = df_cancer_dx,
@@ -203,8 +211,43 @@ dca(cancer ~ high_risk + joint + conditional,
 ) %>%
   plot(smooth = TRUE)
 
+
+## ---- r-import_case_control -----
+# import data
+df_cancer_dx_case_control <-
+  readr::read_csv(
+    file = "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv"
+  ) %>%
+  # assign variable labels. these labels will be carried through in the `dca()` output
+  labelled::set_variable_labels(
+    patientid = "Patient ID",
+    casecontrol = "Case-Control Status",
+    risk_group = "Risk Group",
+    age = "Patient Age",
+    famhistory = "Family History",
+    marker = "Marker",
+    cancerpredmarker = "Prediction Model"
+  )
+
+# summarize data
+df_cancer_dx_case_control %>%
+  select(-patientid) %>%
+  tbl_summary(
+    by = casecontrol,
+    type = all_dichotomous() ~ "categorical"
+  ) %>%
+  modify_spanning_header(all_stat_cols() ~ "**Case-Control Status**")
+
+## ---- r-dca_case_control -----
+dca(casecontrol ~ cancerpredmarker,
+  data = df_cancer_dx_case_control,
+  prevalence = 0.20,
+  thresholds = seq(0, 0.5, 0.01)
+) %>%
+  plot(smooth = TRUE)
+
 ## ---- r-dca_harm_simple -----
-# Run the decision curve
+# Run the decision curve incorporating simple harm of marker measurement
 dca(cancer ~ marker,
   data = df_cancer_dx,
   thresholds = seq(0, 0.35, 0.01),
@@ -230,7 +273,6 @@ dca(cancer ~ risk_group,
   harm = list(risk_group = harm_conditional)
 ) %>%
   plot(smooth = TRUE)
-
 
 ## ---- r-dca_table -----
 dca(cancer ~ marker,
@@ -320,40 +362,6 @@ dca(Surv(ttcancer, cancer_cr) ~ pr_failure18,
   time = 1.5,
   thresholds = seq(0, 0.5, 0.01),
   label = list(pr_failure18 = "Prediction Model")
-) %>%
-  plot(smooth = TRUE)
-
-## ---- r-import_case_control -----
-# import data
-df_cancer_dx_case_control <-
-  readr::read_csv(
-    file = "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv"
-  ) %>%
-  # assign variable labels. these labels will be carried through in the `dca()` output
-  labelled::set_variable_labels(
-    patientid = "Patient ID",
-    casecontrol = "Case-Control Status",
-    risk_group = "Risk Group",
-    age = "Patient Age",
-    famhistory = "Family History",
-    marker = "Marker",
-    cancerpredmarker = "Prediction Model"
-  )
-
-# summarize data
-df_cancer_dx_case_control %>%
-  select(-patientid) %>%
-  tbl_summary(
-    by = casecontrol,
-    type = all_dichotomous() ~ "categorical"
-  ) %>%
-  modify_spanning_header(all_stat_cols() ~ "**Case-Control Status**")
-
-## ---- r-dca_case_control -----
-dca(casecontrol ~ cancerpredmarker,
-  data = df_cancer_dx_case_control,
-  prevalence = 0.20,
-  thresholds = seq(0, 0.5, 0.01)
 ) %>%
   plot(smooth = TRUE)
 
