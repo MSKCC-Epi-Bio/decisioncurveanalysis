@@ -123,24 +123,23 @@ dcurves::dca(
   theme(legend.position = "none")
 
 # ---- dca_create_low_incidence ----- 
-# Create a dataset with lower incidence of cancer
+
 set.seed(123)
+
 df_cancer_dx_low <- df_cancer_dx |>
   mutate(
-    cancer_temp = case_when(
-      cancer == 1 & runif(n()) >= 0.1 ~ 1, # Keep only 10% of cancer cases
-      cancer == 1 & runif(n()) < 0.1 ~ NA, # Set 90% to NA
-      TRUE ~ cancer # Keep other values as is
-    )
-  )
+    u           = runif(n()),                       # one draw per row
+    cancer_temp = if_else(cancer == 1 & u < 0.9,    # 90 % of cancers → NA
+                          NA_real_,                 # (same as “.” in Stata)
+                          cancer)
+  ) |>
+  select(-u)                                        # drop helper
 
-# Run DCA with default y-axis
-dcurves::dca(
-  data = df_cancer_dx_low,
-  formula = cancer_temp ~ cancerpredmarker,
-  thresholds = seq(0, 0.25, by = 0.01)
-) |>
-  plot()
+dca(
+  cancer_temp ~ cancerpredmarker,                   # cancerpredmarker is *already* a
+  data       = df_cancer_dx_low,                    # predicted probability
+  thresholds = seq(0, 0.25, 0.01)
+)
 
 # ---- dca_adjust_axes ----- 
 # Adjust both x and y axes for better visualization

@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.2",
+    "Version": "4.5.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -5235,7 +5235,7 @@
     },
     "labelled": {
       "Package": "labelled",
-      "Version": "2.14.0",
+      "Version": "2.14.1",
       "Source": "Repository",
       "Type": "Package",
       "Title": "Manipulating Labelled Data",
@@ -5278,7 +5278,7 @@
       "Config/testthat/edition": "3",
       "Config/Needs/check": "memisc",
       "NeedsCompilation": "no",
-      "Author": "Joseph Larmarange [aut, cre] (<https://orcid.org/0000-0001-7097-700X>), Daniel Ludecke [ctb], Hadley Wickham [ctb], Michal Bojanowski [ctb], François Briatte [ctb]",
+      "Author": "Joseph Larmarange [aut, cre] (ORCID: <https://orcid.org/0000-0001-7097-700X>), Daniel Ludecke [ctb], Hadley Wickham [ctb], Michal Bojanowski [ctb], François Briatte [ctb]",
       "Repository": "CRAN"
     },
     "languageserver": {
@@ -9171,11 +9171,11 @@
     },
     "survival": {
       "Package": "survival",
-      "Version": "3.7-0",
+      "Version": "3.8-3",
       "Source": "Repository",
       "Title": "Survival Analysis",
       "Priority": "recommended",
-      "Date": "2024-06-01",
+      "Date": "2024-12-17",
       "Depends": [
         "R (>= 3.5.0)"
       ],

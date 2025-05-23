@@ -213,7 +213,7 @@ wheels = [
 
 [[package]]
 name = "dcurves"
-version = "1.1.3"
+version = "1.1.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lifelines" },
@@ -224,9 +224,9 @@ dependencies = [
     { name = "statsmodels" },
     { name = "typing" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/db/fe/50e1e08114ee0186158b051d1774d414b69e3c81d4d9bb93a84213f5fae1/dcurves-1.1.3.tar.gz", hash = "sha256:692c45fcbd4cc019c194a51eb49b21bda76c00da8eb6cc9935c3c6b7b77726a4", size = 4972530, upload-time = "2025-03-15T19:16:25.158Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/45/51/a60e25ca90cbb13450e209e0e107168f774e73b45c3bce43dcdd44c6f199/dcurves-1.1.4.tar.gz", hash = "sha256:dc4711dd29435f16bd87ed7d18c8215289a0a39d40eab5ec62b7ad1f04d4e7bc", size = 4907185, upload-time = "2025-05-22T21:02:18.405Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/28/33/b3c01dcbc146d1efc6fd2c6090253fb9e63da55446791933b226dba688de/dcurves-1.1.3-py3-none-any.whl", hash = "sha256:9bcc111166c684e94e9b152a77185f18e42ce048e73426899d6ec24e5e2a5801", size = 49145, upload-time = "2025-03-15T19:16:23.926Z" },
+    { url = "https://files.pythonhosted.org/packages/30/46/b50666736d6d1af6e75506967fa1be6e145726783c466bd9b1a60f8b40ca/dcurves-1.1.4-py3-none-any.whl", hash = "sha256:bea4fc3038f9534109e49fb55fb3290ca558e6602780214c564dd8648d58a956", size = 49662, upload-time = "2025-05-22T21:02:15.907Z" },
 ]
 
 [[package]]
@@ -269,7 +269,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "dcurves", specifier = ">=1.1.3" },
+    { name = "dcurves", specifier = "==1.1.4" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "nbformat", specifier = ">=5.10.4" },
     { name = "numpy", specifier = ">=2.2.6" },

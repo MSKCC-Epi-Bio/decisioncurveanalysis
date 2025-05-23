@@ -70,7 +70,7 @@ dca_multi_df = dca(
 plot_graphs(plot_df=dca_multi_df, y_limits=[-0.05, 0.2], graph_type="net_benefit")
 
 ## ---- python-dca_formatting -----
-# Add formatting options to improve graph appearance
+
 dca_formatting_df = dca(
     data=df_cancer_dx,
     outcome="cancer",
@@ -78,134 +78,78 @@ dca_formatting_df = dca(
     thresholds=np.arange(0, 0.26, 0.01),
 )
 
-# Custom plot with specific formatting
-import matplotlib.pyplot as plt
-
-fig, ax = plt.subplots(figsize=(8, 6))
-
-# Extract data
-treat_all = dca_formatting_df[dca_formatting_df["model"] == "all"]
-treat_none = dca_formatting_df[dca_formatting_df["model"] == "none"]
-model = dca_formatting_df[dca_formatting_df["model"] == "cancerpredmarker"]
-
-# Plot with custom formatting
-ax.plot(
-    treat_all["threshold"],
-    treat_all["net_benefit"],
-    color="red",
-    linestyle="solid",
-    linewidth=2,
-    label="Treat All",
+plot_graphs(
+    plot_df=dca_formatting_df,
+    graph_type="net_benefit",
+    y_limits=[-0.05, 0.15],
+    color_names=["blue", "red", "green"],
+    linestyles=["--", "-", "--"],
+    linewidths=[0.75, 3, 2],
 )
-ax.plot(
-    treat_none["threshold"],
-    treat_none["net_benefit"],
-    color="green",
-    linestyle="dashed",
-    linewidth=1.5,
-    label="Treat None",
-)
-ax.plot(
-    model["threshold"],
-    model["net_benefit"],
-    color="blue",
-    linestyle="dotted",
-    linewidth=1,
-    label="Marker",
-)
-
-ax.set_xlabel("Threshold Probability")
-ax.set_ylabel("Net Benefit")
-ax.legend()
-plt.show()
 
 ## ---- python-dca_legend_off -----
+
 # Turn off the legend for a cleaner publication-ready figure
 dca_legend_off_df = dca(
     data=df_cancer_dx,
     outcome="cancer",
-    modelnames=["cancerpredmarker", "famhistory"],
-    thresholds=np.arange(0, 0.36, 0.01),
+    modelnames=["cancerpredmarker"],
+    thresholds=np.arange(0, 0.26, 0.01),
 )
 
-# Custom plot with no legend
-fig, ax = plt.subplots(figsize=(8, 6))
-
-# Extract data
-treat_all = dca_legend_off_df[dca_legend_off_df["model"] == "all"]
-treat_none = dca_legend_off_df[dca_legend_off_df["model"] == "none"]
-model1 = dca_legend_off_df[dca_legend_off_df["model"] == "cancerpredmarker"]
-model2 = dca_legend_off_df[dca_legend_off_df["model"] == "famhistory"]
-
-# Plot with no legend
-ax.plot(treat_all["threshold"], treat_all["net_benefit"])
-ax.plot(treat_none["threshold"], treat_none["net_benefit"])
-ax.plot(model1["threshold"], model1["net_benefit"])
-ax.plot(model2["threshold"], model2["net_benefit"])
-
-ax.set_xlabel("Threshold Probability")
-ax.set_ylabel("Net Benefit")
-# No legend is displayed
-plt.show()
+plot_graphs(
+    plot_df=dca_legend_off_df,
+    graph_type="net_benefit",
+    y_limits=[-0.05, 0.15],
+    color_names=["blue", "red", "green"],
+    linestyles=["--", "-", "--"],
+    linewidths=[0.75, 3, 2],
+    show_legend=False,
+)
 
 ## ---- python-dca_create_low_incidence -----
-# Create a dataset with lower incidence of cancer
-import numpy as np
 
 np.random.seed(123)
 
-# Make a copy of the original dataframe
 df_cancer_dx_low = df_cancer_dx.copy()
+u = np.random.rand(len(df_cancer_dx_low))
 
-# Create a mask for cancer cases
-cancer_mask = df_cancer_dx_low["cancer"] == 1
-random_mask = np.random.uniform(0, 1, size=len(df_cancer_dx_low)) >= 0.9
+# copy → cancer_temp, then blank out 90 % of cancers
+df_cancer_dx_low["cancer_temp"] = df_cancer_dx_low["cancer"]
+mask_na = (df_cancer_dx_low["cancer"] == 1) & (u < 0.9)
+df_cancer_dx_low.loc[mask_na, "cancer_temp"] = np.nan
 
-# Set 90% of cancer cases to NaN
-df_cancer_dx_low.loc[cancer_mask & random_mask, "cancer_temp"] = 1
-df_cancer_dx_low.loc[cancer_mask & ~random_mask, "cancer_temp"] = np.nan
-df_cancer_dx_low.loc[~cancer_mask, "cancer_temp"] = df_cancer_dx_low.loc[
-    ~cancer_mask, "cancer"
-]
+# drop rows missing in *either* outcome or predictor
+df_for_dca = df_cancer_dx_low.dropna(subset=["cancer_temp", "cancerpredmarker"])
 
-# Run DCA with default y-axis
 dca_low_incidence_df = dca(
-    data=df_cancer_dx_low,
+    data=df_for_dca,
     outcome="cancer_temp",
     modelnames=["cancerpredmarker"],
     thresholds=np.arange(0, 0.26, 0.01),
 )
 
-plot_graphs(plot_df=dca_low_incidence_df, graph_type="net_benefit")
-
-## ---- python-dca_adjust_axes -----
-# Adjust both x and y axes for better visualization
-dca_adjust_axes_df = dca(
-    data=df_cancer_dx_low,
-    outcome="cancer_temp",
-    modelnames=["cancerpredmarker"],
-    thresholds=np.arange(0, 0.11, 0.01),  # Restricted x-axis
+plot_graphs(
+    plot_df=dca_low_incidence_df,
+    graph_type="net_benefit",
+    color_names=["blue", "red", "green"],
 )
 
-# Custom plot with adjusted axes
-fig, ax = plt.subplots(figsize=(8, 6))
+## ---- python-dca_adjust_axes -----
 
-# Extract data
-treat_all = dca_adjust_axes_df[dca_adjust_axes_df["model"] == "all"]
-treat_none = dca_adjust_axes_df[dca_adjust_axes_df["model"] == "none"]
-model = dca_adjust_axes_df[dca_adjust_axes_df["model"] == "cancerpredmarker"]
+dca_low_incidence_small = dca(
+    data=df_for_dca,
+    outcome="cancer_temp",
+    modelnames=["cancerpredmarker"],
+    thresholds=np.arange(0, 0.05, 0.01),
+)
 
-# Plot with custom y-axis limits
-ax.plot(treat_all["threshold"], treat_all["net_benefit"], label="Treat All")
-ax.plot(treat_none["threshold"], treat_none["net_benefit"], label="Treat None")
-ax.plot(model["threshold"], model["net_benefit"], label="Marker")
-
-ax.set_xlabel("Threshold Probability")
-ax.set_ylabel("Net Benefit")
-ax.set_ylim(-0.005, 0.05)  # Set y-axis limits
-ax.set_xticks(np.arange(0, 0.11, 0.02))  # Set x-axis ticks
-ax.legend()
-plt.show()
+plot_graphs(
+    plot_df=dca_low_incidence_small,
+    graph_type="net_benefit",
+    y_limits=[-0.005, 0.0225],
+    color_names=["blue", "red", "green"],
+)
 
 ## ---- python-dca_smooth -----
 

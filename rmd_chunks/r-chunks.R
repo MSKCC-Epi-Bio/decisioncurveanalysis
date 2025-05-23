@@ -46,15 +46,13 @@ mod1_summary <- tbl_regression(mod1, exponentiate = TRUE)
 mod1_summary
 
 ## ---- r-dca_famhistory -----
-dca(cancer ~ famhistory, data = df_cancer_dx) %>%
-  plot()
+dca(cancer ~ famhistory, data = df_cancer_dx) 
 
 ## ---- r-dca_famhistory2 -----
 dca(cancer ~ famhistory,
   data = df_cancer_dx,
   thresholds = seq(0, 0.35, 0.01)
-) %>%
-  plot()
+)
 
 ## ---- r-model_multi -----
 # build multivariable logistic regression model
@@ -123,38 +121,36 @@ dcurves::dca(
   theme(legend.position = "none")
 
 ## ---- r-dca_create_low_incidence -----
-# Create a dataset with lower incidence of cancer
-set.seed(123)
-df_cancer_dx_low <- df_cancer_dx |>
-  mutate(
-    cancer_temp = case_when(
-      cancer == 1 & runif(n()) >= 0.1 ~ 1, # Keep only 10% of cancer cases
-      cancer == 1 & runif(n()) < 0.1 ~ NA, # Set 90% to NA
-      TRUE ~ cancer # Keep other values as is
-    )
-  )
 
-# Run DCA with default y-axis
-dcurves::dca(
-  data = df_cancer_dx_low,
-  formula = cancer_temp ~ cancerpredmarker,
-  thresholds = seq(0, 0.25, by = 0.01)
-) |>
-  plot()
+set.seed(123)
+
+df_cancer_dx_low <-
+  df_cancer_dx %>%
+  mutate(
+    cancer_temp = if_else(
+      cancer == 1 & runif(n()) < 0.9,   # 90 % of cancers → NA
+      NA_real_,
+      cancer
+    )
+  ) %>%
+  drop_na(cancer_temp, cancerpredmarker) # remove rows missing in *either* field
+
+dca(
+  cancer_temp ~ cancerpredmarker,
+  data       = df_cancer_dx_low,
+  thresholds = seq(0, 0.25, 0.01)
+)
 
 ## ---- r-dca_adjust_axes -----
-# Adjust both x and y axes for better visualization
-dcurves::dca(
-  data = df_cancer_dx_low,
-  formula = cancer_temp ~ cancerpredmarker,
-  thresholds = seq(0, 0.1, by = 0.01)
-) |>
-  plot() +
-  coord_cartesian(ylim = c(-0.005, 0.05)) +
-  scale_x_continuous(breaks = seq(0, 0.1, by = 0.02))
 
+dca(
+  cancer_temp ~ cancerpredmarker,
+  data       = df_cancer_dx_low,
+  thresholds = seq(0, 0.04, 0.01)
+)
 
 ## ---- r-dca_smooth -----
+
 dca(cancer ~ famhistory + cancerpredmarker,
   data = df_cancer_dx,
   thresholds = seq(0, 0.35, 0.01),
