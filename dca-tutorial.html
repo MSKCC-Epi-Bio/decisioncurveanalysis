@@ -360,9 +360,6 @@ div.tocify {
 </div>
 
 
-<!-- <div class="center"> -->
-<!--   <h1>Decision Curve Analysis</h1> -->
-<!-- </div> -->
 <p>Below we will walk through how to perform decision curve analysis for
 binary and time-to-event outcomes using <strong>R</strong>,
 <strong>Stata</strong>, <strong>SAS</strong>, and
@@ -373,23 +370,23 @@ functions; although, naturally, output is very similar irrespective of
 programming language. .</p>
 <div id="select-a-language" class="section level2">
 <h2>Select a language</h2>
-<div id="nhoepfvlnx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nhoepfvlnx table {
+<div id="oytjpguach" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oytjpguach table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nhoepfvlnx thead, #nhoepfvlnx tbody, #nhoepfvlnx tfoot, #nhoepfvlnx tr, #nhoepfvlnx td, #nhoepfvlnx th {
+#oytjpguach thead, #oytjpguach tbody, #oytjpguach tfoot, #oytjpguach tr, #oytjpguach td, #oytjpguach th {
   border-style: none;
 }
 
-#nhoepfvlnx p {
+#oytjpguach p {
   margin: 0;
   padding: 0;
 }
 
-#nhoepfvlnx .gt_table {
+#oytjpguach .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -415,12 +412,12 @@ programming language. .</p>
   border-left-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_caption {
+#oytjpguach .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nhoepfvlnx .gt_title {
+#oytjpguach .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -432,7 +429,7 @@ programming language. .</p>
   border-bottom-width: 0;
 }
 
-#nhoepfvlnx .gt_subtitle {
+#oytjpguach .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -444,7 +441,7 @@ programming language. .</p>
   border-top-width: 0;
 }
 
-#nhoepfvlnx .gt_heading {
+#oytjpguach .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -456,13 +453,13 @@ programming language. .</p>
   border-right-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_bottom_border {
+#oytjpguach .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_col_headings {
+#oytjpguach .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -477,7 +474,7 @@ programming language. .</p>
   border-right-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_col_heading {
+#oytjpguach .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -497,7 +494,7 @@ programming language. .</p>
   overflow-x: hidden;
 }
 
-#nhoepfvlnx .gt_column_spanner_outer {
+#oytjpguach .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -509,15 +506,15 @@ programming language. .</p>
   padding-right: 4px;
 }
 
-#nhoepfvlnx .gt_column_spanner_outer:first-child {
+#oytjpguach .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nhoepfvlnx .gt_column_spanner_outer:last-child {
+#oytjpguach .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nhoepfvlnx .gt_column_spanner {
+#oytjpguach .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -529,11 +526,11 @@ programming language. .</p>
   width: 100%;
 }
 
-#nhoepfvlnx .gt_spanner_row {
+#oytjpguach .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nhoepfvlnx .gt_group_heading {
+#oytjpguach .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -559,7 +556,7 @@ programming language. .</p>
   text-align: left;
 }
 
-#nhoepfvlnx .gt_empty_group_heading {
+#oytjpguach .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -574,15 +571,15 @@ programming language. .</p>
   vertical-align: middle;
 }
 
-#nhoepfvlnx .gt_from_md > :first-child {
+#oytjpguach .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nhoepfvlnx .gt_from_md > :last-child {
+#oytjpguach .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nhoepfvlnx .gt_row {
+#oytjpguach .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -601,7 +598,7 @@ programming language. .</p>
   overflow-x: hidden;
 }
 
-#nhoepfvlnx .gt_stub {
+#oytjpguach .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -614,7 +611,7 @@ programming language. .</p>
   padding-right: 5px;
 }
 
-#nhoepfvlnx .gt_stub_row_group {
+#oytjpguach .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -628,15 +625,15 @@ programming language. .</p>
   vertical-align: top;
 }
 
-#nhoepfvlnx .gt_row_group_first td {
+#oytjpguach .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nhoepfvlnx .gt_row_group_first th {
+#oytjpguach .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nhoepfvlnx .gt_summary_row {
+#oytjpguach .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -646,16 +643,16 @@ programming language. .</p>
   padding-right: 5px;
 }
 
-#nhoepfvlnx .gt_first_summary_row {
+#oytjpguach .gt_first_summary_row {
   border-top-style: none;
   border-top-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_first_summary_row.thick {
+#oytjpguach .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nhoepfvlnx .gt_last_summary_row {
+#oytjpguach .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -665,7 +662,7 @@ programming language. .</p>
   border-bottom-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_grand_summary_row {
+#oytjpguach .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -675,7 +672,7 @@ programming language. .</p>
   padding-right: 5px;
 }
 
-#nhoepfvlnx .gt_first_grand_summary_row {
+#oytjpguach .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +682,7 @@ programming language. .</p>
   border-top-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_last_grand_summary_row_top {
+#oytjpguach .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -695,11 +692,11 @@ programming language. .</p>
   border-bottom-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_striped {
+#oytjpguach .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nhoepfvlnx .gt_table_body {
+#oytjpguach .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -708,7 +705,7 @@ programming language. .</p>
   border-bottom-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_footnotes {
+#oytjpguach .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -722,7 +719,7 @@ programming language. .</p>
   border-right-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_footnote {
+#oytjpguach .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -731,7 +728,7 @@ programming language. .</p>
   padding-right: 5px;
 }
 
-#nhoepfvlnx .gt_sourcenotes {
+#oytjpguach .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -745,7 +742,7 @@ programming language. .</p>
   border-right-color: #D3D3D3;
 }
 
-#nhoepfvlnx .gt_sourcenote {
+#oytjpguach .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -753,72 +750,72 @@ programming language. .</p>
   padding-right: 5px;
 }
 
-#nhoepfvlnx .gt_left {
+#oytjpguach .gt_left {
   text-align: left;
 }
 
-#nhoepfvlnx .gt_center {
+#oytjpguach .gt_center {
   text-align: center;
 }
 
-#nhoepfvlnx .gt_right {
+#oytjpguach .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nhoepfvlnx .gt_font_normal {
+#oytjpguach .gt_font_normal {
   font-weight: normal;
 }
 
-#nhoepfvlnx .gt_font_bold {
+#oytjpguach .gt_font_bold {
   font-weight: bold;
 }
 
-#nhoepfvlnx .gt_font_italic {
+#oytjpguach .gt_font_italic {
   font-style: italic;
 }
 
-#nhoepfvlnx .gt_super {
+#oytjpguach .gt_super {
   font-size: 65%;
 }
 
-#nhoepfvlnx .gt_footnote_marks {
+#oytjpguach .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nhoepfvlnx .gt_asterisk {
+#oytjpguach .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nhoepfvlnx .gt_indent_1 {
+#oytjpguach .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nhoepfvlnx .gt_indent_2 {
+#oytjpguach .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nhoepfvlnx .gt_indent_3 {
+#oytjpguach .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nhoepfvlnx .gt_indent_4 {
+#oytjpguach .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nhoepfvlnx .gt_indent_5 {
+#oytjpguach .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nhoepfvlnx .katex-display {
+#oytjpguach .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nhoepfvlnx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oytjpguach div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -863,8 +860,10 @@ install.packages(&quot;dcurves&quot;)
 
 # install other packages used in this tutorial
 install.packages(
-  c(&quot;tidyverse&quot;, &quot;survival&quot;, &quot;gt&quot;, &quot;broom&quot;,
-    &quot;gtsummary&quot;, &quot;rsample&quot;, &quot;labelled&quot;)
+  c(
+    &quot;tidyverse&quot;, &quot;survival&quot;, &quot;gt&quot;, &quot;broom&quot;,
+    &quot;gtsummary&quot;, &quot;rsample&quot;, &quot;labelled&quot;
+  )
 )
 
 # load packages
@@ -993,29 +992,32 @@ RUN;</code></pre>
 </div>
 <div id="python-1" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>df_cancer_dx = pd.read_csv(&#39;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv&#39;)</code></pre>
+<pre class="python"><code># No table for this chunk
+df_cancer_dx = pd.read_csv(
+    &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv&quot;
+)</code></pre>
 </div>
 </div>
 <div id="section-3" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
-<div id="dqkpvoxeee" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dqkpvoxeee table {
+<div id="kninmcwayl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kninmcwayl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dqkpvoxeee thead, #dqkpvoxeee tbody, #dqkpvoxeee tfoot, #dqkpvoxeee tr, #dqkpvoxeee td, #dqkpvoxeee th {
+#kninmcwayl thead, #kninmcwayl tbody, #kninmcwayl tfoot, #kninmcwayl tr, #kninmcwayl td, #kninmcwayl th {
   border-style: none;
 }
 
-#dqkpvoxeee p {
+#kninmcwayl p {
   margin: 0;
   padding: 0;
 }
 
-#dqkpvoxeee .gt_table {
+#kninmcwayl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1041,12 +1043,12 @@ RUN;</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_caption {
+#kninmcwayl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dqkpvoxeee .gt_title {
+#kninmcwayl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1058,7 +1060,7 @@ RUN;</code></pre>
   border-bottom-width: 0;
 }
 
-#dqkpvoxeee .gt_subtitle {
+#kninmcwayl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1070,7 +1072,7 @@ RUN;</code></pre>
   border-top-width: 0;
 }
 
-#dqkpvoxeee .gt_heading {
+#kninmcwayl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1082,13 +1084,13 @@ RUN;</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_bottom_border {
+#kninmcwayl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_col_headings {
+#kninmcwayl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1103,7 +1105,7 @@ RUN;</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_col_heading {
+#kninmcwayl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1123,7 +1125,7 @@ RUN;</code></pre>
   overflow-x: hidden;
 }
 
-#dqkpvoxeee .gt_column_spanner_outer {
+#kninmcwayl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1135,15 +1137,15 @@ RUN;</code></pre>
   padding-right: 4px;
 }
 
-#dqkpvoxeee .gt_column_spanner_outer:first-child {
+#kninmcwayl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dqkpvoxeee .gt_column_spanner_outer:last-child {
+#kninmcwayl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dqkpvoxeee .gt_column_spanner {
+#kninmcwayl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1155,11 +1157,11 @@ RUN;</code></pre>
   width: 100%;
 }
 
-#dqkpvoxeee .gt_spanner_row {
+#kninmcwayl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dqkpvoxeee .gt_group_heading {
+#kninmcwayl .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1185,7 +1187,7 @@ RUN;</code></pre>
   text-align: left;
 }
 
-#dqkpvoxeee .gt_empty_group_heading {
+#kninmcwayl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1200,15 +1202,15 @@ RUN;</code></pre>
   vertical-align: middle;
 }
 
-#dqkpvoxeee .gt_from_md > :first-child {
+#kninmcwayl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dqkpvoxeee .gt_from_md > :last-child {
+#kninmcwayl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dqkpvoxeee .gt_row {
+#kninmcwayl .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1227,7 +1229,7 @@ RUN;</code></pre>
   overflow-x: hidden;
 }
 
-#dqkpvoxeee .gt_stub {
+#kninmcwayl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1240,7 +1242,7 @@ RUN;</code></pre>
   padding-right: 5px;
 }
 
-#dqkpvoxeee .gt_stub_row_group {
+#kninmcwayl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1254,15 +1256,15 @@ RUN;</code></pre>
   vertical-align: top;
 }
 
-#dqkpvoxeee .gt_row_group_first td {
+#kninmcwayl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dqkpvoxeee .gt_row_group_first th {
+#kninmcwayl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dqkpvoxeee .gt_summary_row {
+#kninmcwayl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1272,16 +1274,16 @@ RUN;</code></pre>
   padding-right: 5px;
 }
 
-#dqkpvoxeee .gt_first_summary_row {
+#kninmcwayl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_first_summary_row.thick {
+#kninmcwayl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dqkpvoxeee .gt_last_summary_row {
+#kninmcwayl .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1291,7 +1293,7 @@ RUN;</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_grand_summary_row {
+#kninmcwayl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1301,7 +1303,7 @@ RUN;</code></pre>
   padding-right: 5px;
 }
 
-#dqkpvoxeee .gt_first_grand_summary_row {
+#kninmcwayl .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1311,7 +1313,7 @@ RUN;</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_last_grand_summary_row_top {
+#kninmcwayl .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1321,11 +1323,11 @@ RUN;</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_striped {
+#kninmcwayl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dqkpvoxeee .gt_table_body {
+#kninmcwayl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1334,7 +1336,7 @@ RUN;</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_footnotes {
+#kninmcwayl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1348,7 +1350,7 @@ RUN;</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_footnote {
+#kninmcwayl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1357,7 +1359,7 @@ RUN;</code></pre>
   padding-right: 5px;
 }
 
-#dqkpvoxeee .gt_sourcenotes {
+#kninmcwayl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1371,7 +1373,7 @@ RUN;</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dqkpvoxeee .gt_sourcenote {
+#kninmcwayl .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1379,72 +1381,72 @@ RUN;</code></pre>
   padding-right: 5px;
 }
 
-#dqkpvoxeee .gt_left {
+#kninmcwayl .gt_left {
   text-align: left;
 }
 
-#dqkpvoxeee .gt_center {
+#kninmcwayl .gt_center {
   text-align: center;
 }
 
-#dqkpvoxeee .gt_right {
+#kninmcwayl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dqkpvoxeee .gt_font_normal {
+#kninmcwayl .gt_font_normal {
   font-weight: normal;
 }
 
-#dqkpvoxeee .gt_font_bold {
+#kninmcwayl .gt_font_bold {
   font-weight: bold;
 }
 
-#dqkpvoxeee .gt_font_italic {
+#kninmcwayl .gt_font_italic {
   font-style: italic;
 }
 
-#dqkpvoxeee .gt_super {
+#kninmcwayl .gt_super {
   font-size: 65%;
 }
 
-#dqkpvoxeee .gt_footnote_marks {
+#kninmcwayl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dqkpvoxeee .gt_asterisk {
+#kninmcwayl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dqkpvoxeee .gt_indent_1 {
+#kninmcwayl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dqkpvoxeee .gt_indent_2 {
+#kninmcwayl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dqkpvoxeee .gt_indent_3 {
+#kninmcwayl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dqkpvoxeee .gt_indent_4 {
+#kninmcwayl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dqkpvoxeee .gt_indent_5 {
+#kninmcwayl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dqkpvoxeee .katex-display {
+#kninmcwayl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dqkpvoxeee div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kninmcwayl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1523,7 +1525,9 @@ RUN;</code></pre>
 </div>
 <div id="python-2" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>mod1 = sm.GLM.from_formula(&#39;cancer ~ famhistory&#39;, data=df_cancer_dx, family=sm.families.Binomial())
+<pre class="python"><code>mod1 = sm.GLM.from_formula(
+    &quot;cancer ~ famhistory&quot;, data=df_cancer_dx, family=sm.families.Binomial()
+)
 mod1_results = mod1.fit()
 
 print(mod1_results.summary())</code></pre>
@@ -1532,23 +1536,23 @@ print(mod1_results.summary())</code></pre>
 <div id="section-5" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
-<div id="kmsamcapvu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kmsamcapvu table {
+<div id="yzqlkghjqt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yzqlkghjqt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kmsamcapvu thead, #kmsamcapvu tbody, #kmsamcapvu tfoot, #kmsamcapvu tr, #kmsamcapvu td, #kmsamcapvu th {
+#yzqlkghjqt thead, #yzqlkghjqt tbody, #yzqlkghjqt tfoot, #yzqlkghjqt tr, #yzqlkghjqt td, #yzqlkghjqt th {
   border-style: none;
 }
 
-#kmsamcapvu p {
+#yzqlkghjqt p {
   margin: 0;
   padding: 0;
 }
 
-#kmsamcapvu .gt_table {
+#yzqlkghjqt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1574,12 +1578,12 @@ print(mod1_results.summary())</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_caption {
+#yzqlkghjqt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kmsamcapvu .gt_title {
+#yzqlkghjqt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1591,7 +1595,7 @@ print(mod1_results.summary())</code></pre>
   border-bottom-width: 0;
 }
 
-#kmsamcapvu .gt_subtitle {
+#yzqlkghjqt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1603,7 +1607,7 @@ print(mod1_results.summary())</code></pre>
   border-top-width: 0;
 }
 
-#kmsamcapvu .gt_heading {
+#yzqlkghjqt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1615,13 +1619,13 @@ print(mod1_results.summary())</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_bottom_border {
+#yzqlkghjqt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_col_headings {
+#yzqlkghjqt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1636,7 +1640,7 @@ print(mod1_results.summary())</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_col_heading {
+#yzqlkghjqt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1656,7 +1660,7 @@ print(mod1_results.summary())</code></pre>
   overflow-x: hidden;
 }
 
-#kmsamcapvu .gt_column_spanner_outer {
+#yzqlkghjqt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1668,15 +1672,15 @@ print(mod1_results.summary())</code></pre>
   padding-right: 4px;
 }
 
-#kmsamcapvu .gt_column_spanner_outer:first-child {
+#yzqlkghjqt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kmsamcapvu .gt_column_spanner_outer:last-child {
+#yzqlkghjqt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kmsamcapvu .gt_column_spanner {
+#yzqlkghjqt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1688,11 +1692,11 @@ print(mod1_results.summary())</code></pre>
   width: 100%;
 }
 
-#kmsamcapvu .gt_spanner_row {
+#yzqlkghjqt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kmsamcapvu .gt_group_heading {
+#yzqlkghjqt .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1718,7 +1722,7 @@ print(mod1_results.summary())</code></pre>
   text-align: left;
 }
 
-#kmsamcapvu .gt_empty_group_heading {
+#yzqlkghjqt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1733,15 +1737,15 @@ print(mod1_results.summary())</code></pre>
   vertical-align: middle;
 }
 
-#kmsamcapvu .gt_from_md > :first-child {
+#yzqlkghjqt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kmsamcapvu .gt_from_md > :last-child {
+#yzqlkghjqt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kmsamcapvu .gt_row {
+#yzqlkghjqt .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1760,7 +1764,7 @@ print(mod1_results.summary())</code></pre>
   overflow-x: hidden;
 }
 
-#kmsamcapvu .gt_stub {
+#yzqlkghjqt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1773,7 +1777,7 @@ print(mod1_results.summary())</code></pre>
   padding-right: 5px;
 }
 
-#kmsamcapvu .gt_stub_row_group {
+#yzqlkghjqt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1787,15 +1791,15 @@ print(mod1_results.summary())</code></pre>
   vertical-align: top;
 }
 
-#kmsamcapvu .gt_row_group_first td {
+#yzqlkghjqt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kmsamcapvu .gt_row_group_first th {
+#yzqlkghjqt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kmsamcapvu .gt_summary_row {
+#yzqlkghjqt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1805,16 +1809,16 @@ print(mod1_results.summary())</code></pre>
   padding-right: 5px;
 }
 
-#kmsamcapvu .gt_first_summary_row {
+#yzqlkghjqt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_first_summary_row.thick {
+#yzqlkghjqt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kmsamcapvu .gt_last_summary_row {
+#yzqlkghjqt .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1824,7 +1828,7 @@ print(mod1_results.summary())</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_grand_summary_row {
+#yzqlkghjqt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1834,7 +1838,7 @@ print(mod1_results.summary())</code></pre>
   padding-right: 5px;
 }
 
-#kmsamcapvu .gt_first_grand_summary_row {
+#yzqlkghjqt .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1844,7 +1848,7 @@ print(mod1_results.summary())</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_last_grand_summary_row_top {
+#yzqlkghjqt .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1854,11 +1858,11 @@ print(mod1_results.summary())</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_striped {
+#yzqlkghjqt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kmsamcapvu .gt_table_body {
+#yzqlkghjqt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1867,7 +1871,7 @@ print(mod1_results.summary())</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_footnotes {
+#yzqlkghjqt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1881,7 +1885,7 @@ print(mod1_results.summary())</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_footnote {
+#yzqlkghjqt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1890,7 +1894,7 @@ print(mod1_results.summary())</code></pre>
   padding-right: 5px;
 }
 
-#kmsamcapvu .gt_sourcenotes {
+#yzqlkghjqt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1904,7 +1908,7 @@ print(mod1_results.summary())</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#kmsamcapvu .gt_sourcenote {
+#yzqlkghjqt .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1912,72 +1916,72 @@ print(mod1_results.summary())</code></pre>
   padding-right: 5px;
 }
 
-#kmsamcapvu .gt_left {
+#yzqlkghjqt .gt_left {
   text-align: left;
 }
 
-#kmsamcapvu .gt_center {
+#yzqlkghjqt .gt_center {
   text-align: center;
 }
 
-#kmsamcapvu .gt_right {
+#yzqlkghjqt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kmsamcapvu .gt_font_normal {
+#yzqlkghjqt .gt_font_normal {
   font-weight: normal;
 }
 
-#kmsamcapvu .gt_font_bold {
+#yzqlkghjqt .gt_font_bold {
   font-weight: bold;
 }
 
-#kmsamcapvu .gt_font_italic {
+#yzqlkghjqt .gt_font_italic {
   font-style: italic;
 }
 
-#kmsamcapvu .gt_super {
+#yzqlkghjqt .gt_super {
   font-size: 65%;
 }
 
-#kmsamcapvu .gt_footnote_marks {
+#yzqlkghjqt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kmsamcapvu .gt_asterisk {
+#yzqlkghjqt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kmsamcapvu .gt_indent_1 {
+#yzqlkghjqt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kmsamcapvu .gt_indent_2 {
+#yzqlkghjqt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kmsamcapvu .gt_indent_3 {
+#yzqlkghjqt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kmsamcapvu .gt_indent_4 {
+#yzqlkghjqt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kmsamcapvu .gt_indent_5 {
+#yzqlkghjqt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kmsamcapvu .katex-display {
+#yzqlkghjqt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kmsamcapvu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yzqlkghjqt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2015,8 +2019,7 @@ outcome.</p>
 <h4 class="tabset tabset-pills"></h4>
 <div id="r-3" class="section level5 active">
 <h5 class="active">R</h5>
-<pre class="r"><code>dca(cancer ~ famhistory, data = df_cancer_dx) %&gt;%
-  plot()</code></pre>
+<pre class="r"><code>dca(cancer ~ famhistory, data = df_cancer_dx) </code></pre>
 </div>
 <div id="stata-3" class="section level5">
 <h5>Stata</h5>
@@ -2031,18 +2034,9 @@ dca cancer famhistory</code></pre>
 </div>
 <div id="python-3" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_famhistory_df = \
-      dca(
-          data=df_cancer_dx,
-          outcome=&#39;cancer&#39;,
-          modelnames=[&#39;famhistory&#39;]
-      )
+<pre class="python"><code>dca_famhistory_df = dca(data=df_cancer_dx, outcome=&quot;cancer&quot;, modelnames=[&quot;famhistory&quot;])
 
-plot_graphs(
-    plot_df=dca_famhistory_df,
-    graph_type=&#39;net_benefit&#39;,
-    y_limits=[-0.05, 0.2]
-)</code></pre>
+plot_graphs(plot_df=dca_famhistory_df, graph_type=&quot;net_benefit&quot;, y_limits=[-0.05, 0.2])</code></pre>
 </div>
 </div>
 <div id="section-7" class="section level4 unnumbered">
@@ -2066,10 +2060,9 @@ we will show the range between 0% and 35%.</p>
 <div id="r-4" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(cancer ~ famhistory,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01)
-) %&gt;%
-  plot()</code></pre>
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01)
+)</code></pre>
 </div>
 <div id="stata-4" class="section level5">
 <h5>Stata</h5>
@@ -2081,19 +2074,14 @@ we will show the range between 0% and 35%.</p>
 </div>
 <div id="python-4" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_famhistory2_df = \
-        dca(
-            data=df_cancer_dx,
-            outcome=&#39;cancer&#39;,
-            modelnames=[&#39;famhistory&#39;],
-            thresholds=np.arange(0, 0.36, 0.01),
-        )
+<pre class="python"><code>dca_famhistory2_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;famhistory&quot;],
+    thresholds=np.arange(0, 0.36, 0.01),
+)
 
-plot_graphs(
-    plot_df=dca_famhistory2_df,
-    graph_type=&#39;net_benefit&#39;,
-    y_limits=[-0.05, 0.2]
-)</code></pre>
+plot_graphs(plot_df=dca_famhistory2_df, graph_type=&quot;net_benefit&quot;, y_limits=[-0.05, 0.2])</code></pre>
 </div>
 </div>
 <div id="section-9" class="section level4 unnumbered">
@@ -2143,7 +2131,7 @@ df_cancer_dx &lt;-
   mutate(
     cancerpredmarker =
       broom::augment(mod2, type.predict = &quot;response&quot;) %&gt;%
-      pull(&quot;.fitted&quot;)
+        pull(&quot;.fitted&quot;)
   )</code></pre>
 </div>
 <div id="stata-5" class="section level5">
@@ -2166,34 +2154,38 @@ RUN;</code></pre>
 </div>
 <div id="python-5" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>mod2 = sm.GLM.from_formula(&#39;cancer ~ marker + age + famhistory&#39;, data=df_cancer_dx, family=sm.families.Binomial())
+<pre class="python"><code>mod2 = sm.GLM.from_formula(
+    &quot;cancer ~ marker + age + famhistory&quot;,
+    data=df_cancer_dx,
+    family=sm.families.Binomial(),
+)
 mod2_results = mod2.fit()
 
 print(mod2_results.summary())
 
-df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</code></pre>
+df_cancer_dx[&quot;cancerpredmarker&quot;] = mod2_results.predict(df_cancer_dx)</code></pre>
 </div>
 </div>
 <div id="section-11" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
-<div id="jmcxgkdefb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jmcxgkdefb table {
+<div id="jydoinmwvh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jydoinmwvh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jmcxgkdefb thead, #jmcxgkdefb tbody, #jmcxgkdefb tfoot, #jmcxgkdefb tr, #jmcxgkdefb td, #jmcxgkdefb th {
+#jydoinmwvh thead, #jydoinmwvh tbody, #jydoinmwvh tfoot, #jydoinmwvh tr, #jydoinmwvh td, #jydoinmwvh th {
   border-style: none;
 }
 
-#jmcxgkdefb p {
+#jydoinmwvh p {
   margin: 0;
   padding: 0;
 }
 
-#jmcxgkdefb .gt_table {
+#jydoinmwvh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2219,12 +2211,12 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-left-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_caption {
+#jydoinmwvh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jmcxgkdefb .gt_title {
+#jydoinmwvh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2236,7 +2228,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-bottom-width: 0;
 }
 
-#jmcxgkdefb .gt_subtitle {
+#jydoinmwvh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2248,7 +2240,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-top-width: 0;
 }
 
-#jmcxgkdefb .gt_heading {
+#jydoinmwvh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2260,13 +2252,13 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-right-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_bottom_border {
+#jydoinmwvh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_col_headings {
+#jydoinmwvh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2281,7 +2273,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-right-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_col_heading {
+#jydoinmwvh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2301,7 +2293,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   overflow-x: hidden;
 }
 
-#jmcxgkdefb .gt_column_spanner_outer {
+#jydoinmwvh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2313,15 +2305,15 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   padding-right: 4px;
 }
 
-#jmcxgkdefb .gt_column_spanner_outer:first-child {
+#jydoinmwvh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jmcxgkdefb .gt_column_spanner_outer:last-child {
+#jydoinmwvh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jmcxgkdefb .gt_column_spanner {
+#jydoinmwvh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2333,11 +2325,11 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   width: 100%;
 }
 
-#jmcxgkdefb .gt_spanner_row {
+#jydoinmwvh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jmcxgkdefb .gt_group_heading {
+#jydoinmwvh .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2363,7 +2355,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   text-align: left;
 }
 
-#jmcxgkdefb .gt_empty_group_heading {
+#jydoinmwvh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2378,15 +2370,15 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   vertical-align: middle;
 }
 
-#jmcxgkdefb .gt_from_md > :first-child {
+#jydoinmwvh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jmcxgkdefb .gt_from_md > :last-child {
+#jydoinmwvh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jmcxgkdefb .gt_row {
+#jydoinmwvh .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2405,7 +2397,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   overflow-x: hidden;
 }
 
-#jmcxgkdefb .gt_stub {
+#jydoinmwvh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2418,7 +2410,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   padding-right: 5px;
 }
 
-#jmcxgkdefb .gt_stub_row_group {
+#jydoinmwvh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2432,15 +2424,15 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   vertical-align: top;
 }
 
-#jmcxgkdefb .gt_row_group_first td {
+#jydoinmwvh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jmcxgkdefb .gt_row_group_first th {
+#jydoinmwvh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jmcxgkdefb .gt_summary_row {
+#jydoinmwvh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2450,16 +2442,16 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   padding-right: 5px;
 }
 
-#jmcxgkdefb .gt_first_summary_row {
+#jydoinmwvh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_first_summary_row.thick {
+#jydoinmwvh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jmcxgkdefb .gt_last_summary_row {
+#jydoinmwvh .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2469,7 +2461,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-bottom-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_grand_summary_row {
+#jydoinmwvh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2479,7 +2471,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   padding-right: 5px;
 }
 
-#jmcxgkdefb .gt_first_grand_summary_row {
+#jydoinmwvh .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2489,7 +2481,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-top-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_last_grand_summary_row_top {
+#jydoinmwvh .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2499,11 +2491,11 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-bottom-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_striped {
+#jydoinmwvh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jmcxgkdefb .gt_table_body {
+#jydoinmwvh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2512,7 +2504,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-bottom-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_footnotes {
+#jydoinmwvh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2526,7 +2518,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-right-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_footnote {
+#jydoinmwvh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -2535,7 +2527,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   padding-right: 5px;
 }
 
-#jmcxgkdefb .gt_sourcenotes {
+#jydoinmwvh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2549,7 +2541,7 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   border-right-color: #D3D3D3;
 }
 
-#jmcxgkdefb .gt_sourcenote {
+#jydoinmwvh .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -2557,72 +2549,72 @@ df_cancer_dx[&#39;cancerpredmarker&#39;] = mod2_results.predict(df_cancer_dx)</c
   padding-right: 5px;
 }
 
-#jmcxgkdefb .gt_left {
+#jydoinmwvh .gt_left {
   text-align: left;
 }
 
-#jmcxgkdefb .gt_center {
+#jydoinmwvh .gt_center {
   text-align: center;
 }
 
-#jmcxgkdefb .gt_right {
+#jydoinmwvh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jmcxgkdefb .gt_font_normal {
+#jydoinmwvh .gt_font_normal {
   font-weight: normal;
 }
 
-#jmcxgkdefb .gt_font_bold {
+#jydoinmwvh .gt_font_bold {
   font-weight: bold;
 }
 
-#jmcxgkdefb .gt_font_italic {
+#jydoinmwvh .gt_font_italic {
   font-style: italic;
 }
 
-#jmcxgkdefb .gt_super {
+#jydoinmwvh .gt_super {
   font-size: 65%;
 }
 
-#jmcxgkdefb .gt_footnote_marks {
+#jydoinmwvh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jmcxgkdefb .gt_asterisk {
+#jydoinmwvh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jmcxgkdefb .gt_indent_1 {
+#jydoinmwvh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jmcxgkdefb .gt_indent_2 {
+#jydoinmwvh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jmcxgkdefb .gt_indent_3 {
+#jydoinmwvh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jmcxgkdefb .gt_indent_4 {
+#jydoinmwvh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jmcxgkdefb .gt_indent_5 {
+#jydoinmwvh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jmcxgkdefb .katex-display {
+#jydoinmwvh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jmcxgkdefb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jydoinmwvh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2668,9 +2660,9 @@ including the marker, age and family history of cancer.</p>
 <div id="r-6" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(cancer ~ famhistory + cancerpredmarker,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01),
-    label = list(cancerpredmarker = &quot;Prediction Model&quot;)
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  label = list(cancerpredmarker = &quot;Prediction Model&quot;)
 ) %&gt;%
   plot(smooth = FALSE)</code></pre>
 </div>
@@ -2685,19 +2677,14 @@ including the marker, age and family history of cancer.</p>
 <div id="python-6" class="section level5">
 <h5>Python</h5>
 <pre class="python"><code># Run dca on multivariable model
-dca_multi_df = \
-    dca(
-        data=df_cancer_dx,
-        outcome=&#39;cancer&#39;,
-        modelnames=[&#39;famhistory&#39;, &#39;cancerpredmarker&#39;],
-        thresholds=np.arange(0,0.36,0.01)
-    )
+dca_multi_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;famhistory&quot;, &quot;cancerpredmarker&quot;],
+    thresholds=np.arange(0, 0.36, 0.01),
+)
 
-plot_graphs(
-    plot_df=dca_multi_df,
-    y_limits=[-0.05, 0.2],
-    graph_type=&#39;net_benefit&#39;
-    )</code></pre>
+plot_graphs(plot_df=dca_multi_df, y_limits=[-0.05, 0.2], graph_type=&quot;net_benefit&quot;)</code></pre>
 </div>
 </div>
 <div id="section-13" class="section level4 unnumbered">
@@ -2713,6 +2700,317 @@ statistical model has the highest net benefit across the entire range of
 threshold probabilities. Accordingly, we would conclude that using the
 model to decide whether to biopsy a patient would lead to better
 clinical outcomes.</p>
+</div>
+</div>
+<div id="graph-appearance-options" class="section level3">
+<h3>Graph Appearance Options</h3>
+<p>There are various options for improving the look of the graph. First,
+regular graph options apply. You can change line color, width, and
+patterns, and in this example, the “Treat All” plot shows as a thick,
+red, solid line, while “Treat None” is of medium thickness, green, and
+dashed. “Marker” is a thin, blue, dashed line (note: this would not look
+much good, but is given for illustrative purposes).</p>
+<div id="section-14" class="section level4 tabset tabset-pills">
+<h4 class="tabset tabset-pills"></h4>
+<div id="r-7" class="section level5 active">
+<h5 class="active">R</h5>
+<pre class="r"><code>library(dplyr)
+library(ggplot2)
+
+dcurves::dca(
+  data       = df_cancer_dx,
+  formula    = cancer ~ cancerpredmarker,
+  thresholds = seq(0, 0.25, by = 0.01)
+) |&gt;
+  as_tibble() |&gt;
+  filter(!is.na(net_benefit)) |&gt;
+  ggplot(aes(
+    x        = threshold,
+    y        = net_benefit,
+    color    = label,
+    linetype = label,
+    size     = label
+  )) +
+  geom_line() +
+  ylim(-0.05, 0.15) +
+  scale_color_manual(values = c(&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;)) +
+  scale_linetype_manual(values = c(&quot;solid&quot;, &quot;dashed&quot;, &quot;dashed&quot;)) +
+  scale_size_manual(values = c(1.5, 1, 0.5)) +
+  labs(
+    x        = &quot;Threshold Probability&quot;,
+    y        = &quot;Net Benefit&quot;,
+    color    = &quot;Model&quot;,
+    linetype = &quot;Model&quot;,
+    size     = &quot;Model&quot;
+  ) +
+  theme_minimal()</code></pre>
+</div>
+<div id="stata-7" class="section level5">
+<h5>Stata</h5>
+<pre class="stata"><code>// Add formatting options to improve graph appearance
+dca cancer cancerpredmarker, xstop(0.25) lcolor(red green blue) lwidth(thick medium thin) lpattern(solid dash dot)</code></pre>
+</div>
+<div id="sas-7" class="section level5">
+<h5>SAS</h5>
+<pre class="sas"><code>/* Add formatting options to improve graph appearance */
+%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker,
+     xstop = 0.25);
+
+/* Example of custom plot formatting using PROC SGPLOT */
+PROC SGPLOT DATA = dca;
+  SERIES X = threshold Y = all / LINEATTRS = (COLOR = red THICKNESS = 3 PATTERN = solid) NAME = &quot;all&quot;;
+  SERIES X = threshold Y = none / LINEATTRS = (COLOR = green THICKNESS = 2 PATTERN = dash) NAME = &quot;none&quot;;
+  SERIES X = threshold Y = cancerpredmarker / LINEATTRS = (COLOR = blue THICKNESS = 1 PATTERN = dot) NAME = &quot;marker&quot;;
+  XAXIS LABEL = &quot;Threshold Probability&quot; VALUES = (0 to 0.25 by 0.05);
+  YAXIS LABEL = &quot;Net Benefit&quot;;
+  KEYLEGEND &quot;all&quot; &quot;none&quot; &quot;marker&quot; / TITLE = &quot;&quot;;
+RUN;</code></pre>
+</div>
+<div id="python-7" class="section level5">
+<h5>Python</h5>
+<pre class="python"><code>dca_formatting_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;cancerpredmarker&quot;],
+    thresholds=np.arange(0, 0.26, 0.01),
+)
+
+plot_graphs(
+    plot_df=dca_formatting_df,
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.05, 0.15],
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+    linestyles=[&quot;--&quot;, &quot;-&quot;, &quot;--&quot;],
+    linewidths=[0.75, 3, 2],
+)</code></pre>
+</div>
+</div>
+<div id="section-15" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+<!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
+<p><img src="dca-tutorial_files/figure-html/r-dca_formatting-1.png" width="672" /></p>
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
+<p>Second, the legend can be switched on – useful for initial evaluation
+– and off - better for producing publication-ready figures. The default
+(shown in all the examples above) is to include the legend. To avoid
+showing the legend:</p>
+</div>
+<div id="section-16" class="section level4 tabset tabset-pills">
+<h4 class="tabset tabset-pills"></h4>
+<div id="r-8" class="section level5 active">
+<h5 class="active">R</h5>
+<pre class="r"><code># Turn off the legend for a cleaner publication-ready figure
+dcurves::dca(
+  data = df_cancer_dx,
+  formula = cancer ~ cancerpredmarker + famhistory,
+  thresholds = seq(0, 0.35, by = 0.01)
+) |&gt;
+  plot() +
+  theme(legend.position = &quot;none&quot;)</code></pre>
+</div>
+<div id="stata-8" class="section level5">
+<h5>Stata</h5>
+<pre class="stata"><code>// Turn off the legend for a cleaner publication-ready figure
+dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.05)0.35) legend(off)</code></pre>
+</div>
+<div id="sas-8" class="section level5">
+<h5>SAS</h5>
+<pre class="sas"><code>/* Turn off the legend for a cleaner publication-ready figure */
+%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker famhistory,
+     xstop = 0.35);
+
+/* Custom plot with legend turned off */
+PROC SGPLOT DATA = dca;
+  SERIES X = threshold Y = all;
+  SERIES X = threshold Y = none;
+  SERIES X = threshold Y = cancerpredmarker;
+  SERIES X = threshold Y = famhistory;
+  XAXIS LABEL = &quot;Threshold Probability&quot; VALUES = (0 to 0.35 by 0.05);
+  YAXIS LABEL = &quot;Net Benefit&quot;;
+  /* No KEYLEGEND statement means no legend will be displayed */
+RUN;</code></pre>
+</div>
+<div id="python-8" class="section level5">
+<h5>Python</h5>
+<pre class="python"><code># Turn off the legend for a cleaner publication-ready figure
+dca_legend_off_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;cancerpredmarker&quot;],
+    thresholds=np.arange(0, 0.26, 0.01),
+)
+
+plot_graphs(
+    plot_df=dca_legend_off_df,
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.05, 0.15],
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+    linestyles=[&quot;--&quot;, &quot;-&quot;, &quot;--&quot;],
+    linewidths=[0.75, 3, 2],
+    show_legend=False,
+)</code></pre>
+</div>
+</div>
+<div id="section-17" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+<!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
+<p><img src="dca-tutorial_files/figure-html/r-dca_legend_off-1.png" width="672" /></p>
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
+<p>Finally, it can sometimes be important to modify the y axis,
+especially when event rates – and therefore net benefit – is low. We
+will demonstrate by first creating a data set where the incidence of
+cancer is 90% lower than in the original data set. Running a decision
+curve ends up with a large amount of white space where net benefit is
+less than 0, which is uninteresting.</p>
+</div>
+<div id="section-18" class="section level4 tabset tabset-pills">
+<h4 class="tabset tabset-pills"></h4>
+<div id="r-9" class="section level5 active">
+<h5 class="active">R</h5>
+<pre class="r"><code>set.seed(123)
+
+df_cancer_dx_low &lt;-
+  df_cancer_dx %&gt;%
+  mutate(
+    cancer_temp = if_else(
+      cancer == 1 &amp; runif(n()) &lt; 0.9,   # 90 % of cancers → NA
+      NA_real_,
+      cancer
+    )
+  ) %&gt;%
+  drop_na(cancer_temp, cancerpredmarker) # remove rows missing in *either* field
+
+dca(
+  cancer_temp ~ cancerpredmarker,
+  data       = df_cancer_dx_low,
+  thresholds = seq(0, 0.25, 0.01)
+)</code></pre>
+</div>
+<div id="stata-9" class="section level5">
+<h5>Stata</h5>
+<pre class="stata"><code>// Create a dataset with lower incidence of cancer
+set seed 123
+g cancer_temp = cancer
+replace cancer_temp=. if cancer==1 &amp; uniform()&lt;.9
+dca cancer_temp cancerpredmarker, xstop(0.25) xlabel(0(0.05)0.25)</code></pre>
+</div>
+<div id="sas-9" class="section level5">
+<h5>SAS</h5>
+<pre class="sas"><code>/* Create a dataset with lower incidence of cancer */
+DATA data_cancer_low;
+  SET data_cancer;
+  CALL STREAMINIT(123); /* Set seed for reproducibility */
+
+  /* Keep only 10% of cancer cases */
+  IF cancer = 1 THEN DO;
+    IF RAND(&quot;UNIFORM&quot;) &lt; 0.1 THEN cancer_temp = 1;
+    ELSE cancer_temp = .;
+  END;
+  ELSE cancer_temp = cancer;
+RUN;
+
+/* Run DCA with default y-axis */
+%DCA(data = data_cancer_low, outcome = cancer_temp,
+     predictors = cancerpredmarker,
+     xstop = 0.25);</code></pre>
+</div>
+<div id="python-9" class="section level5">
+<h5>Python</h5>
+<pre class="python"><code>np.random.seed(123)
+
+df_cancer_dx_low = df_cancer_dx.copy()
+u = np.random.rand(len(df_cancer_dx_low))
+
+# copy → cancer_temp, then blank out 90 % of cancers
+df_cancer_dx_low[&quot;cancer_temp&quot;] = df_cancer_dx_low[&quot;cancer&quot;]
+mask_na = (df_cancer_dx_low[&quot;cancer&quot;] == 1) &amp; (u &lt; 0.9)
+df_cancer_dx_low.loc[mask_na, &quot;cancer_temp&quot;] = np.nan
+
+# drop rows missing in *either* outcome or predictor
+df_for_dca = df_cancer_dx_low.dropna(subset=[&quot;cancer_temp&quot;, &quot;cancerpredmarker&quot;])
+
+dca_low_incidence_df = dca(
+    data=df_for_dca,
+    outcome=&quot;cancer_temp&quot;,
+    modelnames=[&quot;cancerpredmarker&quot;],
+    thresholds=np.arange(0, 0.26, 0.01),
+)
+
+plot_graphs(
+    plot_df=dca_low_incidence_df,
+    graph_type=&quot;net_benefit&quot;,
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+)</code></pre>
+</div>
+</div>
+<div id="section-19" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+<!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
+<p><img src="dca-tutorial_files/figure-html/r-dca_create_low_incidence-1.png" width="672" /></p>
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
+<p>A better alternative would be to use an option that truncates the
+y-axis. We can also truncate the x-axis on the grounds that net benefit
+is below zero for threshold probabilities above 0.1.</p>
+</div>
+<div id="section-20" class="section level4 tabset tabset-pills">
+<h4 class="tabset tabset-pills"></h4>
+<div id="r-10" class="section level5 active">
+<h5 class="active">R</h5>
+<pre class="r"><code>dca(
+  cancer_temp ~ cancerpredmarker,
+  data       = df_cancer_dx_low,
+  thresholds = seq(0, 0.04, 0.01)
+)</code></pre>
+</div>
+<div id="stata-10" class="section level5">
+<h5>Stata</h5>
+<pre class="stata"><code>// Adjust both x and y axes for better visualization
+dca cancer_temp cancerpredmarker, xstop(0.1) ymin(-0.005) xlabel(0(0.02)0.1) ylabel(-0.005(0.01)0.05)</code></pre>
+</div>
+<div id="sas-10" class="section level5">
+<h5>SAS</h5>
+<pre class="sas"><code>/* Adjust both x and y axes for better visualization */
+%DCA(data = data_cancer_low, outcome = cancer_temp,
+     predictors = cancerpredmarker,
+     xstop = 0.1);
+
+/* Custom plot with adjusted axes */
+PROC SGPLOT DATA = dca;
+  SERIES X = threshold Y = all;
+  SERIES X = threshold Y = none;
+  SERIES X = threshold Y = cancerpredmarker;
+  XAXIS LABEL = &quot;Threshold Probability&quot; VALUES = (0 to 0.1 by 0.02);
+  YAXIS LABEL = &quot;Net Benefit&quot; MIN = -0.005 MAX = 0.05;
+RUN;</code></pre>
+</div>
+<div id="python-10" class="section level5">
+<h5>Python</h5>
+<pre class="python"><code>dca_low_incidence_small = dca(
+    data=df_for_dca,
+    outcome=&quot;cancer_temp&quot;,
+    modelnames=[&quot;cancerpredmarker&quot;],
+    thresholds=np.arange(0, 0.05, 0.01),
+)
+
+plot_graphs(
+    plot_df=dca_low_incidence_small,
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.005, 0.0225],
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+)</code></pre>
+</div>
+</div>
+<div id="section-21" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+<!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
+<p><img src="dca-tutorial_files/figure-html/r-dca_adjust_axes-1.png" width="672" /></p>
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
+</div>
+</div>
+<div id="smoothing-options" class="section level3">
+<h3>Smoothing Options</h3>
 <p>The decision curve for the model should in theory be a smooth curve
 with net benefit always going down (or staying the same) as you move
 from left to right. But the curve is a bit bumpy and sometimes even
@@ -2723,37 +3021,36 @@ smoothers as there is no one smoother that is best in every situation.
 As such, results of a smoothed curve should always be compared with the
 unsmoothed curve to ensure that it gives a fair representation of the
 data.</p>
-</div>
-<div id="section-14" class="section level4 tabset tabset-pills">
+<div id="section-22" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-7" class="section level5 active">
+<div id="r-11" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(cancer ~ famhistory + cancerpredmarker,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01),
-    label = list(cancerpredmarker = &quot;Prediction Model&quot;)
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  label = list(cancerpredmarker = &quot;Prediction Model&quot;)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-7" class="section level5">
+<div id="stata-11" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.01)0.35) smooth</code></pre>
 </div>
-<div id="sas-7" class="section level5">
+<div id="sas-11" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer, predictors = cancerpredmarker famhistory, graph = yes, xstop = 0.35, smooth=yes);</code></pre>
 </div>
-<div id="python-7" class="section level5">
+<div id="python-11" class="section level5">
 <h5>Python</h5>
 <pre class="python"><code>plot_graphs(
-  plot_df=dca_multi_df,
-  y_limits=[-0.05, 0.2],
-  graph_type=&#39;net_benefit&#39;,
-  smooth_frac=0.5 # Set the smoothing fraction to 0.5
+    plot_df=dca_multi_df,
+    y_limits=[-0.025, 0.15],
+    graph_type=&quot;net_benefit&quot;,
+    smooth_frac=0.5,  # Set the smoothing fraction to 0.5
 )</code></pre>
 </div>
 </div>
-<div id="section-15" class="section level4 unnumbered">
+<div id="section-23" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-dca_smooth-1.png" width="672" /></p>
@@ -2763,49 +3060,51 @@ default, the software calculates net benefit at every 1% of threshold
 probability, but we this can cause artifacts unless the data set is very
 large. You can specify instead to calculate net benefit every 5%.</p>
 </div>
-<div id="section-16" class="section level4 tabset tabset-pills">
+<div id="section-24" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-8" class="section level5 active">
+<div id="r-12" class="section level5 active">
 <h5 class="active">R</h5>
-<pre class="r"><code>dca(cancer ~ famhistory + cancerpredmarker,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.05),
-    label = list(cancerpredmarker = &quot;Prediction Model&quot;)
-) %&gt;%
-  plot(smooth = FALSE)</code></pre>
+<pre class="r"><code>dcurves::dca(
+  data = df_cancer_dx,
+  formula = cancer ~ cancerpredmarker + famhistory + risk_group,
+  thresholds = seq(0, 0.35, by = 0.05),
+  as_probability = &quot;risk_group&quot;
+)</code></pre>
 </div>
-<div id="stata-8" class="section level5">
+<div id="stata-12" class="section level5">
 <h5>Stata</h5>
-<pre class="stata"><code>dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
+<pre class="stata"><code>dca cancer cancerpredmarker famhistory risk_group, xstop(0.35) xby(0.05) probability(no risk_group)</code></pre>
 </div>
-<div id="sas-8" class="section level5">
+<div id="sas-12" class="section level5">
 <h5>SAS</h5>
-<pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer, predictors = cancerpredmarker famhistory, graph = yes, xstop = 0.35, xby=0.05, smooth=no);</code></pre>
+<pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer,
+     predictors = cancerpredmarker famhistory risk_group,
+     probability = no risk_group,
+     xby = 0.05, xstop = 0.35);</code></pre>
 </div>
-<div id="python-8" class="section level5">
+<div id="python-12" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code># When running the dca, increase the &#39;thresholds&#39; interval from 0.01 to 0.05 to get a smoother curve
-dca_multi_df = \
-    dca(
-        data=df_cancer_dx,
-        outcome=&#39;cancer&#39;,
-        modelnames=[&#39;famhistory&#39;, &#39;cancerpredmarker&#39;],
-        thresholds=np.arange(0,0.36,0.05) # here we increase the interval to 0.05
-    )
+<pre class="python"><code>dca_smooth2_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;cancerpredmarker&quot;, &quot;famhistory&quot;, &quot;risk_group&quot;],
+    thresholds=np.arange(0, 0.36, 0.05),
+    models_to_prob=[&quot;risk_group&quot;],  # Specify risk_group is not a probability
+)
 
 plot_graphs(
-    plot_df=dca_multi_df,
-    y_limits=[-0.05, 0.2],
-    graph_type=&#39;net_benefit&#39;
+    plot_df=dca_smooth2_df,
+    graph_type=&quot;net_benefit&quot;,
+    smooth_frac=0,
+    y_limits=[-0.025, 0.15],
 )</code></pre>
 </div>
 </div>
-<div id="section-17" class="section level4 unnumbered">
+<div id="section-25" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-dca_smooth2-1.png" width="672" /></p>
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
-<p>You can also combine the two methods of smoothing together.</p>
 <p>A few additional points are worth noting. First, look at the green
 line, the net benefit for “treat all”, that is, biopsy everyone. This
 crosses the y axis at the prevalence. Imagine that a man had a risk
@@ -2834,9 +3133,9 @@ our cancer biopsy data set. The authors reported a statistical model
 with coefficients of 0.75 for a positive family history of cancer; 0.26
 for each increased year of age, and an intercept of -17.5. To test this
 formula on our data set:</p>
-<div id="section-18" class="section level4 tabset tabset-pills">
+<div id="section-26" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-9" class="section level5 active">
+<div id="r-13" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># Use the coefficients from the Brown model
 df_cancer_dx &lt;-
@@ -2848,13 +3147,13 @@ df_cancer_dx &lt;-
 
 # Run the decision curve
 dca(cancer ~ phat_brown,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01),
-    label = list(phat_brown = &quot;Brown Model&quot;)
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  label = list(phat_brown = &quot;Brown Model&quot;)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-9" class="section level5">
+<div id="stata-13" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Use the coefficients from the Brown model
 g logodds_Brown = 0.75*(famhistory) + 0.26*(age) - 17.5
@@ -2866,7 +3165,7 @@ label var phat_Brown &quot;Risk from Brown Model&quot;
 * Run the decision curve
 dca cancer phat_Brown, xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
 </div>
-<div id="sas-9" class="section level5">
+<div id="sas-13" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>DATA data_cancer;
   SET data_cancer;
@@ -2879,28 +3178,32 @@ RUN;
 * run the decision curve;
 %DCA(data = data_cancer, outcome = cancer, predictors = phat_Brown, xstop = 0.35);</code></pre>
 </div>
-<div id="python-9" class="section level5">
+<div id="python-13" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>df_cancer_dx[&#39;logodds_brown&#39;] = 0.75 * df_cancer_dx[&#39;famhistory&#39;] + 0.26*df_cancer_dx[&#39;age&#39;] - 17.5
-df_cancer_dx[&#39;phat_brown&#39;] = np.exp(df_cancer_dx[&#39;logodds_brown&#39;]) / (1 + np.exp(df_cancer_dx[&#39;logodds_brown&#39;]))
+<pre class="python"><code>df_cancer_dx[&quot;logodds_brown&quot;] = (
+    0.75 * df_cancer_dx[&quot;famhistory&quot;] + 0.26 * df_cancer_dx[&quot;age&quot;] - 17.5
+)
+df_cancer_dx[&quot;phat_brown&quot;] = np.exp(df_cancer_dx[&quot;logodds_brown&quot;]) / (
+    1 + np.exp(df_cancer_dx[&quot;logodds_brown&quot;])
+)
 
-dca_pub_model_df = \
-    dca(
-        data=df_cancer_dx,
-        outcome=&#39;cancer&#39;,
-        modelnames=[&#39;phat_brown&#39;],
-        thresholds=np.arange(0,0.36,0.01),
-    )
+dca_pub_model_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;phat_brown&quot;],
+    thresholds=np.arange(0, 0.36, 0.01),
+)
 
 plot_graphs(
     plot_df=dca_pub_model_df,
-    y_limits=[-0.05, 0.2],
-    graph_type=&#39;net_benefit&#39;,
-    smooth_frac=0.5
+    y_limits=[-0.05, 0.15],
+    graph_type=&quot;net_benefit&quot;,
+    smooth_frac=0.5,
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
 )</code></pre>
 </div>
 </div>
-<div id="section-19" class="section level4 unnumbered">
+<div id="section-27" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-pub_model-1.png" width="672" /></p>
@@ -2929,15 +3232,15 @@ immediately; for intermediate-risk patients, use the marker to decide;
 and don’t treat low-risk patients.</li>
 </ol>
 <p>First, let’s set up the variables for these approaches:</p>
-<div id="section-20" class="section level4 tabset tabset-pills">
+<div id="section-28" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-10" class="section level5 active">
+<div id="r-14" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># Create a variable for the strategy of treating only high risk patients
 df_cancer_dx &lt;-
   df_cancer_dx %&gt;%
   mutate(
-    # This will be 1 for treat and 0 for don’t treat
+    # This will be 1 for treat and 0 for don&#39;t treat
     high_risk = ifelse(risk_group == &quot;high&quot;, 1, 0),
     # Treat based on Joint Approach
     joint = ifelse(risk_group == &quot;high&quot; | cancerpredmarker &gt; 0.15, 1, 0),
@@ -2946,7 +3249,7 @@ df_cancer_dx &lt;-
       ifelse(risk_group == &quot;high&quot; | (risk_group == &quot;intermediate&quot; &amp; cancerpredmarker &gt; 0.15), 1, 0)
   )</code></pre>
 </div>
-<div id="stata-10" class="section level5">
+<div id="stata-14" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Create a variable for the strategy of treating only high risk patients
 * This will be 1 for treat and 0 for don&#39;t treat
@@ -2962,7 +3265,7 @@ g conditional = risk_group==&quot;high&quot; | ///
   (risk_group == &quot;intermediate&quot; &amp; cancerpredmarker &gt; 0.15)
 label var conditional &quot;Treat via Conditional Approach&quot;</code></pre>
 </div>
-<div id="sas-10" class="section level5">
+<div id="sas-14" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>* Create a variable for the strategy of treating only high risk patients;
 * This will be 1 for treat and 0 for don&#39;t treat;
@@ -2981,67 +3284,77 @@ DATA data_cancer;
   LABEL conditional = &quot;Treat via Conditional Approach&quot;;
 RUN;</code></pre>
 </div>
-<div id="python-10" class="section level5">
+<div id="python-14" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>df_cancer_dx[&#39;high_risk&#39;] = np.where(df_cancer_dx[&#39;risk_group&#39;] == &quot;high&quot;, 1, 0)
+<pre class="python"><code>df_cancer_dx[&quot;high_risk&quot;] = np.where(df_cancer_dx[&quot;risk_group&quot;] == &quot;high&quot;, 1, 0)
 
-df_cancer_dx[&#39;joint&#39;] = np.where((df_cancer_dx[&#39;risk_group&#39;] == &#39;high&#39;) |
-                                 (df_cancer_dx[&#39;cancerpredmarker&#39;] &gt; 0.15), 1, 0)
+df_cancer_dx[&quot;joint&quot;] = np.where(
+    (df_cancer_dx[&quot;risk_group&quot;] == &quot;high&quot;) | (df_cancer_dx[&quot;cancerpredmarker&quot;] &gt; 0.15),
+    1,
+    0,
+)
 
-df_cancer_dx[&#39;conditional&#39;] = np.where((df_cancer_dx[&#39;risk_group&#39;] == &quot;high&quot;) |
-                                       ((df_cancer_dx[&#39;risk_group&#39;] == &quot;intermediate&quot;) &amp;
-                                        (df_cancer_dx[&#39;cancerpredmarker&#39;] &gt; 0.15)), 1, 0)</code></pre>
+df_cancer_dx[&quot;conditional&quot;] = np.where(
+    (df_cancer_dx[&quot;risk_group&quot;] == &quot;high&quot;)
+    | (
+        (df_cancer_dx[&quot;risk_group&quot;] == &quot;intermediate&quot;)
+        &amp; (df_cancer_dx[&quot;cancerpredmarker&quot;] &gt; 0.15)
+    ),
+    1,
+    0,
+)</code></pre>
 </div>
 </div>
-<div id="section-21" class="section level4 unnumbered">
+<div id="section-29" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
 <p>Now, let’s compare the performance of these approaches using decision
 curve analysis:</p>
 </div>
-<div id="section-22" class="section level4 tabset tabset-pills">
+<div id="section-30" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-11" class="section level5 active">
+<div id="r-15" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(cancer ~ high_risk + joint + conditional,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01),
-    label = list(
-      high_risk = &quot;High Risk&quot;,
-      joint = &quot;Joint Test&quot;,
-      conditional = &quot;Conditional Approach&quot;
-    )
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  label = list(
+    high_risk = &quot;High Risk&quot;,
+    joint = &quot;Joint Test&quot;,
+    conditional = &quot;Conditional Approach&quot;
+  )
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-11" class="section level5">
+<div id="stata-15" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>dca cancer high_risk joint conditional, xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
 </div>
-<div id="sas-11" class="section level5">
+<div id="sas-15" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer,
      predictors = high_risk joint conditional,
      graph = yes, xstop = 0.35);</code></pre>
 </div>
-<div id="python-11" class="section level5">
+<div id="python-15" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_joint_df = \
-  dca(
-      data=df_cancer_dx,
-      outcome=&#39;cancer&#39;,
-      modelnames=[&#39;high_risk&#39;, &#39;joint&#39;, &#39;conditional&#39;],
-      thresholds=np.arange(0, 0.36, 0.01)
-  )
+<pre class="python"><code>dca_joint_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;high_risk&quot;, &quot;joint&quot;, &quot;conditional&quot;],
+    thresholds=np.arange(0, 0.36, 0.01),
+)
 
 plot_graphs(
     plot_df=dca_joint_df,
-    graph_type=&#39;net_benefit&#39;
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.05, 0.15],
+    color_names=[&quot;green&quot;, &quot;cyan&quot;, &quot;violet&quot;, &quot;red&quot;, &quot;gold&quot;],
 )</code></pre>
 </div>
 </div>
-<div id="section-23" class="section level4 unnumbered">
+<div id="section-31" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-dca_joint-1.png" width="672" /></p>
@@ -3071,14 +3384,14 @@ a probability. Based on our thresholds, we’d want to begin at 0.05, and
 by increments of 0.05, stop at 0.35. As we are not interested in the
 graph, we can also specify to suppress the graph from being
 displayed.</p>
-<div id="section-24" class="section level4 tabset tabset-pills">
+<div id="section-32" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-12" class="section level5 active">
+<div id="r-16" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(cancer ~ marker,
-    data = df_cancer_dx,
-    as_probability = &quot;marker&quot;,
-    thresholds = seq(0.05, 0.35, 0.15)
+  data = df_cancer_dx,
+  as_probability = &quot;marker&quot;,
+  thresholds = seq(0.05, 0.35, 0.15)
 ) %&gt;%
   as_tibble() %&gt;%
   select(label, threshold, net_benefit) %&gt;%
@@ -3092,7 +3405,7 @@ displayed.</p>
   ) %&gt;%
   gt::cols_align(&quot;left&quot;, columns = label)</code></pre>
 </div>
-<div id="stata-12" class="section level5">
+<div id="stata-16" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Run the decision curve and save out net benefit results
 * Specifying xby(.05) since we&#39;d want 5% increments
@@ -3108,7 +3421,7 @@ use &quot;DCA Output marker.dta&quot;, clear
 g advantage = marker - all
 label var advantage &quot;Increase in net benefit from using Marker model&quot;</code></pre>
 </div>
-<div id="sas-12" class="section level5">
+<div id="sas-16" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>* Run the decision curve and save out net benefit results, specify xby=0.05 since we want 5% increments;
 %DCA(data = data_cancer, outcome = cancer, predictors = marker,
@@ -3123,40 +3436,39 @@ DATA dcamarker;
   advantage = marker - all;
 RUN;</code></pre>
 </div>
-<div id="python-12" class="section level5">
+<div id="python-16" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_table_df = \
-  dca(
-      data=df_cancer_dx,
-      outcome=&#39;cancer&#39;,
-      modelnames=[&#39;marker&#39;],
-      models_to_prob=[&#39;marker&#39;],
-      thresholds=np.arange(0.05, 0.36, 0.15)
-  )
+<pre class="python"><code>dca_table_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;marker&quot;],
+    models_to_prob=[&quot;marker&quot;],
+    thresholds=np.arange(0.05, 0.36, 0.15),
+)
 
-print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net_benefit&#39;]])</code></pre>
+print(&quot;\n&quot;, dca_table_df[[&quot;model&quot;, &quot;threshold&quot;, &quot;net_benefit&quot;]])</code></pre>
 </div>
 </div>
-<div id="section-25" class="section level4 unnumbered">
+<div id="section-33" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
-<div id="izrsjtjace" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#izrsjtjace table {
+<div id="zqwufjmfih" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zqwufjmfih table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#izrsjtjace thead, #izrsjtjace tbody, #izrsjtjace tfoot, #izrsjtjace tr, #izrsjtjace td, #izrsjtjace th {
+#zqwufjmfih thead, #zqwufjmfih tbody, #zqwufjmfih tfoot, #zqwufjmfih tr, #zqwufjmfih td, #zqwufjmfih th {
   border-style: none;
 }
 
-#izrsjtjace p {
+#zqwufjmfih p {
   margin: 0;
   padding: 0;
 }
 
-#izrsjtjace .gt_table {
+#zqwufjmfih .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3182,12 +3494,12 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-left-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_caption {
+#zqwufjmfih .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#izrsjtjace .gt_title {
+#zqwufjmfih .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3199,7 +3511,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-bottom-width: 0;
 }
 
-#izrsjtjace .gt_subtitle {
+#zqwufjmfih .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3211,7 +3523,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-top-width: 0;
 }
 
-#izrsjtjace .gt_heading {
+#zqwufjmfih .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3223,13 +3535,13 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-right-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_bottom_border {
+#zqwufjmfih .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_col_headings {
+#zqwufjmfih .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3244,7 +3556,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-right-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_col_heading {
+#zqwufjmfih .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3264,7 +3576,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   overflow-x: hidden;
 }
 
-#izrsjtjace .gt_column_spanner_outer {
+#zqwufjmfih .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3276,15 +3588,15 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   padding-right: 4px;
 }
 
-#izrsjtjace .gt_column_spanner_outer:first-child {
+#zqwufjmfih .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#izrsjtjace .gt_column_spanner_outer:last-child {
+#zqwufjmfih .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#izrsjtjace .gt_column_spanner {
+#zqwufjmfih .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3296,11 +3608,11 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   width: 100%;
 }
 
-#izrsjtjace .gt_spanner_row {
+#zqwufjmfih .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#izrsjtjace .gt_group_heading {
+#zqwufjmfih .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3326,7 +3638,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   text-align: left;
 }
 
-#izrsjtjace .gt_empty_group_heading {
+#zqwufjmfih .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3341,15 +3653,15 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   vertical-align: middle;
 }
 
-#izrsjtjace .gt_from_md > :first-child {
+#zqwufjmfih .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#izrsjtjace .gt_from_md > :last-child {
+#zqwufjmfih .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#izrsjtjace .gt_row {
+#zqwufjmfih .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3368,7 +3680,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   overflow-x: hidden;
 }
 
-#izrsjtjace .gt_stub {
+#zqwufjmfih .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3381,7 +3693,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   padding-right: 5px;
 }
 
-#izrsjtjace .gt_stub_row_group {
+#zqwufjmfih .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3395,15 +3707,15 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   vertical-align: top;
 }
 
-#izrsjtjace .gt_row_group_first td {
+#zqwufjmfih .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#izrsjtjace .gt_row_group_first th {
+#zqwufjmfih .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#izrsjtjace .gt_summary_row {
+#zqwufjmfih .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3413,16 +3725,16 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   padding-right: 5px;
 }
 
-#izrsjtjace .gt_first_summary_row {
+#zqwufjmfih .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_first_summary_row.thick {
+#zqwufjmfih .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#izrsjtjace .gt_last_summary_row {
+#zqwufjmfih .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3432,7 +3744,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-bottom-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_grand_summary_row {
+#zqwufjmfih .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3442,7 +3754,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   padding-right: 5px;
 }
 
-#izrsjtjace .gt_first_grand_summary_row {
+#zqwufjmfih .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3452,7 +3764,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-top-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_last_grand_summary_row_top {
+#zqwufjmfih .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3462,11 +3774,11 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-bottom-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_striped {
+#zqwufjmfih .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#izrsjtjace .gt_table_body {
+#zqwufjmfih .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3475,7 +3787,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-bottom-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_footnotes {
+#zqwufjmfih .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3489,7 +3801,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-right-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_footnote {
+#zqwufjmfih .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3498,7 +3810,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   padding-right: 5px;
 }
 
-#izrsjtjace .gt_sourcenotes {
+#zqwufjmfih .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3512,7 +3824,7 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   border-right-color: #D3D3D3;
 }
 
-#izrsjtjace .gt_sourcenote {
+#zqwufjmfih .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3520,72 +3832,72 @@ print(&#39;\n&#39;, dca_table_df[[&#39;model&#39;, &#39;threshold&#39;, &#39;net
   padding-right: 5px;
 }
 
-#izrsjtjace .gt_left {
+#zqwufjmfih .gt_left {
   text-align: left;
 }
 
-#izrsjtjace .gt_center {
+#zqwufjmfih .gt_center {
   text-align: center;
 }
 
-#izrsjtjace .gt_right {
+#zqwufjmfih .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#izrsjtjace .gt_font_normal {
+#zqwufjmfih .gt_font_normal {
   font-weight: normal;
 }
 
-#izrsjtjace .gt_font_bold {
+#zqwufjmfih .gt_font_bold {
   font-weight: bold;
 }
 
-#izrsjtjace .gt_font_italic {
+#zqwufjmfih .gt_font_italic {
   font-style: italic;
 }
 
-#izrsjtjace .gt_super {
+#zqwufjmfih .gt_super {
   font-size: 65%;
 }
 
-#izrsjtjace .gt_footnote_marks {
+#zqwufjmfih .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#izrsjtjace .gt_asterisk {
+#zqwufjmfih .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#izrsjtjace .gt_indent_1 {
+#zqwufjmfih .gt_indent_1 {
   text-indent: 5px;
 }
 
-#izrsjtjace .gt_indent_2 {
+#zqwufjmfih .gt_indent_2 {
   text-indent: 10px;
 }
 
-#izrsjtjace .gt_indent_3 {
+#zqwufjmfih .gt_indent_3 {
   text-indent: 15px;
 }
 
-#izrsjtjace .gt_indent_4 {
+#zqwufjmfih .gt_indent_4 {
   text-indent: 20px;
 }
 
-#izrsjtjace .gt_indent_5 {
+#zqwufjmfih .gt_indent_5 {
   text-indent: 25px;
 }
 
-#izrsjtjace .katex-display {
+#zqwufjmfih .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#izrsjtjace div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zqwufjmfih div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3655,20 +3967,20 @@ In our cancer biopsy example, for instance, we might interested in
 whether we could reduce the number of biopsies. in the table that was
 saved out. To view decrease in interventions graphically, we would only
 need to specify it in our command.</p>
-<div id="section-26" class="section level4 tabset tabset-pills">
+<div id="section-34" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-13" class="section level5 active">
+<div id="r-17" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(cancer ~ marker,
-    data = df_cancer_dx,
-    as_probability = &quot;marker&quot;,
-    thresholds = seq(0.05, 0.35, 0.01),
-    label = list(marker = &quot;Marker&quot;)
+  data = df_cancer_dx,
+  as_probability = &quot;marker&quot;,
+  thresholds = seq(0.05, 0.35, 0.01),
+  label = list(marker = &quot;Marker&quot;)
 ) %&gt;%
   net_intervention_avoided() %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-13" class="section level5">
+<div id="stata-17" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* import data
 import delimited &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv&quot;, clear
@@ -3677,30 +3989,30 @@ label variable marker &quot;Marker&quot;
 * net interventions avoided
 dca cancer marker, prob(no) intervention xstart(0.05) xstop(0.35)</code></pre>
 </div>
-<div id="sas-13" class="section level5">
+<div id="sas-17" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer, predictors = marker, probability = no,
      intervention = yes, xstart = 0.05, xstop = 0.35);</code></pre>
 </div>
-<div id="python-13" class="section level5">
+<div id="python-17" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_intervention_df = \
-  dca(
-      data=df_cancer_dx,
-      outcome=&#39;cancer&#39;,
-      modelnames=[&#39;marker&#39;],
-      thresholds=np.arange(0.05, 0.36, 0.01),
-      models_to_prob=[&#39;marker&#39;]
-  )
-  
+<pre class="python"><code>dca_intervention_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;marker&quot;],
+    thresholds=np.arange(0.05, 0.36, 0.01),
+    models_to_prob=[&quot;marker&quot;],
+)
+
 plot_graphs(
-  plot_df=dca_intervention_df,
-  graph_type=&#39;net_intervention_avoided&#39;,
-  smooth_frac=0.5
+    plot_df=dca_intervention_df,
+    graph_type=&quot;net_intervention_avoided&quot;,
+    smooth_frac=0.2,
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
 )</code></pre>
 </div>
 </div>
-<div id="section-27" class="section level4 unnumbered">
+<div id="section-35" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-dca_intervention-1.png" width="672" /></p>
@@ -3727,9 +4039,9 @@ predicts cancer diagnosis within 1.5 years.</p>
 <div id="basic-data-set-up" class="section level3">
 <h3>Basic Data Set-up</h3>
 <p>We first need to import our data.</p>
-<div id="section-28" class="section level4 tabset tabset-pills">
+<div id="section-36" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-14" class="section level5 active">
+<div id="r-18" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># import data
 df_time_to_cancer_dx &lt;-
@@ -3749,7 +4061,7 @@ df_time_to_cancer_dx &lt;-
     cancer_cr = &quot;Cancer Diagnosis Status&quot;
   )</code></pre>
 </div>
-<div id="stata-14" class="section level5">
+<div id="stata-18" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* import data
 import delimited &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_time_to_cancer_dx.csv&quot;, clear
@@ -3768,7 +4080,7 @@ label variable cancer_cr &quot;Cancer Diagnosis Status&quot;
 * Declaring survival time data: follow-up time variable is ttcancer and the event is cancer
 stset ttcancer, f(cancer)</code></pre>
 </div>
-<div id="sas-14" class="section level5">
+<div id="sas-18" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>FILENAME ttcancer URL &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_time_to_cancer_dx.csv&quot;;
 
@@ -3790,15 +4102,14 @@ DATA data_ttcancer;
 
 RUN;</code></pre>
 </div>
-<div id="python-14" class="section level5">
+<div id="python-18" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>df_time_to_cancer_dx = \
-    pd.read_csv(
-        &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_time_to_cancer_dx.csv&quot;
-    )</code></pre>
+<pre class="python"><code>df_time_to_cancer_dx = pd.read_csv(
+    &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_time_to_cancer_dx.csv&quot;
+)</code></pre>
 </div>
 </div>
-<div id="section-29" class="section level4 unnumbered">
+<div id="section-37" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
@@ -3827,9 +4138,9 @@ of failure at the specified time point. For our example, we will use a
 time point of 1.5, which would corresponds to the eighteen months that
 we are interested in.</p>
 </div>
-<div id="section-30" class="section level4 tabset tabset-pills">
+<div id="section-38" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-15" class="section level5 active">
+<div id="r-19" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># Load survival library
 library(survival)
@@ -3844,7 +4155,7 @@ df_time_to_cancer_dx &lt;-
       1 - summary(survfit(coxmod, newdata = df_time_to_cancer_dx), times = 1.5)$surv[1, ]
   )</code></pre>
 </div>
-<div id="stata-15" class="section level5">
+<div id="stata-19" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Run the cox model and save out baseline survival in the &quot;surv_func&quot; variable
 stcox age famhistory marker, basesurv(surv_func)
@@ -3863,7 +4174,7 @@ local base = r(min)
 g pr_failure18 = 1 - `base&#39;^exp(xb)
 label var pr_failure18 &quot;Probability of Failure at 18 months&quot;</code></pre>
 </div>
-<div id="sas-15" class="section level5">
+<div id="sas-19" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>* Run the Cox model;
 PROC PHREG DATA=data_ttcancer;
@@ -3895,26 +4206,24 @@ DATA data_ttcancer;
   LABEL pr_failure18 = &quot;Probability of Failure at 18 months&quot;;
 RUN;</code></pre>
 </div>
-<div id="python-15" class="section level5">
+<div id="python-19" class="section level5">
 <h5>Python</h5>
 <pre class="python"><code>cph = lifelines.CoxPHFitter()
-cph.fit(df=df_time_to_cancer_dx,
-        duration_col=&#39;ttcancer&#39;,
-        event_col=&#39;cancer&#39;,
-        formula=&#39;age + famhistory + marker&#39;
+cph.fit(
+    df=df_time_to_cancer_dx,
+    duration_col=&quot;ttcancer&quot;,
+    event_col=&quot;cancer&quot;,
+    formula=&quot;age + famhistory + marker&quot;,
 )
 
-cph_pred_vals = \
-  cph.predict_survival_function(
-    df_time_to_cancer_dx[[&#39;age&#39;,
-                          &#39;famhistory&#39;,
-                          &#39;marker&#39;]],
-                          times=[1.5])
+cph_pred_vals = cph.predict_survival_function(
+    df_time_to_cancer_dx[[&quot;age&quot;, &quot;famhistory&quot;, &quot;marker&quot;]], times=[1.5]
+)
 
-df_time_to_cancer_dx[&#39;pr_failure18&#39;] = [1 - val for val in cph_pred_vals.iloc[0, :]]</code></pre>
+df_time_to_cancer_dx[&quot;pr_failure18&quot;] = [1 - val for val in cph_pred_vals.iloc[0, :]]</code></pre>
 </div>
 </div>
-<div id="section-31" class="section level4 unnumbered">
+<div id="section-39" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
@@ -3923,49 +4232,49 @@ after the probability of failure is calculated. All we have to do is
 specify the time point we are interested in. For our example, let us not
 only set the threshold from 0% to 50%, but also add smoothing.</p>
 </div>
-<div id="section-32" class="section level4 tabset tabset-pills">
+<div id="section-40" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-16" class="section level5 active">
+<div id="r-20" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(Surv(ttcancer, cancer) ~ pr_failure18,
-    data = df_time_to_cancer_dx,
-    time = 1.5,
-    thresholds = seq(0, 0.5, 0.01),
-    label = list(pr_failure18 = &quot;Prediction Model&quot;)
+  data = df_time_to_cancer_dx,
+  time = 1.5,
+  thresholds = seq(0, 0.5, 0.01),
+  label = list(pr_failure18 = &quot;Prediction Model&quot;)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-16" class="section level5">
+<div id="stata-20" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>stdca pr_failure18, timepoint(1.5) xstop(0.5) smooth</code></pre>
 </div>
-<div id="sas-16" class="section level5">
+<div id="sas-20" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%STDCA(data = data_ttcancer, out = survivalmult,
        outcome = cancer, ttoutcome = ttcancer,
        timepoint = 1.5, predictors = pr_failure18, xstop = 0.5);</code></pre>
 </div>
-<div id="python-16" class="section level5">
+<div id="python-20" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>stdca_coxph_results = \
-  dca(
-      data=df_time_to_cancer_dx,
-      outcome=&#39;cancer&#39;,
-      modelnames=[&#39;pr_failure18&#39;],
-      thresholds=np.arange(0, 0.51, 0.01),
-      time=1.5,
-      time_to_outcome_col=&#39;ttcancer&#39;
-  )
+<pre class="python"><code>stdca_coxph_results = dca(
+    data=df_time_to_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;pr_failure18&quot;],
+    thresholds=np.arange(0, 0.51, 0.01),
+    time=1.5,
+    time_to_outcome_col=&quot;ttcancer&quot;,
+)
 
 plot_graphs(
-  plot_df=stdca_coxph_results,
-  graph_type=&#39;net_benefit&#39;,
-  y_limits=[-0.05, 0.25],
-  smooth_frac=0.5
+    plot_df=stdca_coxph_results,
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.05, 0.25],
+    smooth_frac=0.5,
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
 )</code></pre>
 </div>
 </div>
-<div id="section-33" class="section level4 unnumbered">
+<div id="section-41" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-stdca_coxph-1.png" width="672" /></p>
@@ -3982,9 +4291,9 @@ our cancer data set, patients may have died prior to cancer diagnosis.
 To run a competing risk analysis, we first create a failure variable
 that indicates which patients died before a cancer diagnosis and then
 run a survival time decision curve analysis.</p>
-<div id="section-34" class="section level4 tabset tabset-pills">
+<div id="section-42" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-17" class="section level5 active">
+<div id="r-21" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># status variable must be a factor with first level coded as &#39;censor&#39;,
 # and the second level the outcome of interest.
@@ -3993,19 +4302,19 @@ df_time_to_cancer_dx &lt;-
   mutate(
     cancer_cr =
       factor(cancer_cr,
-             levels = c(&quot;censor&quot;, &quot;diagnosed with cancer&quot;, &quot;dead other causes&quot;)
+        levels = c(&quot;censor&quot;, &quot;diagnosed with cancer&quot;, &quot;dead other causes&quot;)
       )
   )
 
 dca(Surv(ttcancer, cancer_cr) ~ pr_failure18,
-    data = df_time_to_cancer_dx,
-    time = 1.5,
-    thresholds = seq(0, 0.5, 0.01),
-    label = list(pr_failure18 = &quot;Prediction Model&quot;)
+  data = df_time_to_cancer_dx,
+  time = 1.5,
+  thresholds = seq(0, 0.5, 0.01),
+  label = list(pr_failure18 = &quot;Prediction Model&quot;)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-17" class="section level5">
+<div id="stata-21" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Define the competing events status variable
 g status = 0 if cancer_cr == &quot;censor&quot;
@@ -4018,7 +4327,7 @@ stset ttcancer, f(status=1)
 * Run the decision curve specifying the competing risk option
 stdca pr_failure18, timepoint(1.5) compet1(2) smooth xstop(.5)</code></pre>
 </div>
-<div id="sas-17" class="section level5">
+<div id="sas-21" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>* Define the competing events status variable;
 DATA data_ttcancer;
@@ -4033,12 +4342,12 @@ RUN;
        ttoutcome = ttcancer, timepoint = 1.5,
        predictors = pr_failure18, competerisk = yes, xstop = 0.5);</code></pre>
 </div>
-<div id="python-17" class="section level5">
+<div id="python-21" class="section level5">
 <h5>Python</h5>
 <pre class="python"><code># Python library doesn&#39;t support competing risks</code></pre>
 </div>
 </div>
-<div id="section-35" class="section level4 unnumbered">
+<div id="section-43" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-stdca_cmprsk-1.png" width="672" /></p>
@@ -4053,9 +4362,9 @@ is that net benefit depends on prevalence, and prevalence in
 case-control studies is fixed by design. When working with case-control
 data, you can pass the population prevalence to accurately calculate the
 net benefit.</p>
-<div id="section-36" class="section level4 tabset tabset-pills">
+<div id="section-44" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-18" class="section level5 active">
+<div id="r-22" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># import data
 df_cancer_dx_case_control &lt;-
@@ -4082,7 +4391,7 @@ df_cancer_dx_case_control %&gt;%
   ) %&gt;%
   modify_spanning_header(all_stat_cols() ~ &quot;**Case-Control Status**&quot;)</code></pre>
 </div>
-<div id="stata-18" class="section level5">
+<div id="stata-22" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* import data
 import delimited &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv&quot;, clear
@@ -4095,7 +4404,7 @@ label variable famhistory &quot;Family History&quot;
 label variable marker &quot;Marker&quot;
 label variable cancerpredmarker &quot;Probability of Cancer Diagnosis&quot;</code></pre>
 </div>
-<div id="sas-18" class="section level5">
+<div id="sas-22" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>FILENAME case_con URL &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv&quot;;
 
@@ -4114,44 +4423,42 @@ DATA data_case_control;
         cancerpredmarker = &quot;Probability of Cancer Diagnosis&quot;;
 RUN;</code></pre>
 </div>
-<div id="python-18" class="section level5">
+<div id="python-22" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>df_case_control = \
-  pd.read_csv(
-              &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv&quot;
-          )
+<pre class="python"><code>df_case_control = pd.read_csv(
+    &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv&quot;
+)
 
 # Summarize Data With Column Medians
 # drop &#39;patientid&#39;, then group and take medians of numeric columns only
 medians = (
-    df_case_control
-      .drop(columns=&#39;patientid&#39;)
-      .groupby(&#39;casecontrol&#39;)
-      .median(numeric_only=True)
+    df_case_control.drop(columns=&quot;patientid&quot;)
+    .groupby(&quot;casecontrol&quot;)
+    .median(numeric_only=True)
 )
 print(medians)</code></pre>
 </div>
 </div>
-<div id="section-37" class="section level4 unnumbered">
+<div id="section-45" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
-<div id="tetxbrrenq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tetxbrrenq table {
+<div id="apvbhnlzhi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#apvbhnlzhi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tetxbrrenq thead, #tetxbrrenq tbody, #tetxbrrenq tfoot, #tetxbrrenq tr, #tetxbrrenq td, #tetxbrrenq th {
+#apvbhnlzhi thead, #apvbhnlzhi tbody, #apvbhnlzhi tfoot, #apvbhnlzhi tr, #apvbhnlzhi td, #apvbhnlzhi th {
   border-style: none;
 }
 
-#tetxbrrenq p {
+#apvbhnlzhi p {
   margin: 0;
   padding: 0;
 }
 
-#tetxbrrenq .gt_table {
+#apvbhnlzhi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4177,12 +4484,12 @@ print(medians)</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_caption {
+#apvbhnlzhi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tetxbrrenq .gt_title {
+#apvbhnlzhi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4194,7 +4501,7 @@ print(medians)</code></pre>
   border-bottom-width: 0;
 }
 
-#tetxbrrenq .gt_subtitle {
+#apvbhnlzhi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4206,7 +4513,7 @@ print(medians)</code></pre>
   border-top-width: 0;
 }
 
-#tetxbrrenq .gt_heading {
+#apvbhnlzhi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4218,13 +4525,13 @@ print(medians)</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_bottom_border {
+#apvbhnlzhi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_col_headings {
+#apvbhnlzhi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4239,7 +4546,7 @@ print(medians)</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_col_heading {
+#apvbhnlzhi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4259,7 +4566,7 @@ print(medians)</code></pre>
   overflow-x: hidden;
 }
 
-#tetxbrrenq .gt_column_spanner_outer {
+#apvbhnlzhi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4271,15 +4578,15 @@ print(medians)</code></pre>
   padding-right: 4px;
 }
 
-#tetxbrrenq .gt_column_spanner_outer:first-child {
+#apvbhnlzhi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tetxbrrenq .gt_column_spanner_outer:last-child {
+#apvbhnlzhi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tetxbrrenq .gt_column_spanner {
+#apvbhnlzhi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4291,11 +4598,11 @@ print(medians)</code></pre>
   width: 100%;
 }
 
-#tetxbrrenq .gt_spanner_row {
+#apvbhnlzhi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tetxbrrenq .gt_group_heading {
+#apvbhnlzhi .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -4321,7 +4628,7 @@ print(medians)</code></pre>
   text-align: left;
 }
 
-#tetxbrrenq .gt_empty_group_heading {
+#apvbhnlzhi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4336,15 +4643,15 @@ print(medians)</code></pre>
   vertical-align: middle;
 }
 
-#tetxbrrenq .gt_from_md > :first-child {
+#apvbhnlzhi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tetxbrrenq .gt_from_md > :last-child {
+#apvbhnlzhi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tetxbrrenq .gt_row {
+#apvbhnlzhi .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -4363,7 +4670,7 @@ print(medians)</code></pre>
   overflow-x: hidden;
 }
 
-#tetxbrrenq .gt_stub {
+#apvbhnlzhi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4376,7 +4683,7 @@ print(medians)</code></pre>
   padding-right: 5px;
 }
 
-#tetxbrrenq .gt_stub_row_group {
+#apvbhnlzhi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4390,15 +4697,15 @@ print(medians)</code></pre>
   vertical-align: top;
 }
 
-#tetxbrrenq .gt_row_group_first td {
+#apvbhnlzhi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tetxbrrenq .gt_row_group_first th {
+#apvbhnlzhi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tetxbrrenq .gt_summary_row {
+#apvbhnlzhi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4408,16 +4715,16 @@ print(medians)</code></pre>
   padding-right: 5px;
 }
 
-#tetxbrrenq .gt_first_summary_row {
+#apvbhnlzhi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_first_summary_row.thick {
+#apvbhnlzhi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tetxbrrenq .gt_last_summary_row {
+#apvbhnlzhi .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -4427,7 +4734,7 @@ print(medians)</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_grand_summary_row {
+#apvbhnlzhi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4437,7 +4744,7 @@ print(medians)</code></pre>
   padding-right: 5px;
 }
 
-#tetxbrrenq .gt_first_grand_summary_row {
+#apvbhnlzhi .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -4447,7 +4754,7 @@ print(medians)</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_last_grand_summary_row_top {
+#apvbhnlzhi .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -4457,11 +4764,11 @@ print(medians)</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_striped {
+#apvbhnlzhi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tetxbrrenq .gt_table_body {
+#apvbhnlzhi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4470,7 +4777,7 @@ print(medians)</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_footnotes {
+#apvbhnlzhi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4484,7 +4791,7 @@ print(medians)</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_footnote {
+#apvbhnlzhi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -4493,7 +4800,7 @@ print(medians)</code></pre>
   padding-right: 5px;
 }
 
-#tetxbrrenq .gt_sourcenotes {
+#apvbhnlzhi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4507,7 +4814,7 @@ print(medians)</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tetxbrrenq .gt_sourcenote {
+#apvbhnlzhi .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -4515,72 +4822,72 @@ print(medians)</code></pre>
   padding-right: 5px;
 }
 
-#tetxbrrenq .gt_left {
+#apvbhnlzhi .gt_left {
   text-align: left;
 }
 
-#tetxbrrenq .gt_center {
+#apvbhnlzhi .gt_center {
   text-align: center;
 }
 
-#tetxbrrenq .gt_right {
+#apvbhnlzhi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tetxbrrenq .gt_font_normal {
+#apvbhnlzhi .gt_font_normal {
   font-weight: normal;
 }
 
-#tetxbrrenq .gt_font_bold {
+#apvbhnlzhi .gt_font_bold {
   font-weight: bold;
 }
 
-#tetxbrrenq .gt_font_italic {
+#apvbhnlzhi .gt_font_italic {
   font-style: italic;
 }
 
-#tetxbrrenq .gt_super {
+#apvbhnlzhi .gt_super {
   font-size: 65%;
 }
 
-#tetxbrrenq .gt_footnote_marks {
+#apvbhnlzhi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tetxbrrenq .gt_asterisk {
+#apvbhnlzhi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tetxbrrenq .gt_indent_1 {
+#apvbhnlzhi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tetxbrrenq .gt_indent_2 {
+#apvbhnlzhi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tetxbrrenq .gt_indent_3 {
+#apvbhnlzhi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tetxbrrenq .gt_indent_4 {
+#apvbhnlzhi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tetxbrrenq .gt_indent_5 {
+#apvbhnlzhi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tetxbrrenq .katex-display {
+#apvbhnlzhi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tetxbrrenq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#apvbhnlzhi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4642,46 +4949,45 @@ N = 420</span><span class="gt_footnote_marks" style="white-space:nowrap;font-sty
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
 <p>In the example below, the population prevalence is 20%.</p>
 </div>
-<div id="section-38" class="section level4 tabset tabset-pills">
+<div id="section-46" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-19" class="section level5 active">
+<div id="r-23" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code>dca(casecontrol ~ cancerpredmarker,
-    data = df_cancer_dx_case_control,
-    prevalence = 0.20,
-    thresholds = seq(0, 0.5, 0.01)
+  data = df_cancer_dx_case_control,
+  prevalence = 0.20,
+  thresholds = seq(0, 0.5, 0.01)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-19" class="section level5">
+<div id="stata-23" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>dca casecontrol cancerpredmarker, prevalence(0.20) xstop(0.50)</code></pre>
 </div>
-<div id="sas-19" class="section level5">
+<div id="sas-23" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%DCA(data = data_case_control, outcome = casecontrol,
      predictors = cancerpredmarker, prevalence = 0.20);</code></pre>
 </div>
-<div id="python-19" class="section level5">
+<div id="python-23" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_case_control_df = \
-  dca(
+<pre class="python"><code>dca_case_control_df = dca(
     data=df_case_control,
-    outcome=&#39;casecontrol&#39;,
-    modelnames=[&#39;cancerpredmarker&#39;],
+    outcome=&quot;casecontrol&quot;,
+    modelnames=[&quot;cancerpredmarker&quot;],
     prevalence=0.20,
-    thresholds=np.arange(0, 0.51, 0.01)
-  )
+    thresholds=np.arange(0, 0.51, 0.01),
+)
 
 plot_graphs(
-  plot_df=dca_case_control_df,
-  graph_type=&#39;net_benefit&#39;,
-  y_limits=[-0.05, 0.25],
-  smooth_frac=0.5
+    plot_df=dca_case_control_df,
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.05, 0.25],
+    smooth_frac=0.1,
 )</code></pre>
 </div>
 </div>
-<div id="section-39" class="section level4 unnumbered">
+<div id="section-47" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-dca_case_control-1.png" width="672" /></p>
@@ -4702,24 +5008,24 @@ accurate, few clinicians would conduct more than 30 tests to predict one
 cancer diagnosis. This might be because the test is expensive, or
 requires some invasive procedure to obtain. The “harm” of measuring the
 marker is the reciprocal of 30, or 0.0333.</p>
-<div id="section-40" class="section level4 tabset tabset-pills">
+<div id="section-48" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-20" class="section level5 active">
+<div id="r-24" class="section level5 active">
 <h5 class="active">R</h5>
-<pre class="r"><code># Run the decision curve
+<pre class="r"><code># Run the decision curve incorporating simple harm of marker measurement
 dca(cancer ~ marker,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01),
-    as_probability = &quot;marker&quot;,
-    harm = list(marker = 0.0333)
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  as_probability = &quot;marker&quot;,
+  harm = list(marker = 0.0333)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-20" class="section level5">
+<div id="stata-24" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>dca cancer marker, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
 </div>
-<div id="sas-20" class="section level5">
+<div id="sas-24" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%DCA(data = data_cancer, outcome = cancer,
      predictors = marker,
@@ -4727,25 +5033,27 @@ dca(cancer ~ marker,
      harm = 0.0333,
      graph = yes, xstop = 0.35);</code></pre>
 </div>
-<div id="python-20" class="section level5">
+<div id="python-24" class="section level5">
 <h5>Python</h5>
-<pre class="python"><code>dca_harm_simple_df = \
-  dca(
-      data=df_cancer_dx,
-      outcome=&#39;cancer&#39;,
-      modelnames=[&#39;marker&#39;],
-      thresholds=np.arange(0, 0.36, 0.01),
-      harm={&#39;marker&#39;: 0.0333},
-      models_to_prob=[&#39;marker&#39;]
-  )
+<pre class="python"><code>dca_harm_simple_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;marker&quot;],
+    thresholds=np.arange(0, 0.36, 0.01),
+    harm={&quot;marker&quot;: 0.0333},
+    models_to_prob=[&quot;marker&quot;],
+)
 
 plot_graphs(
-  plot_df=dca_harm_simple_df,
-  graph_type=&#39;net_benefit&#39;
+    plot_df=dca_harm_simple_df,
+    graph_type=&quot;net_benefit&quot;,
+    y_limits=[-0.05, 0.15],
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+    smooth_frac=0.2,
 )</code></pre>
 </div>
 </div>
-<div id="section-41" class="section level4 unnumbered">
+<div id="section-49" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-dca_harm_simple-1.png" width="672" /></p>
@@ -4768,9 +5076,9 @@ incorporate it into our decision curve. The strategy for incorporating
 harm for the conditional test is by multiplying the proportion scanned
 by the harm of the scan.</p>
 </div>
-<div id="section-42" class="section level4 tabset tabset-pills">
+<div id="section-50" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-21" class="section level5 active">
+<div id="r-25" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># the harm of measuring the marker is stored in a scalar
 harm_marker &lt;- 0.0333
@@ -4782,14 +5090,14 @@ harm_conditional &lt;- mean(df_cancer_dx$risk_group == &quot;intermediate&quot;)
 
 # Run the decision curve
 dca(cancer ~ risk_group,
-    data = df_cancer_dx,
-    thresholds = seq(0, 0.35, 0.01),
-    as_probability = &quot;risk_group&quot;,
-    harm = list(risk_group = harm_conditional)
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  as_probability = &quot;risk_group&quot;,
+  harm = list(risk_group = harm_conditional)
 ) %&gt;%
   plot(smooth = TRUE)</code></pre>
 </div>
-<div id="stata-21" class="section level5">
+<div id="stata-25" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* the harm of measuring the marker is stored in a local
 local harm_marker = 0.0333
@@ -4806,7 +5114,7 @@ encode (risk_group), g(risk_category)
 dca cancer risk_category, ///
 probability(no) harm(`harm_conditional&#39;) xstop(0.35) xlabel(0(0.05)0.35)</code></pre>
 </div>
-<div id="sas-21" class="section level5">
+<div id="sas-25" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>* the harm of measuring the marker is stored as a macro variable;
 %LET harm_marker = 0.0333;
@@ -4836,29 +5144,32 @@ RUN;
      probability=no,
      harm = &amp;harm_conditional., xstop = 0.35);</code></pre>
 </div>
-<div id="python-21" class="section level5">
+<div id="python-25" class="section level5">
 <h5>Python</h5>
 <pre class="python"><code>harm_marker = 0.0333
-harm_conditional = (df_cancer_dx[&#39;risk_group&#39;] == &quot;intermediate&quot;).mean() * harm_marker
+harm_conditional = (df_cancer_dx[&quot;risk_group&quot;] == &quot;intermediate&quot;).mean() * harm_marker
 
-dca_harm_df = \
-  dca(
-      data=df_cancer_dx,
-      outcome=&#39;cancer&#39;,
-      modelnames=[&#39;risk_group&#39;],
-      models_to_prob=[&#39;risk_group&#39;],
-      thresholds=np.arange(0, 0.36, 0.01),
-      harm={&#39;risk_group&#39;: harm_conditional}
-  )
+dca_harm_df = dca(
+    data=df_cancer_dx,
+    outcome=&quot;cancer&quot;,
+    modelnames=[&quot;risk_group&quot;],
+    models_to_prob=[&quot;risk_group&quot;],
+    thresholds=np.arange(0, 0.36, 0.01),
+    harm={&quot;risk_group&quot;: harm_conditional},
+)
 
 plot_graphs(
-  plot_df=dca_harm_df
+    plot_df=dca_harm_df,
+    y_limits=[-0.05, 0.15],
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+    smooth_frac=0.2,
 )</code></pre>
 </div>
 </div>
-<div id="section-43" class="section level4 unnumbered">
+<div id="section-51" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
+<p><img src="dca-tutorial_files/figure-html/r-dca_harm-1.png" width="672" /></p>
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
 </div>
 </div>
@@ -4887,31 +5198,32 @@ done, we will include code for it here. Repeat steps (1) to (5) 200
 times. The corrected net benefit for each threshold probability is the
 mean across the 200 replications.</li>
 </ol>
-<div id="section-44" class="section level4 tabset tabset-pills">
+<div id="section-52" class="section level4 tabset tabset-pills">
 <h4 class="tabset tabset-pills"></h4>
-<div id="r-22" class="section level5 active">
+<div id="r-26" class="section level5 active">
 <h5 class="active">R</h5>
 <pre class="r"><code># set seed for random process
 set.seed(112358)
 
-formula = cancer ~ marker + age + famhistory
-dca_thresholds = seq(0,0.36, 0.01)
+formula &lt;- cancer ~ marker + age + famhistory
+dca_thresholds &lt;- seq(0, 0.36, 0.01)
 
 # create a 10-fold cross validation set, 1 repeat which is the base case, change to suit your use case
 cross_validation_samples &lt;- rsample::vfold_cv(df_cancer_dx, v = 10, repeats = 1)
 
-df_crossval_predictions &lt;- 
-  cross_validation_samples %&gt;% 
+df_crossval_predictions &lt;-
+  cross_validation_samples %&gt;%
   # for each cut of the data, build logistic regression on the 90% (analysis set)
-  rowwise() %&gt;% 
+  rowwise() %&gt;%
   mutate(
     # build regression model on analysis set
     glm_analysis =
-      glm(formula = formula,
-          data = rsample::analysis(splits),
-          family = binomial
+      glm(
+        formula = formula,
+        data = rsample::analysis(splits),
+        family = binomial
       ) %&gt;%
-      list(),
+        list(),
     # get predictions for assessment set
     df_assessment =
       broom::augment(
@@ -4919,7 +5231,7 @@ df_crossval_predictions &lt;-
         newdata = rsample::assessment(splits),
         type.predict = &quot;response&quot;
       ) %&gt;%
-      list()
+        list()
   ) %&gt;%
   ungroup() %&gt;%
   # pool results from the 10-fold cross validation
@@ -4933,7 +5245,7 @@ df_cv_pred &lt;-
   df_cancer_dx %&gt;%
   left_join(
     df_crossval_predictions,
-    by = &#39;patientid&#39;
+    by = &quot;patientid&quot;
   )
 
 dcurves::dca( # calculate net benefit scores on mean cross validation predictions
@@ -4942,7 +5254,8 @@ dcurves::dca( # calculate net benefit scores on mean cross validation prediction
   thresholds = dca_thresholds,
   label = list(
     cv_pred = &quot;Cross-validated Prediction Model&quot;
-  ))$dca |&gt; 
+  )
+)$dca |&gt;
   # plot cross validated net benefit values
   ggplot(aes(x = threshold, y = net_benefit, color = label)) +
   stat_smooth(method = &quot;loess&quot;, se = FALSE, formula = &quot;y ~ x&quot;, span = 0.2) +
@@ -4951,7 +5264,7 @@ dcurves::dca( # calculate net benefit scores on mean cross validation prediction
   labs(x = &quot;Threshold Probability&quot;, y = &quot;Net Benefit&quot;, color = &quot;&quot;) +
   theme_bw()</code></pre>
 </div>
-<div id="stata-22" class="section level5">
+<div id="stata-26" class="section level5">
 <h5>Stata</h5>
 <pre class="stata"><code>* Load Original Dataset
 import delimited &quot;https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx.csv&quot;, clear
@@ -5026,7 +5339,7 @@ label var model &quot;Cross-validated Prediction Model&quot;
 * Plotting the figure of all the net benefits.
 twoway (line all threshold if all&gt;-0.05, sort) || (line none model threshold, sort)</code></pre>
 </div>
-<div id="sas-22" class="section level5">
+<div id="sas-26" class="section level5">
 <h5>SAS</h5>
 <pre class="sas"><code>%MACRO CROSSVAL(data=,             /*Name of input dataset*/
                 out=,              /*Name of output dataset containing calculated net benefit*/
@@ -5135,11 +5448,13 @@ PROC GPLOT DATA=allcv_pr;
 RUN;
 QUIT;</code></pre>
 </div>
-<div id="python-22" class="section level5">
+<div id="python-26" class="section level5">
 <h5>Python</h5>
 <pre class="python"><code># Load dependencies for cross validation
 import random  # Library to generate random seed
-from sklearn.model_selection import RepeatedKFold  # Cross validation data selection and segregation function
+from sklearn.model_selection import (
+    RepeatedKFold,
+)  # Cross validation data selection and segregation function
 
 # Set seed for random processes
 random.seed(112358)
@@ -5150,7 +5465,7 @@ df_cancer_dx = pd.read_csv(
 )
 
 # Define the formula (make sure the column names in your DataFrame match these)
-formula = &#39;cancer ~ marker + age + famhistory&#39;
+formula = &quot;cancer ~ marker + age + famhistory&quot;
 
 # Create cross-validation object
 rkf = RepeatedKFold(n_splits=10, n_repeats=1, random_state=112358)
@@ -5162,50 +5477,47 @@ cv_predictions = []
 for train_index, test_index in rkf.split(df_cancer_dx):
     # Split data into training and test sets
     train = df_cancer_dx.iloc[train_index]
-    test  = df_cancer_dx.iloc[test_index].copy()   # ← make an explicit copy
+    test = df_cancer_dx.iloc[test_index].copy()  # ← make an explicit copy
 
     # Fit the model
     model = sm.Logit.from_formula(formula, data=train).fit(disp=0)
 
     # Make predictions on the test set
-    test[&#39;cv_prediction&#39;] = model.predict(test)
+    test[&quot;cv_prediction&quot;] = model.predict(test)
 
     # Store predictions
-    cv_predictions.append(test[[&#39;patientid&#39;, &#39;cv_prediction&#39;]])
+    cv_predictions.append(test[[&quot;patientid&quot;, &quot;cv_prediction&quot;]])
 
 # Concatenate predictions from all folds
 df_predictions = pd.concat(cv_predictions)
 
 # Calculate mean prediction per patient
 df_mean_predictions = (
-    df_predictions
-      .groupby(&#39;patientid&#39;)[&#39;cv_prediction&#39;]
-      .mean()
-      .reset_index()
+    df_predictions.groupby(&quot;patientid&quot;)[&quot;cv_prediction&quot;].mean().reset_index()
 )
 
 # Join with original data
-df_cv_pred = pd.merge(df_cancer_dx, df_mean_predictions, on=&#39;patientid&#39;, how=&#39;left&#39;)
+df_cv_pred = pd.merge(df_cancer_dx, df_mean_predictions, on=&quot;patientid&quot;, how=&quot;left&quot;)
 
 # Decision curve analysis
 df_dca_cv = dca(
     data=df_cv_pred,
-    modelnames=[&#39;cv_prediction&#39;],
-    outcome=&#39;cancer&#39;,
-    thresholds=np.arange(0, 0.36, 0.01)
+    modelnames=[&quot;cv_prediction&quot;],
+    outcome=&quot;cancer&quot;,
+    thresholds=np.arange(0, 0.36, 0.01),
 )
 
 # Plot DCA curves
 plot_graphs(
     plot_df=df_dca_cv,
-    graph_type=&#39;net_benefit&#39;,
+    graph_type=&quot;net_benefit&quot;,
     y_limits=[-0.01, 0.15],
-    color_names=[&#39;blue&#39;, &#39;red&#39;, &#39;green&#39;],
-    smooth_frac=0.5
+    color_names=[&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;],
+    smooth_frac=0.2,
 )</code></pre>
 </div>
 </div>
-<div id="section-45" class="section level4 unnumbered">
+<div id="section-53" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 <!-- This chunk runs the R code without printing the code (since that is in the tabset). -->
 <p><img src="dca-tutorial_files/figure-html/r-cross_validation-1.png" width="672" /></p>
