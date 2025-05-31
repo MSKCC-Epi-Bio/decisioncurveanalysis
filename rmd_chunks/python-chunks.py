@@ -341,7 +341,7 @@ plot_graphs(
     plot_df=dca_case_control_df,
     graph_type="net_benefit",
     y_limits=[-0.05, 0.25],
-    smooth_frac=0.5,
+    smooth_frac=0.1,
 )
 
 ## ---- python-dca_harm_simple -----
@@ -355,7 +355,13 @@ dca_harm_simple_df = dca(
     models_to_prob=["marker"],
 )
 
-plot_graphs(plot_df=dca_harm_simple_df, graph_type="net_benefit")
+plot_graphs(
+    plot_df=dca_harm_simple_df,
+    graph_type="net_benefit",
+    y_limits=[-0.05, 0.15],
+    color_names=["blue", "red", "green"],
+    smooth_frac=0.2,
+)
 
 ## ---- python-dca_harm -----
 
@@ -371,7 +377,12 @@ dca_harm_df = dca(
     harm={"risk_group": harm_conditional},
 )
 
-plot_graphs(plot_df=dca_harm_df)
+plot_graphs(
+    plot_df=dca_harm_df,
+    y_limits=[-0.05, 0.15],
+    color_names=["blue", "red", "green"],
+    smooth_frac=0.2,
+)
 
 ## ---- python-cross_validation -----
 
@@ -438,5 +449,5 @@ plot_graphs(
     graph_type="net_benefit",
     y_limits=[-0.01, 0.15],
     color_names=["blue", "red", "green"],
-    smooth_frac=0.5,
+    smooth_frac=0.2,
 )

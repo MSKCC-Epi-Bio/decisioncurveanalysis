@@ -210,69 +210,6 @@ dca(cancer ~ high_risk + joint + conditional,
 ) %>%
   plot(smooth = TRUE)
 
-
-# ---- import_case_control ----- 
-# import data
-df_cancer_dx_case_control <-
-  readr::read_csv(
-    file = "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv"
-  ) %>%
-  # assign variable labels. these labels will be carried through in the `dca()` output
-  labelled::set_variable_labels(
-    patientid = "Patient ID",
-    casecontrol = "Case-Control Status",
-    risk_group = "Risk Group",
-    age = "Patient Age",
-    famhistory = "Family History",
-    marker = "Marker",
-    cancerpredmarker = "Prediction Model"
-  )
-
-# summarize data
-df_cancer_dx_case_control %>%
-  select(-patientid) %>%
-  tbl_summary(
-    by = casecontrol,
-    type = all_dichotomous() ~ "categorical"
-  ) %>%
-  modify_spanning_header(all_stat_cols() ~ "**Case-Control Status**")
-
-# ---- dca_case_control ----- 
-dca(casecontrol ~ cancerpredmarker,
-  data = df_cancer_dx_case_control,
-  prevalence = 0.20,
-  thresholds = seq(0, 0.5, 0.01)
-) %>%
-  plot(smooth = TRUE)
-
-# ---- dca_harm_simple ----- 
-# Run the decision curve incorporating simple harm of marker measurement
-dca(cancer ~ marker,
-  data = df_cancer_dx,
-  thresholds = seq(0, 0.35, 0.01),
-  as_probability = "marker",
-  harm = list(marker = 0.0333)
-) %>%
-  plot(smooth = TRUE)
-
-# ---- dca_harm ----- 
-# the harm of measuring the marker is stored in a scalar
-harm_marker <- 0.0333
-# in the conditional test, only patients at intermediate risk
-# have their marker measured
-# harm of the conditional approach is proportion of patients who have the marker
-# measured multiplied by the harm
-harm_conditional <- mean(df_cancer_dx$risk_group == "intermediate") * harm_marker
-
-# Run the decision curve
-dca(cancer ~ risk_group,
-  data = df_cancer_dx,
-  thresholds = seq(0, 0.35, 0.01),
-  as_probability = "risk_group",
-  harm = list(risk_group = harm_conditional)
-) %>%
-  plot(smooth = TRUE)
-
 # ---- dca_table ----- 
 dca(cancer ~ marker,
   data = df_cancer_dx,
@@ -335,6 +272,7 @@ df_time_to_cancer_dx <-
   )
 
 # ---- stdca_coxph ----- 
+
 dca(Surv(ttcancer, cancer) ~ pr_failure18,
   data = df_time_to_cancer_dx,
   time = 1.5,
@@ -342,7 +280,6 @@ dca(Surv(ttcancer, cancer) ~ pr_failure18,
   label = list(pr_failure18 = "Prediction Model")
 ) %>%
   plot(smooth = TRUE)
-
 
 # ---- stdca_cmprsk ----- 
 # status variable must be a factor with first level coded as 'censor',
@@ -361,6 +298,69 @@ dca(Surv(ttcancer, cancer_cr) ~ pr_failure18,
   time = 1.5,
   thresholds = seq(0, 0.5, 0.01),
   label = list(pr_failure18 = "Prediction Model")
+) %>%
+  plot(smooth = TRUE)
+
+# ---- import_case_control ----- 
+# import data
+df_cancer_dx_case_control <-
+  readr::read_csv(
+    file = "https://raw.githubusercontent.com/ddsjoberg/dca-tutorial/main/data/df_cancer_dx_case_control.csv"
+  ) %>%
+  # assign variable labels. these labels will be carried through in the `dca()` output
+  labelled::set_variable_labels(
+    patientid = "Patient ID",
+    casecontrol = "Case-Control Status",
+    risk_group = "Risk Group",
+    age = "Patient Age",
+    famhistory = "Family History",
+    marker = "Marker",
+    cancerpredmarker = "Prediction Model"
+  )
+
+# summarize data
+df_cancer_dx_case_control %>%
+  select(-patientid) %>%
+  tbl_summary(
+    by = casecontrol,
+    type = all_dichotomous() ~ "categorical"
+  ) %>%
+  modify_spanning_header(all_stat_cols() ~ "**Case-Control Status**")
+
+# ---- dca_case_control ----- 
+dca(casecontrol ~ cancerpredmarker,
+  data = df_cancer_dx_case_control,
+  prevalence = 0.20,
+  thresholds = seq(0, 0.5, 0.01)
+) %>%
+  plot(smooth = TRUE)
+
+
+# ---- dca_harm_simple ----- 
+# Run the decision curve incorporating simple harm of marker measurement
+dca(cancer ~ marker,
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  as_probability = "marker",
+  harm = list(marker = 0.0333)
+) %>%
+  plot(smooth = TRUE)
+
+# ---- dca_harm ----- 
+# the harm of measuring the marker is stored in a scalar
+harm_marker <- 0.0333
+# in the conditional test, only patients at intermediate risk
+# have their marker measured
+# harm of the conditional approach is proportion of patients who have the marker
+# measured multiplied by the harm
+harm_conditional <- mean(df_cancer_dx$risk_group == "intermediate") * harm_marker
+
+# Run the decision curve
+dca(cancer ~ risk_group,
+  data = df_cancer_dx,
+  thresholds = seq(0, 0.35, 0.01),
+  as_probability = "risk_group",
+  harm = list(risk_group = harm_conditional)
 ) %>%
   plot(smooth = TRUE)
 

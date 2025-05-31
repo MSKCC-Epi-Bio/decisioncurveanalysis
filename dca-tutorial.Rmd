@@ -464,7 +464,7 @@ Then incorporate it into our decision curve.
 The strategy for incorporating harm for the conditional test is by multiplying the proportion scanned by the harm of the scan.
 
 ```{r, dca_harm, echo=FALSE, message = FALSE, results='asis'}
-add_tabset_codes("dca_harm", eval = FALSE)
+add_tabset_codes("dca_harm")
 ```
 
 ## Correction for Overfit
