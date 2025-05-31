@@ -377,7 +377,12 @@ dca_harm_df = dca(
     harm={"risk_group": harm_conditional},
 )
 
-plot_graphs(plot_df=dca_harm_df)
+plot_graphs(
+    plot_df=dca_harm_df,
+    y_limits=[-0.05, 0.15],
+    color_names=["blue", "red", "green"],
+    smooth_frac=0.2,
+)
 
 # ---- cross_validation ----- 
 
@@ -444,5 +449,5 @@ plot_graphs(
     graph_type="net_benefit",
     y_limits=[-0.01, 0.15],
     color_names=["blue", "red", "green"],
-    smooth_frac=0.5,
+    smooth_frac=0.2,
 )
