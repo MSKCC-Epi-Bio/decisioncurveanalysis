@@ -28,6 +28,13 @@ editor_options:
   background-color: #f9f9f9;
   display: block;
   width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover effect */
+}
+
+/* Slight lift and shadow on hover to make cards feel interactive */
+.contact-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .contact-wrapper {

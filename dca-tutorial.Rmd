@@ -14,10 +14,6 @@ editor_options:
     wrap: sentence
 ---
 
-<!-- <div class="center"> -->
-<!--   <h1>Decision Curve Analysis</h1> -->
-<!-- </div> -->
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = TRUE, warning = FALSE, fig.height = 3, cache = TRUE,
