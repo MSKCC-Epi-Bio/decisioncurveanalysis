@@ -55,19 +55,19 @@ p {
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.youtube.com/playlist?list=PL_3UUp3wcnVYYQUQ5wXgNjkl1LI1mocA3">DCA YouTube Series (12 Videos)</a></h2>
+<h2><a href="https://www.youtube.com/playlist?list=PL_3UUp3wcnVYYQUQ5wXgNjkl1LI1mocA3" target="_blank" rel="noopener noreferrer">DCA YouTube Series (12 Videos)</a></h2>
 </div>
 </div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://github.com/ML4LHS/modelrecon">R code for calculating net benefit under resource constraints</a></h2>
+<h2><a href="https://github.com/ML4LHS/modelrecon" target="_blank" rel="noopener noreferrer">R code for calculating net benefit under resource constraints</a></h2>
 </div>
 </div>
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://www.fharrell.com/post/edca/">Seven Common Errors in Decision Curve Analysis</a></h2>
+<h2><a href="https://www.fharrell.com/post/edca/" target="_blank" rel="noopener noreferrer">Seven Common Errors in Decision Curve Analysis</a></h2>
 <span class="year">2023</span>
 <p> Andrew Vickers </p>
 </div>
@@ -75,7 +75,7 @@ p {
 
 <div class="contact-wrapper contact-box">
 <div class="contact-text">
-<h2><a href="https://it-innovations-healthcare.medium.com/decision-curve-analysis-or-why-interpretation-of-medical-decision-support-models-should-be-based-on-b553acedb998">Decision Curve Analysis or Why Interpretation of Medical Decision Support Models Should Be Based on Net Benefit</a></h2>
+<h2><a href="https://it-innovations-healthcare.medium.com/decision-curve-analysis-or-why-interpretation-of-medical-decision-support-models-should-be-based-on-b553acedb998" target="_blank" rel="noopener noreferrer">Decision Curve Analysis or Why Interpretation of Medical Decision Support Models Should Be Based on Net Benefit</a></h2>
 <span class="year">2024</span>
 <p>Paul Hiemstra, PhD</p>
 </div>

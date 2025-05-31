@@ -6,3 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <!-- <link rel="canonical" href="https://www.decisioncurveanalysis.org/"> -->
+
+<!-- Force certain navbar links (Discussions & GitHub) to open in a new tab -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var selectors = [
+      'a[href*="github.com/MSKCC-Epi-Bio/decisioncurveanalysis/discussions"]',
+      'a[href*="github.com/mskcc-epi-bio/decisioncurveanalysis"]'
+    ];
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      });
+    });
+  });
+</script>
