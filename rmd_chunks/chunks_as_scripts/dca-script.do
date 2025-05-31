@@ -21,7 +21,7 @@ logit cancer famhistory
 
 /* ---- dca_famhistory ----- */
 * Run the decision curve: family history is coded as 0 or 1, i.e. a probability
-* so no need to specify the “probability” option
+* so no need to specify the "probability" option
 dca cancer famhistory
 
 /* ---- dca_famhistory2 ----- */
@@ -38,11 +38,30 @@ predict cancerpredmarker
 /* ---- dca_multi ----- */
 dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.01)0.35)
 
+/* ---- dca_formatting ----- */
+// Add formatting options to improve graph appearance
+dca cancer cancerpredmarker, xstop(0.25) lcolor(red green blue) lwidth(thick medium thin) lpattern(solid dash dot)
+
+/* ---- dca_legend_off ----- */
+// Turn off the legend for a cleaner publication-ready figure
+dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.05)0.35) legend(off)
+
+/* ---- dca_create_low_incidence ----- */
+// Create a dataset with lower incidence of cancer
+set seed 123
+g cancer_temp = cancer
+replace cancer_temp=. if cancer==1 & uniform()<.9
+dca cancer_temp cancerpredmarker, xstop(0.25) xlabel(0(0.05)0.25)
+
+/* ---- dca_adjust_axes ----- */
+// Adjust both x and y axes for better visualization
+dca cancer_temp cancerpredmarker, xstop(0.1) ymin(-0.005) xlabel(0(0.02)0.1) ylabel(-0.005(0.01)0.05)
+
 /* ---- dca_smooth ----- */
 dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.01)0.35) smooth
 
-/* ---- dca_smooth2 ----- */
-dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.05)0.35)
+## ---- stata-dca_smooth2 ----
+dca cancer cancerpredmarker famhistory risk_group, xstop(0.35) xby(0.05) probability(no risk_group)
 
 /* ---- pub_model ----- */
 * Use the coefficients from the Brown model
@@ -57,7 +76,7 @@ dca cancer phat_Brown, xstop(0.35) xlabel(0(0.05)0.35)
 
 /* ---- joint ----- */
 * Create a variable for the strategy of treating only high risk patients
-* This will be 1 for treat and 0 for don’t treat
+* This will be 1 for treat and 0 for don't treat
 g high_risk = risk_group=="high"
 label var high_risk "Treat Only High Risk Group"
 
@@ -73,28 +92,9 @@ label var conditional "Treat via Conditional Approach"
 /* ---- dca_joint ----- */
 dca cancer high_risk joint conditional, xstop(0.35) xlabel(0(0.05)0.35)
 
-/* ---- dca_harm_simple ----- */
-dca cancer high_risk, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)
-
-/* ---- dca_harm ----- */
-* the harm of measuring the marker is stored in a local
-local harm_marker = 0.0333
-* in the conditional test, only patients at intermediate risk have their marker measured
-g intermediate_risk = (risk_group=="intermediate")
-
-* harm of the conditional approach is proportion of patients who have the marker measured multiplied by the harm of measuring
-sum intermediate_risk
-local harm_conditional = r(mean)*`harm_marker'
-
-*convert risk group to a numerical variable to use in the decision curve analysis
-encode (risk_group), g(risk_category)
-* Run the decision curve
-dca cancer risk_category, ///
-probability(no) harm(`harm_conditional') xstop(0.25) xlabel(0(0.05)0.25)
-
 /* ---- dca_table ----- */
 * Run the decision curve and save out net benefit results
-* Specifying xby(.05) since we’d want 5% increments
+* Specifying xby(.05) since we'd want 5% increments
 dca cancer marker, prob(no) xstart(0.05) xstop(0.35) xby(0.05) nograph ///
  saving("DCA Output marker.dta", replace)
 
@@ -134,7 +134,7 @@ label variable cancer_cr "Cancer Diagnosis Status"
 stset ttcancer, f(cancer)
 
 /* ---- coxph ----- */
-* Run the cox model and save out baseline survival in the “surv_func” variable
+* Run the cox model and save out baseline survival in the "surv_func" variable
 stcox age famhistory marker, basesurv(surv_func)
 
 * get linear predictor for calculation of risk
@@ -180,6 +180,25 @@ label variable cancerpredmarker "Probability of Cancer Diagnosis"
 
 /* ---- dca_case_control ----- */
 dca casecontrol cancerpredmarker, prevalence(0.20) xstop(0.50)
+
+/* ---- dca_harm_simple ----- */
+dca cancer marker, probability(no) harm(0.0333) xstop(0.35) xlabel(0(0.05)0.35)
+
+/* ---- dca_harm ----- */
+* the harm of measuring the marker is stored in a local
+local harm_marker = 0.0333
+* in the conditional test, only patients at intermediate risk have their marker measured
+g intermediate_risk = (risk_group=="intermediate")
+
+* harm of the conditional approach is proportion of patients who have the marker measured multiplied by the harm of measuring
+sum intermediate_risk
+local harm_conditional = r(mean)*`harm_marker'
+
+*convert risk group to a numerical variable to use in the decision curve analysis
+encode (risk_group), g(risk_category)
+* Run the decision curve
+dca cancer risk_category, ///
+probability(no) harm(`harm_conditional') xstop(0.35) xlabel(0(0.05)0.35)
 
 /* ---- cross_validation ----- */
 * Load Original Dataset

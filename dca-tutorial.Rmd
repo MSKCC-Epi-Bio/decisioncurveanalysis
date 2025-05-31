@@ -14,10 +14,6 @@ editor_options:
     wrap: sentence
 ---
 
-<!-- <div class="center"> -->
-<!--   <h1>Decision Curve Analysis</h1> -->
-<!-- </div> -->
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = TRUE, warning = FALSE, fig.height = 3, cache = TRUE,
@@ -235,6 +231,34 @@ The key aspect of decision curve analysis is to look at which strategy leads to 
 It is clear that the statistical model has the highest net benefit across the entire range of threshold probabilities.
 Accordingly, we would conclude that using the model to decide whether to biopsy a patient would lead to better clinical outcomes.
 
+### Graph Appearance Options
+
+There are various options for improving the look of the graph. First, regular graph options apply. You can change line color, width, and patterns, and in this example, the "Treat All" plot shows as a thick, red, solid line, while "Treat None" is of medium thickness, green, and dashed. "Marker" is a thin, blue, dashed line (note: this would not look much good, but is given for illustrative purposes).
+
+```{r, dca_formatting, echo=FALSE, message = FALSE, results='asis'}
+add_tabset_codes("dca_formatting")
+```
+
+Second, the legend can be switched on – useful for initial evaluation – and off - better for producing publication-ready figures. The default (shown in all the examples above) is to include the legend. To avoid showing the legend:
+
+```{r, dca_legend_off, echo=FALSE, message = FALSE, results='asis'}
+add_tabset_codes("dca_legend_off")
+```
+
+Finally, it can sometimes be important to modify the y axis, especially when event rates – and therefore net benefit – is low. We will demonstrate by first creating a data set where the incidence of cancer is 90% lower than in the original data set. Running a decision curve ends up with a large amount of white space where net benefit is less than 0, which is uninteresting.
+
+```{r, dca_create_low_incidence, echo=FALSE, message = FALSE, results='asis'}
+add_tabset_codes("dca_create_low_incidence")
+```
+
+A better alternative would be to use an option that truncates the y-axis. We can also truncate the x-axis on the grounds that net benefit is below zero for threshold probabilities above 0.1.
+
+```{r, dca_adjust_axes, echo=FALSE, message = FALSE, results='asis'}
+add_tabset_codes("dca_adjust_axes")
+```
+
+### Smoothing Options
+
 The decision curve for the model should in theory be a smooth curve with net benefit always going down (or staying the same) as you move from left to right.
 But the curve is a bit bumpy and sometimes even increases a bit, a result of statistical noise.
 Some researchers prefer to show a smoothed curve and there are two options for doing so.
@@ -253,8 +277,6 @@ You can specify instead to calculate net benefit every 5%.
 ```{r, dca_smooth2, echo=FALSE, message = FALSE, results='asis'}
 add_tabset_codes("dca_smooth2")
 ```
-
-You can also combine the two methods of smoothing together.
 
 A few additional points are worth noting.
 First, look at the green line, the net benefit for "treat all", that is, biopsy everyone.
@@ -438,7 +460,7 @@ Then incorporate it into our decision curve.
 The strategy for incorporating harm for the conditional test is by multiplying the proportion scanned by the harm of the scan.
 
 ```{r, dca_harm, echo=FALSE, message = FALSE, results='asis'}
-add_tabset_codes("dca_harm", eval = FALSE)
+add_tabset_codes("dca_harm")
 ```
 
 ## Correction for Overfit
