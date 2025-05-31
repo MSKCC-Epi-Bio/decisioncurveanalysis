@@ -58,13 +58,6 @@ RUN;
      probability = no risk_group,
      xby = 0.05, xstop = 0.35);
 
-/* ---- dca_combined_smooth ----- */
-/* Combine both smoothing methods: wider intervals and loess smoothing */
-%DCA(data = data_cancer, outcome = cancer,
-     predictors = cancerpredmarker famhistory risk_group,
-     probability = no risk_group,
-     xby = 0.05, xstop = 0.35, smooth = loess);
-
 /* ---- dca_formatting ----- */
 /* Add formatting options to improve graph appearance */
 %DCA(data = data_cancer, outcome = cancer,

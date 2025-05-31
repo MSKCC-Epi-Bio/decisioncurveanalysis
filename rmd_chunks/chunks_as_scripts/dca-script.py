@@ -108,69 +108,55 @@ plot_graphs(
 )
 
 # ---- dca_create_low_incidence ----- 
-# Create a dataset with lower incidence of cancer
-import numpy as np
 
 np.random.seed(123)
 
-# Make a copy of the original dataframe
 df_cancer_dx_low = df_cancer_dx.copy()
+u = np.random.rand(len(df_cancer_dx_low))
 
-# Create a mask for cancer cases
-cancer_mask = df_cancer_dx_low["cancer"] == 1
-random_mask = np.random.uniform(0, 1, size=len(df_cancer_dx_low)) >= 0.9
+# copy → cancer_temp, then blank out 90 % of cancers
+df_cancer_dx_low["cancer_temp"] = df_cancer_dx_low["cancer"]
+mask_na = (df_cancer_dx_low["cancer"] == 1) & (u < 0.9)
+df_cancer_dx_low.loc[mask_na, "cancer_temp"] = np.nan
 
-# Set 90% of cancer cases to NaN
-df_cancer_dx_low.loc[cancer_mask & random_mask, "cancer_temp"] = 1
-df_cancer_dx_low.loc[cancer_mask & ~random_mask, "cancer_temp"] = np.nan
-df_cancer_dx_low.loc[~cancer_mask, "cancer_temp"] = df_cancer_dx_low.loc[
-    ~cancer_mask, "cancer"
-]
+# drop rows missing in *either* outcome or predictor
+df_for_dca = df_cancer_dx_low.dropna(subset=["cancer_temp", "cancerpredmarker"])
 
-# Run DCA with default y-axis
 dca_low_incidence_df = dca(
-    data=df_cancer_dx_low,
+    data=df_for_dca,
     outcome="cancer_temp",
     modelnames=["cancerpredmarker"],
     thresholds=np.arange(0, 0.26, 0.01),
 )
 
-plot_graphs(plot_df=dca_low_incidence_df, graph_type="net_benefit")
-
-# ---- dca_adjust_axes ----- 
-# Adjust both x and y axes for better visualization
-dca_adjust_axes_df = dca(
-    data=df_cancer_dx_low,
-    outcome="cancer_temp",
-    modelnames=["cancerpredmarker"],
-    thresholds=np.arange(0, 0.11, 0.01),  # Restricted x-axis
+plot_graphs(
+    plot_df=dca_low_incidence_df,
+    graph_type="net_benefit",
+    color_names=["blue", "red", "green"],
 )
 
-# Custom plot with adjusted axes
-fig, ax = plt.subplots(figsize=(8, 6))
+# ---- dca_adjust_axes ----- 
 
-# Extract data
-treat_all = dca_adjust_axes_df[dca_adjust_axes_df["model"] == "all"]
-treat_none = dca_adjust_axes_df[dca_adjust_axes_df["model"] == "none"]
-model = dca_adjust_axes_df[dca_adjust_axes_df["model"] == "cancerpredmarker"]
+dca_low_incidence_small = dca(
+    data=df_for_dca,
+    outcome="cancer_temp",
+    modelnames=["cancerpredmarker"],
+    thresholds=np.arange(0, 0.05, 0.01),
+)
 
-# Plot with custom y-axis limits
-ax.plot(treat_all["threshold"], treat_all["net_benefit"], label="Treat All")
-ax.plot(treat_none["threshold"], treat_none["net_benefit"], label="Treat None")
-ax.plot(model["threshold"], model["net_benefit"], label="Marker")
-
-ax.set_xlabel("Threshold Probability")
-ax.set_ylabel("Net Benefit")
-ax.set_ylim(-0.005, 0.05)  # Set y-axis limits
-ax.set_xticks(np.arange(0, 0.11, 0.02))  # Set x-axis ticks
-ax.legend()
-plt.show()
+plot_graphs(
+    plot_df=dca_low_incidence_small,
+    graph_type="net_benefit",
+    y_limits=[-0.005, 0.0225],
+    color_names=["blue", "red", "green"],
+)
 
 # ---- dca_smooth ----- 
 
+
 plot_graphs(
     plot_df=dca_multi_df,
-    y_limits=[-0.05, 0.2],
+    y_limits=[-0.025, 0.15],
     graph_type="net_benefit",
     smooth_frac=0.5,  # Set the smoothing fraction to 0.5
 )
@@ -185,23 +171,11 @@ dca_smooth2_df = dca(
     models_to_prob=["risk_group"],  # Specify risk_group is not a probability
 )
 
-plot_graphs(plot_df=dca_smooth2_df, graph_type="net_benefit", smooth_frac=0)
-
-# ---- dca_combined_smooth ----- 
-
-# Combine both smoothing methods: wider intervals and smoothed lines
-dca_combined_smooth_df = dca(
-    data=df_cancer_dx,
-    outcome="cancer",
-    modelnames=["cancerpredmarker", "famhistory", "risk_group"],
-    thresholds=np.arange(0, 0.36, 0.05),  # Wider intervals
-    models_to_prob=["risk_group"],  # Specify risk_group is not a probability
-)
-
 plot_graphs(
-    plot_df=dca_combined_smooth_df,
+    plot_df=dca_smooth2_df,
     graph_type="net_benefit",
-    smooth_frac=0.5,  # Add smoothing
+    smooth_frac=0,
+    y_limits=[-0.025, 0.15],
 )
 
 # ---- pub_model ----- 

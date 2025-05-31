@@ -153,9 +153,10 @@ plot_graphs(
 
 ## ---- python-dca_smooth -----
 
+
 plot_graphs(
     plot_df=dca_multi_df,
-    y_limits=[-0.05, 0.2],
+    y_limits=[-0.025, 0.15],
     graph_type="net_benefit",
     smooth_frac=0.5,  # Set the smoothing fraction to 0.5
 )
@@ -170,23 +171,11 @@ dca_smooth2_df = dca(
     models_to_prob=["risk_group"],  # Specify risk_group is not a probability
 )
 
-plot_graphs(plot_df=dca_smooth2_df, graph_type="net_benefit", smooth_frac=0)
-
-## ---- python-dca_combined_smooth -----
-
-# Combine both smoothing methods: wider intervals and smoothed lines
-dca_combined_smooth_df = dca(
-    data=df_cancer_dx,
-    outcome="cancer",
-    modelnames=["cancerpredmarker", "famhistory", "risk_group"],
-    thresholds=np.arange(0, 0.36, 0.05),  # Wider intervals
-    models_to_prob=["risk_group"],  # Specify risk_group is not a probability
-)
-
 plot_graphs(
-    plot_df=dca_combined_smooth_df,
+    plot_df=dca_smooth2_df,
     graph_type="net_benefit",
-    smooth_frac=0.5,  # Add smoothing
+    smooth_frac=0,
+    y_limits=[-0.025, 0.15],
 )
 
 ## ---- python-pub_model -----
@@ -207,9 +196,10 @@ dca_pub_model_df = dca(
 
 plot_graphs(
     plot_df=dca_pub_model_df,
-    y_limits=[-0.05, 0.2],
+    y_limits=[-0.05, 0.15],
     graph_type="net_benefit",
     smooth_frac=0.5,
+    color_names=["blue", "red", "green"],
 )
 
 ## ---- python-joint -----
@@ -241,36 +231,12 @@ dca_joint_df = dca(
     thresholds=np.arange(0, 0.36, 0.01),
 )
 
-plot_graphs(plot_df=dca_joint_df, graph_type="net_benefit")
-
-## ---- python-dca_harm_simple -----
-
-dca_harm_simple_df = dca(
-    data=df_cancer_dx,
-    outcome="cancer",
-    modelnames=["marker"],
-    thresholds=np.arange(0, 0.36, 0.01),
-    harm={"marker": 0.0333},
-    models_to_prob=["marker"],
+plot_graphs(
+    plot_df=dca_joint_df,
+    graph_type="net_benefit",
+    y_limits=[-0.05, 0.15],
+    color_names=["green", "cyan", "violet", "red", "gold"],
 )
-
-plot_graphs(plot_df=dca_harm_simple_df, graph_type="net_benefit")
-
-## ---- python-dca_harm -----
-
-harm_marker = 0.0333
-harm_conditional = (df_cancer_dx["risk_group"] == "intermediate").mean() * harm_marker
-
-dca_harm_df = dca(
-    data=df_cancer_dx,
-    outcome="cancer",
-    modelnames=["risk_group"],
-    models_to_prob=["risk_group"],
-    thresholds=np.arange(0, 0.36, 0.01),
-    harm={"risk_group": harm_conditional},
-)
-
-plot_graphs(plot_df=dca_harm_df)
 
 ## ---- python-dca_table -----
 
@@ -295,7 +261,10 @@ dca_intervention_df = dca(
 )
 
 plot_graphs(
-    plot_df=dca_intervention_df, graph_type="net_intervention_avoided", smooth_frac=0.5
+    plot_df=dca_intervention_df,
+    graph_type="net_intervention_avoided",
+    smooth_frac=0.2,
+    color_names=["blue", "red", "green"],
 )
 
 ## ---- python-import_ttcancer -----
@@ -336,6 +305,7 @@ plot_graphs(
     graph_type="net_benefit",
     y_limits=[-0.05, 0.25],
     smooth_frac=0.5,
+    color_names=["blue", "red", "green"],
 )
 
 ## ---- python-stdca_cmprsk -----
@@ -373,6 +343,35 @@ plot_graphs(
     y_limits=[-0.05, 0.25],
     smooth_frac=0.5,
 )
+
+## ---- python-dca_harm_simple -----
+
+dca_harm_simple_df = dca(
+    data=df_cancer_dx,
+    outcome="cancer",
+    modelnames=["marker"],
+    thresholds=np.arange(0, 0.36, 0.01),
+    harm={"marker": 0.0333},
+    models_to_prob=["marker"],
+)
+
+plot_graphs(plot_df=dca_harm_simple_df, graph_type="net_benefit")
+
+## ---- python-dca_harm -----
+
+harm_marker = 0.0333
+harm_conditional = (df_cancer_dx["risk_group"] == "intermediate").mean() * harm_marker
+
+dca_harm_df = dca(
+    data=df_cancer_dx,
+    outcome="cancer",
+    modelnames=["risk_group"],
+    models_to_prob=["risk_group"],
+    thresholds=np.arange(0, 0.36, 0.01),
+    harm={"risk_group": harm_conditional},
+)
+
+plot_graphs(plot_df=dca_harm_df)
 
 ## ---- python-cross_validation -----
 

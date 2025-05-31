@@ -282,12 +282,6 @@ You can specify instead to calculate net benefit every 5%.
 add_tabset_codes("dca_smooth2")
 ```
 
-You can also combine the two methods of smoothing together.
-
-```{r, dca_combined_smooth, echo=FALSE, message = FALSE, results='asis'}
-add_tabset_codes("dca_combined_smooth")
-```
-
 A few additional points are worth noting.
 First, look at the green line, the net benefit for "treat all", that is, biopsy everyone.
 This crosses the y axis at the prevalence.

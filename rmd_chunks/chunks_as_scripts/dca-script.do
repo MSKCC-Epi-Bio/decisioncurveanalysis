@@ -63,10 +63,6 @@ dca cancer cancerpredmarker famhistory, xstop(0.35) xlabel(0(0.01)0.35) smooth
 ## ---- stata-dca_smooth2 ----
 dca cancer cancerpredmarker famhistory risk_group, xstop(0.35) xby(0.05) probability(no risk_group)
 
-/* ---- dca_combined_smooth ----- */
-// Combine both smoothing methods: wider intervals and smoothed lines
-dca cancer cancerpredmarker famhistory risk_group, xstop(0.35) xby(0.05) smooth(0.3) probability(no risk_group)
-
 /* ---- pub_model ----- */
 * Use the coefficients from the Brown model
 g logodds_Brown = 0.75*(famhistory) + 0.26*(age) - 17.5
