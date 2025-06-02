@@ -324,7 +324,7 @@ Now, let's compare the performance of these approaches using decision curve anal
 add_tabset_codes("dca_joint")
 ```
 
-As we can see from the decision curve, the different approaches to combining risk group information with the marker have varying clinical utility across different threshold probabilities.
+In general, the “joint” approach does better than the “conditional” approach, something which shouldn’t be surprising as we are measuring the cancer marker on everyone, not just those at intermediate risk, and so are getting more information. Clearly, however, we are not taking into account the downside of having to measure the marker on more patients, which is the whole justification for using the “conditional” approach. This issue is dealt with in the “incorporating harms” section of the tutorial.
 
 ### Saving out Net Benefit Values
 
