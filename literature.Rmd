@@ -257,6 +257,13 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 <p>Vickers AJ, Van Claster B, Wynants L, Steyerberg EW. Decision curve analysis: confidence intervals and hypothesis testing for net benefit. Diagn Progn Res. 2023 Jun 6;7(1):11. PMID: 37277840; PMCID: PMC10243069.</p>
 </div>
 </div>
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/41354862/" target="_blank" rel="noopener noreferrer">Full derivation of net benefit (in appendix material)</a></h2>
+<span class="year">2025</span>
+<p>Assel M, Vickers A. The F score ranks diagnostic tests and prediction models inconsistently with their clinical utility. Diagn Progn Res. 2025 Dec 8;9(1):30. PMID: 41354862.</p>
+</div>
+</div>
 
 # **Editorials & Commentaries in Major Journals**
 
@@ -293,6 +300,13 @@ Vickers AJ, Cronin AM. Traditional statistical methods for evaluating prediction
 <h2><a href="https://pubmed.ncbi.nlm.nih.gov/36571841/" target="_blank" rel="noopener noreferrer">Decision Curves for Time-to-Event Data</a></h2>
 <span class="year">2023</span>
 <p> McLernon DJ, et al. Ann Intern Med. 2023 Jan;176(1):105-114. PMID: 36571841. </p>
+</div>
+</div>
+<div class="contact-wrapper contact-box">
+<div class="contact-text">
+<h2><a href="https://pubmed.ncbi.nlm.nih.gov/41391983/" target="_blank" rel="noopener noreferrer">Position statement from the Stratos group on evaluation of prediction models</a></h2>
+<span class="year">2025</span>
+<p>Van Calster B, Collins GS, Vickers AJ, Wynants L, Kerr KF, Barreñada L, Varoquaux G, Singh K, Moons KGM, Hernandez-Boussard T, Timmerman D, McLernon DJ, van Smeden M, Steyerberg EW; Topic Group 6 of the STRATOS initiative. Evaluation of performance measures in predictive artificial intelligence models to support medical decisions: overview and guidance. Lancet Digit Health. 2025 Dec 13:100916. PMID: 41391983.</p>
 </div>
 </div>
 
